@@ -1,0 +1,34 @@
+/* @flow */
+import type { State } from "../../state/state.type.js";
+import type { Action } from "./stories.actions.js";
+import type { StoriesState } from "./stories.type";
+
+import { connect } from "react-redux";
+import React, { Component } from "react";
+import { requestStories } from "./stories.actions.js";
+import Section from "../../components/section/section";
+
+type Props = {
+  stories: StoriesState,
+  dispatch: Action => void
+};
+
+class StoriesContainer extends Component<Props> {
+  componentDidMount() {
+    this.props.dispatch(requestStories());
+  }
+  render() {
+    const { stories: { stories, error, timestamp } } = this.props;
+    return (
+      <div>
+        <Section title="Latest stories" info={{ error, timestamp }}>
+          <div>TEST</div>
+        </Section>
+      </div>
+    );
+  }
+}
+
+export default connect((state: State) => ({
+  stories: state.stories
+}))(StoriesContainer);
