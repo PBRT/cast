@@ -3,6 +3,7 @@ import type { State } from "../../state/state.type.js";
 import type { Action } from "../stories/stories.actions.js";
 import type { StoriesState } from "../stories/stories.type";
 
+import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import React, { Component } from "react";
 import { requestStories, createStory } from "../stories/stories.actions.js";
@@ -13,7 +14,8 @@ import Button from "material-ui/Button";
 export type SupportedInputs = ?string | ?number;
 type Props = {
   stories: StoriesState,
-  dispatch: Action => void
+  dispatch: Action => void,
+  history: Object
 };
 type ContainerState = {
   values: {
@@ -71,9 +73,10 @@ class StoriesContainer extends Component<Props, ContainerState> {
         ...{ timestamp: date }
       })
     );
+    this.props.history.push("/");
   };
 }
 
 export default connect((state: State) => ({
   stories: state.stories
-}))(StoriesContainer);
+}))(withRouter(StoriesContainer));
