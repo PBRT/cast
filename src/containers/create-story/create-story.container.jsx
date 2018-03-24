@@ -7,23 +7,51 @@ import { connect } from "react-redux";
 import React, { Component } from "react";
 import { requestStories } from "../stories/stories.actions.js";
 import Section from "../../components/section/section";
+import CreateStoryForm from "./components/form.jsx";
 
+export type SupportedInputs = ?string | ?number;
 type Props = {
   stories: StoriesState,
   dispatch: Action => void
 };
+type ContainerState = {
+  values: {
+    [string]: SupportedInputs
+  }
+};
 
-class StoriesContainer extends Component<Props> {
+class StoriesContainer extends Component<Props, ContainerState> {
+  state: ContainerState = {
+    values: {
+      title: null,
+      description: null,
+      timestamp: 0
+    }
+  };
   render() {
     const { stories: { stories, error, timestamp } } = this.props;
     return (
       <div>
         <Section title="Create story" info={{ error, timestamp }}>
-          <div>TO CREATE</div>
+          <CreateStoryForm
+            handleChange={this._handleChange}
+            values={this.state.values}
+          />
         </Section>
       </div>
     );
   }
+
+  _handleChange = (key: string, value: string) => {
+    this.setState({
+      values: {
+        ...this.state.values,
+        ...{
+          [key]: value
+        }
+      }
+    });
+  };
 }
 
 export default connect((state: State) => ({

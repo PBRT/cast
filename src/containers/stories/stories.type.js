@@ -1,10 +1,11 @@
 // @flow
-export type Storie = {
+export type Story = {
   +title: string,
-  +description: string
+  +description: string,
+  +date: number
 };
 
-export type Stories = Array<Storie>;
+export type Stories = Array<Story>;
 
 export type StoriesState = {
   +error: ?string,

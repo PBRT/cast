@@ -1,12 +1,13 @@
 /* @flow */
 import type { State } from "../../state/state.type.js";
 import type { Action } from "./stories.actions.js";
-import type { StoriesState } from "./stories.type";
+import type { StoriesState, Story as StoryType } from "./stories.type";
 
 import { connect } from "react-redux";
 import React, { Component } from "react";
 import { requestStories } from "./stories.actions.js";
 import Section from "../../components/section/section";
+import Story from "./components/story";
 
 type Props = {
   stories: StoriesState,
@@ -22,7 +23,11 @@ class StoriesContainer extends Component<Props> {
     return (
       <div>
         <Section title="Latest stories" info={{ error, timestamp }}>
-          <div>TEST</div>
+          <div>
+            {stories.map((story: StoryType, idx: number) => (
+              <Story key={idx} story={story} />
+            ))}
+          </div>
         </Section>
       </div>
     );

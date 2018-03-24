@@ -42,6 +42,31 @@ export const stories: StoriesReducer = (
         error: "FAIL",
         loading: false
       };
+    case "REQUEST_CREATE_STORY":
+      return fx({ ...state, loading: true }, [
+        {
+          effect: "fetch",
+          url: "stories",
+          method: "post",
+          onSuccess: "RECEIVE_CREATE_STORY",
+          onError: "FAIL_CREATE_STORY"
+        }
+      ]);
+    case "RECEIVE_CREATE_STORY":
+      return {
+        ...state,
+        stories: [...state.stories, ...(action.payload || [])],
+        loading: false,
+        error: null,
+        timestamp: action.timestamp
+      };
+
+    case "FAIL_CREATE_STORY":
+      return {
+        ...state,
+        error: "FAIL",
+        loading: false
+      };
     default:
       return state;
   }
