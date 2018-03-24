@@ -49,13 +49,14 @@ export const stories: StoriesReducer = (
           url: "stories",
           method: "post",
           onSuccess: "RECEIVE_CREATE_STORY",
-          onError: "FAIL_CREATE_STORY"
+          onError: "FAIL_CREATE_STORY",
+          body: action.story
         }
       ]);
     case "RECEIVE_CREATE_STORY":
       return {
         ...state,
-        stories: [...state.stories, ...(action.payload || [])],
+        stories: [...(action.payload || []), ...state.stories],
         loading: false,
         error: null,
         timestamp: action.timestamp

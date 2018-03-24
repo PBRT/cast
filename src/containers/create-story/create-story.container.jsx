@@ -5,9 +5,10 @@ import type { StoriesState } from "../stories/stories.type";
 
 import { connect } from "react-redux";
 import React, { Component } from "react";
-import { requestStories } from "../stories/stories.actions.js";
+import { requestStories, createStory } from "../stories/stories.actions.js";
 import Section from "../../components/section/section";
 import CreateStoryForm from "./components/form.jsx";
+import Button from "material-ui/Button";
 
 export type SupportedInputs = ?string | ?number;
 type Props = {
@@ -33,10 +34,17 @@ class StoriesContainer extends Component<Props, ContainerState> {
     return (
       <div>
         <Section title="Create story" info={{ error, timestamp }}>
-          <CreateStoryForm
-            handleChange={this._handleChange}
-            values={this.state.values}
-          />
+          <div>
+            <CreateStoryForm
+              handleChange={this._handleChange}
+              values={this.state.values}
+            />
+            <div style={{ textAlign: "center" }}>
+              <Button color="primary" type="raised" onClick={this._onSubmit}>
+                Submit
+              </Button>
+            </div>
+          </div>
         </Section>
       </div>
     );
@@ -51,6 +59,18 @@ class StoriesContainer extends Component<Props, ContainerState> {
         }
       }
     });
+  };
+
+  _onSubmit = () => {
+    const { timestamp } = this.state.values;
+    const date =
+      timestamp != null ? new Date(timestamp).getTime() : new Date().getTime();
+    this.props.dispatch(
+      createStory({
+        ...this.state.values,
+        ...{ timestamp: date }
+      })
+    );
   };
 }
 

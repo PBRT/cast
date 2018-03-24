@@ -18,6 +18,7 @@ export type Action = {
     | RECEIVE_CREATE_STORY
     | FAIL_CREATE_STORY,
   payload?: Stories,
+  story?: Object,
   timestamp?: number
 };
 
@@ -26,7 +27,8 @@ export const requestStories: RequestStories = () => ({
   type: "REQUEST_STORIES"
 });
 
-type CreateStory = () => Action;
-export const createStory: CreateStory = () => ({
-  type: "REQUEST_CREATE_STORY"
+type CreateStory = (story: Object) => Action;
+export const createStory: CreateStory = (story: Object) => ({
+  type: "REQUEST_CREATE_STORY",
+  story
 });
