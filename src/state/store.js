@@ -18,7 +18,6 @@ export function initializeStore() {
   );
 
   store.registerFX("fetch", (params, getState, dispatch) => {
-    console.log(params.body);
     fetch(API_URL + params.url, {
       method: params.method,
       body: JSON.stringify(params.body),
