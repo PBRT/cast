@@ -14,7 +14,7 @@ const Story = (props: Props) => (
     <Paper style={{ marginBottom: 12, padding: 12 }}>
       <Typography type="title">{props.story.title}</Typography>
       <Typography type="caption">
-        {moment(parseInt(props.story.date)).format("DD-MM-YYYY")}
+        {moment(parseInt(props.story.timestamp)).format("DD-MM-YYYY")}
       </Typography>
       <Typography style={{ marginTop: 8 }} type="subheading">
         {props.story.description}

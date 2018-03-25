@@ -2,7 +2,7 @@
 export type Story = {
   +title: string,
   +description: string,
-  +date: number
+  +timestamp: number
 };
 
 export type Stories = Array<Story>;
