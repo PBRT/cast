@@ -11,7 +11,9 @@ type StoryTextInputProps = {
   handleChange: HandleChange,
   style?: Object,
   inputType: "date" | "text",
-  defaultValue?: string
+  defaultValue?: string,
+  rows?: number,
+  multiline?: boolean
 };
 type Props = {
   handleChange: HandleChange,
@@ -28,7 +30,9 @@ class StoryTextInput extends Component<StoryTextInputProps> {
       value,
       style,
       inputType,
-      defaultValue
+      defaultValue,
+      rows,
+      multiline
     } = this.props;
     return (
       <TextField
@@ -38,6 +42,8 @@ class StoryTextInput extends Component<StoryTextInputProps> {
         value={value || ""}
         defaultValue={defaultValue}
         onChange={this._onChange}
+        rows={rows || 1}
+        multiline={multiline != null ? multiline : false}
         style={{
           ...(style || {}),
           ...{ width: "100%", marginBottom: 20 }
@@ -73,6 +79,8 @@ const CreateStoryForm = (props: Props) => {
           label="Description"
           inputKey="description"
           inputType="text"
+          rows={4}
+          multiline={true}
           value={props.values.description}
           handleChange={props.handleChange}
         />
