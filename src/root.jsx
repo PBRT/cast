@@ -3,6 +3,7 @@ import React from "react";
 import { Provider } from "react-redux";
 import App from "./containers/app/app";
 import Stories from "./containers/stories/stories.container";
+import AboutUsContainer from "./containers/about-us/about-us.container";
 import CreateStory from "./containers/create-story/create-story.container";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
@@ -20,6 +21,7 @@ const Root = (props: Props) => (
         <Switch>
           <Route exact path="/" component={Stories} />
           <Route exact path="/create-story" component={CreateStory} />
+          <Route exact path="/about-us" component={AboutUsContainer} />
           <Route
             component={() => (
               <div style={{ textAlign: "center" }}>
