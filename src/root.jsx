@@ -6,10 +6,13 @@ import Stories from "./containers/stories/stories.container";
 import CreateStory from "./containers/create-story/create-story.container";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
+// This is flow, we can go back to that later
+// but it's super cool (give you type in javascript)
 type Props = {
   store: Object
 };
 
+// This is the root of the app with REact router
 const Root = (props: Props) => (
   <Provider store={props.store}>
     <Router>

@@ -71,3 +71,20 @@ Then go to http://localhost:3001
 Go to create a story (top right in the navigation bar), create one and make sure it's working. If not, contact this good old piero.
 
 I put comments everywhere in the code to explain stuff
+
+### PULL REQUEST
+
+When you start working up in that bitch, create a branch FIRST. Then run
+
+```
+git checkout -b 'mybranch'
+```
+
+When you're ready
+
+```
+git commit -m 'My cool stuff'
+git push origin mybranch
+```
+
+And then go on github and open the PR.
