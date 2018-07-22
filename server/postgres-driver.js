@@ -7,9 +7,9 @@ let db = null;
 // it should be 'postgres://[username]:[password]@localhost:5432/casto' so for you
 // probably 'postgres://pinard:daves6512@localhost:5432/casto'
 // Change it, save and go back to the readme
-const DATABASE_URL = process.env.DATABASE_URL;
+const DATABASE_URL = "postgres://postgres:postgres12@localhost:5432/casto";
 const connect = () => {
-  db = pgp(process.env.DATABASE_URL);
+  db = pgp(DATABASE_URL);
 };
 
 const query = query => db.any(query);
