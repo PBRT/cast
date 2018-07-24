@@ -20,17 +20,26 @@ class StoriesContainer extends Component<Props> {
   }
   render() {
     const { stories: { stories, error, timestamp } } = this.props;
-    return (
-      <div>
-        <Section title="Latest stories" info={{ error, timestamp }}>
-          <div>
-            {stories.map((story: StoryType, idx: number) => (
-              <Story key={idx} story={story} />
-            ))}
-          </div>
-        </Section>
-      </div>
-    );
+    if(stories.length !== 0) {
+      return (
+        <div>
+          <Section title="Latest stories" info={{ error, timestamp }}>
+            <div>
+              {stories.map((story: StoryType, idx: number) => (
+                <Story key={idx} story={story} />
+              ))}
+            </div>
+          </Section>
+        </div>
+      );
+    } else {
+      return (
+        <div style={{ textAlign: "center" }}>
+          <div style={{ margin: 40 }}>No story to show, let's create some!</div>
+          <img alt="alphie not happy" src="story-begins.jpg" />
+        </div>
+      )
+    }
   }
 }
 
