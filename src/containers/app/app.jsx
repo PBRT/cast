@@ -31,6 +31,7 @@ const App = (props: Props) => {
               </Typography>
             </NavLink>
           </div>
+
           <div style={{ flex: 1, textAlign: "right" }}>
             <NavLink
               style={{
@@ -46,6 +47,23 @@ const App = (props: Props) => {
               </Typography>
             </NavLink>
           </div>
+
+          <div style={{ flex: 1, textAlign: "right", width: 25 }}>
+            <NavLink
+              style={{
+                textDecoration: "none",
+                color: "white",
+                marginLeft: 12,
+                display: "inline-block"
+              }}
+              to="/about-us"
+            >
+              <Typography type="subheading" color="inherit">
+                About us
+              </Typography>
+            </NavLink>
+          </div>
+
         </div>
       </AppBar>
       {props.children}
