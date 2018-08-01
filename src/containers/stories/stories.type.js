@@ -1,5 +1,6 @@
 // @flow
 export type Story = {
+  +username: string,
   +title: string,
   +description: string,
   +timestamp: number

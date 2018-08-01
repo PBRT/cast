@@ -26,6 +26,7 @@ type ContainerState = {
 class StoriesContainer extends Component<Props, ContainerState> {
   state: ContainerState = {
     values: {
+      username: null,
       title: null,
       description: null,
       timestamp: 0

@@ -9,6 +9,8 @@ import Typography from "material-ui/Typography";
 type Props = {
   story: StoryType
 };
+
+
 const Story = (props: Props) => (
   <div style={{ maxWidth: 800, margin: "auto" }}>
     <Paper style={{ marginBottom: 12, padding: 12 }}>
@@ -19,8 +21,12 @@ const Story = (props: Props) => (
       <Typography style={{ marginTop: 8 }} type="subheading">
         {props.story.description}
       </Typography>
+      <Typography style={{ marginTop: 28 }} type="subheading">
+        {props.story.username}
+      </Typography>
     </Paper>
   </div>
 );
+
 
 export default Story;

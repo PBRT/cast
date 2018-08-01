@@ -62,6 +62,13 @@ const CreateStoryForm = (props: Props) => {
     <div style={{ width: 400, margin: "auto" }}>
       <form noValidate autoComplete="off">
         <StoryTextInput
+          label="Username"
+          inputKey="username"
+          inputType="text"
+          value={props.values.username}
+          handleChange={props.handleChange}
+        />
+        <StoryTextInput
           label="Title"
           inputKey="title"
           inputType="text"

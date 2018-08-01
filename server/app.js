@@ -37,13 +37,13 @@ app.get("/stories", (req, res) => {
 
 // Create a story
 app.post("/stories", (req, res) => {
-  const { title, description, timestamp } = req.body;
+  const { username, title, description, timestamp } = req.body;
   // we make sure there is everything needed
-  if (title != null && description != null && timestamp != null) {
+  if (username != null && title != null && description != null && timestamp != null) {
     // we do the query
     postgresDriver
       .query(
-        `INSERT INTO Stories VALUES ('${title}', '${description}', ${timestamp})`
+        `INSERT INTO Stories VALUES ('${username}', '${title}', '${description}', ${timestamp})`
       )
       .then(() => {
         // we inform the browser it's all good
