@@ -2,9 +2,9 @@
 import type { Story as StoryType } from "../stories.type.js";
 
 import moment from "moment";
-import Paper from "material-ui/Paper";
+import Paper from "@material-ui/core/Paper";
 import React, { Component } from "react";
-import Typography from "material-ui/Typography";
+import Typography from "@material-ui/core/Typography";
 
 type Props = {
   story: StoryType

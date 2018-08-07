@@ -9,7 +9,7 @@ import React, { Component } from "react";
 import { requestStories, createStory } from "../stories/stories.actions.js";
 import Section from "../../components/section/section";
 import CreateStoryForm from "./components/form.jsx";
-import Button from "material-ui/Button";
+import Button from "@material-ui/core/Button";
 
 export type SupportedInputs = ?string | ?number;
 type Props = {
