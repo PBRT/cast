@@ -46,7 +46,7 @@ class AboutUsContainer extends Component<{}> {
           <h1>We love pinard but we want more!!</h1>
         </div>
         <div>
-          <div style={{ textAlign: "right", marginRight: 16 }}>
+          <div style={{ textAlign: "right", marginRight: 16, marginTop: 75 }}>
             <p><a href="https://dictionary.cambridge.org/dictionary/english/animal">Cambridge dictionary</a>: animal noun [ C ] (BAD PERSON)</p>
             <p>Informal - an unpleasant, cruel person or someone who behaves badly: <br/><i>He's a real animal when he's had too much to drink.</i></p>
           </div>
@@ -59,11 +59,6 @@ class AboutUsContainer extends Component<{}> {
             colorPrimary: "navbar-color"
           }}
         ></AppBar>
-        <div style = {{ display: "flex", textAlign: "center", margin: 250 }}>
-            <SimpleMediaCard />
-            <p>Ut non nunc iaculis massa tempus venenatis. Cras rhoncus malesu </p>
-        </div>
-
         <div>
           <GoogleMapsContainer/>
         </div>

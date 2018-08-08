@@ -7,6 +7,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import moment from "moment";
 
 const styles = {
   card: {
@@ -30,11 +31,13 @@ function SimpleMediaCard(props) {
         />
         <CardContent>
           <Typography gutterBottom variant="headline" component="h2">
-            Lizard
+            {props.story.title}
           </Typography>
-          <Typography component="p">
-            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-            across all continents except Antarctica
+          <Typography type="caption" component="p">
+            {moment(parseInt(props.story.timestamp)).format("DD-MM-YYYY")}
+          </Typography>
+          <Typography style={{ marginTop: 8 }} type="subheading" component="p">
+            {props.story.description}
           </Typography>
         </CardContent>
         <CardActions>
