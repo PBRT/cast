@@ -8,7 +8,8 @@ export const initialState: StoriesState = {
   stories: [],
   error: null,
   loading: false,
-  timestamp: Date.now()
+  timestamp: Date.now(),
+  username: "",
 };
 
 type StoriesReducer = (state: StoriesState, action: Action) => StoriesState;
@@ -33,7 +34,7 @@ export const stories: StoriesReducer = (
         stories: action.payload,
         loading: false,
         error: null,
-        timestamp: action.timestamp
+        timestamp: action.timestamp,
       };
 
     case "FAIL_STORIES":

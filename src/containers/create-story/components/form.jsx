@@ -1,6 +1,6 @@
 /* @flow */
 import type { SupportedInputs } from "../create-story.container.jsx";
-import TextField from "material-ui/TextField";
+import TextField from "@material-ui/core/TextField";
 import React, { Component } from "react";
 
 type HandleChange = (key: string, val: string) => void;
@@ -61,6 +61,13 @@ const CreateStoryForm = (props: Props) => {
   return (
     <div style={{ width: 400, margin: "auto" }}>
       <form noValidate autoComplete="off">
+        <StoryTextInput
+          label="Username"
+          inputKey="username"
+          inputType="text"
+          value={props.values.username}
+          handleChange={props.handleChange}
+        />
         <StoryTextInput
           label="Title"
           inputKey="title"

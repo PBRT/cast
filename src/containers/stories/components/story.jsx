@@ -2,13 +2,15 @@
 import type { Story as StoryType } from "../stories.type.js";
 
 import moment from "moment";
-import Paper from "material-ui/Paper";
+import Paper from "@material-ui/core/Paper";
 import React, { Component } from "react";
-import Typography from "material-ui/Typography";
+import Typography from "@material-ui/core/Typography";
 
 type Props = {
   story: StoryType
 };
+
+
 const Story = (props: Props) => (
   <div style={{ maxWidth: 800, margin: "auto" }}>
     <Paper style={{ marginBottom: 12, padding: 12 }}>
@@ -19,8 +21,12 @@ const Story = (props: Props) => (
       <Typography style={{ marginTop: 8 }} type="subheading">
         {props.story.description}
       </Typography>
+      <Typography style={{ marginTop: 28 }} type="subheading">
+        {props.story.username}
+      </Typography>
     </Paper>
   </div>
 );
+
 
 export default Story;

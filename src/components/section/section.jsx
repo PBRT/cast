@@ -2,8 +2,8 @@
 
 import moment from "moment";
 import React from "react";
-import Typography from "material-ui/Typography";
-import Divider from "material-ui/Divider";
+import Typography from "@material-ui/core/Typography";
+import Divider from "@material-ui/core/Divider";
 import "./section.css";
 
 type Props = {
