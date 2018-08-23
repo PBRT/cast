@@ -2,8 +2,8 @@
 
 import React from "react";
 
-import Typography from "material-ui/Typography";
-import AppBar from "material-ui/AppBar";
+import Typography from "@material-ui/core/Typography";
+import AppBar from "@material-ui/core/AppBar";
 import { NavLink } from "react-router-dom";
 
 import "./app.css";

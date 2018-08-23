@@ -1,6 +1,6 @@
 /* @flow */
 import type { SupportedInputs } from "../create-story.container.jsx";
-import TextField from "material-ui/TextField";
+import TextField from "@material-ui/core/TextField";
 import React, { Component } from "react";
 
 type HandleChange = (key: string, val: string) => void;
