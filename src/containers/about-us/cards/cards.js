@@ -13,28 +13,27 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
 
-
 const styles = {
   card: {
     maxWidth: 345,
   },
   media: {
     height: 0,
-    paddingTop: '56.25%', // 16:9
+    paddingTop: '100px',
   },
 };
 
 
 
-const Story = (props: Props) => {
+function Story (props: Props) {
   const { classes } = props;
   return (
     <div>
       <Card className={classes.card}>
         <CardMedia
           className={classes.media}
-          image="/public/careful-mate.jpg"
-          title="Contemplative Reptile"
+          image="1.jpg"
+          title="img"
         />
         <CardContent>
           <Typography gutterBottom variant="headline" component="h2">

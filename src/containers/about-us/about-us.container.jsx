@@ -1,9 +1,47 @@
 /* @flow */
 import React, { Component } from "react";
+import AppBar from "@material-ui/core/AppBar";
+
+import GoogleMapsContainer from "./map/maps";
+import ImageSlider from "./slider/slider";
+
+import "./about-us.css";
+
+
 
 class AboutUsContainer extends Component<{}> {
+
+  
   render() {
-    return <div>We love pinard but we want more!!</div>;
+    return (
+      <div className="header">
+        <div style={{ textAlign: "center", marginTop: 100 }}>
+          <img src="1.jpg" style={{ width: "100%" }}/>
+          <h1>We love pinard but we want more!!</h1>
+        </div>
+        <div>
+          <div style={{ textAlign: "right", marginRight: 16, marginTop: 75 }}>
+            <p><a href="https://dictionary.cambridge.org/dictionary/english/animal">Cambridge dictionary</a>: animal noun [ C ] (BAD PERSON)</p>
+            <p>Informal - an unpleasant, cruel person or someone who behaves badly: <br/><i>He's a real animal when he's had too much to drink.</i></p>
+          </div>
+        </div>
+        <AppBar
+          position="static"
+          color="primary"
+          style={{ marginBottom: 16, padding: 8 }}
+          classes={{
+            colorPrimary: "navbar-color"
+          }}
+        ></AppBar>
+        <div>
+          <p style={{ maxWidth: 1000, textAlign: "center", marginTop: 50, marginBottom: 50, border: "1px solid black" }} >Proin vel eros a dolor aliquam placerat id at turpis. Sed facilisis et neque quis varius. Aliquam convallis nulla et pharetra cursus. Cras elementum nec quam quis pellentesque. Nunc molestie arcu dui, vel pellentesque nisi hendrerit ac. In a commodo est. Quisque ac ante arcu. Morbi maximus magna non purus condimentum iaculis. Nulla ultricies nec erat in pretium. Phasellus pharetra libero a libero ultricies, id faucibus mauris maximus. Donec consequat feugiat dolor. Morbi pretium gravida lacus sit amet tempor. Donec vel semper felis.</p>
+        </div>
+        <ImageSlider/> 
+        <div>
+          <GoogleMapsContainer/>
+        </div>
+      </div>
+    )
   }
 }
 
