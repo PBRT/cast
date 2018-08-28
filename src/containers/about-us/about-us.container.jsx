@@ -3,46 +3,20 @@ import React, { Component } from "react";
 import AppBar from "@material-ui/core/AppBar";
 
 import GoogleMapsContainer from "./map/maps";
-import SimpleMediaCard from "./cards/cards";
+import ImageSlider from "./slider/slider";
 
 import "./about-us.css";
 
-var images = [
-  "1.jpg",
-  "2.jpg",
-  "3.jpg",
-  "4.jpg",
-  "5.jpg",
-  "6.jpg",
-  "7.jpg",
-  "8.jpg",
-  "migro.jpg"
-];
+
 
 class AboutUsContainer extends Component<{}> {
-  
-  renderImage = (imageUrl) => {
-    return (
-      <div> 
-          <img src={imageUrl}/>
-      </div>
-    );
-  }
 
   
   render() {
     return (
       <div className="header">
-        <div>
-          <div id="slider" className="">
-            <figure>
-              <div className="" style={{ textAlign: "center", display: "flex" }}>
-                {images.map(imageUrl => this.renderImage(imageUrl))}
-              </div>
-            </figure>
-          </div>
-        </div>    
-        <div style={{ textAlign: "center" }}>
+        <div style={{ textAlign: "center", marginTop: 100 }}>
+          <img src="1.jpg" style={{ width: "100%" }}/>
           <h1>We love pinard but we want more!!</h1>
         </div>
         <div>
@@ -59,6 +33,10 @@ class AboutUsContainer extends Component<{}> {
             colorPrimary: "navbar-color"
           }}
         ></AppBar>
+        <div>
+          <p style={{ maxWidth: 1000, textAlign: "center", marginTop: 50, marginBottom: 50, border: "1px solid black" }} >Proin vel eros a dolor aliquam placerat id at turpis. Sed facilisis et neque quis varius. Aliquam convallis nulla et pharetra cursus. Cras elementum nec quam quis pellentesque. Nunc molestie arcu dui, vel pellentesque nisi hendrerit ac. In a commodo est. Quisque ac ante arcu. Morbi maximus magna non purus condimentum iaculis. Nulla ultricies nec erat in pretium. Phasellus pharetra libero a libero ultricies, id faucibus mauris maximus. Donec consequat feugiat dolor. Morbi pretium gravida lacus sit amet tempor. Donec vel semper felis.</p>
+        </div>
+        <ImageSlider/> 
         <div>
           <GoogleMapsContainer/>
         </div>

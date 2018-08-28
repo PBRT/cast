@@ -31,7 +31,7 @@ class StoriesContainer extends Component<Props> {
       return (
         <div>
           <Section title="Latest stories" info={{ error, timestamp }}>
-            <div>
+            <div style={{ display: "flex" }}>
               {stories.map((story: StoryType, idx: number) => (
                 <Story key={idx} story={story} />
               ))}

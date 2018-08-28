@@ -26,7 +26,7 @@ const styles = {
 
 
 
-function Story (props: Props) {
+const Story = (props: Props) => {
   const { classes } = props;
   return (
     <div>

@@ -1,4 +1,8 @@
-import React from 'react';
+/* @flow */
+import type { Story as StoryType } from "../stories.type.js";
+
+import moment from "moment";
+import React, { Component } from "react";
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
@@ -7,7 +11,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import moment from "moment";
+
 
 const styles = {
   card: {
@@ -15,11 +19,13 @@ const styles = {
   },
   media: {
     height: 0,
-    paddingTop: '56.25%', // 16:9
+    paddingTop: '100px',
   },
 };
 
-function SimpleMediaCard(props) {
+
+
+function Story (props: Props) {
   const { classes } = props;
   return (
     <div>
@@ -27,7 +33,7 @@ function SimpleMediaCard(props) {
         <CardMedia
           className={classes.media}
           image="1.jpg"
-          title="Contemplative Reptile"
+          title="img"
         />
         <CardContent>
           <Typography gutterBottom variant="headline" component="h2">
@@ -53,8 +59,8 @@ function SimpleMediaCard(props) {
   );
 }
 
-SimpleMediaCard.propTypes = {
+Story.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(SimpleMediaCard);
+export default withStyles(styles)(Story);
