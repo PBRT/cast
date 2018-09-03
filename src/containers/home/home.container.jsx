@@ -11,6 +11,7 @@ import { connect } from "react-redux";
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import Typography from "material-ui/Typography";
+import AppBar from "material-ui/AppBar";
 
 type Props = {
     stories: StoriesState,
@@ -31,23 +32,31 @@ class Home extends Component<Props> {
         </div>
         <div>
           <Section title="Latest stories" info={{ error, timestamp }}>
-            <div>
+            <div style={{ display: "flex", marginLeft: 50 }}>
               {stories.map((story: StoryType, idx: number) => (
                 <Story key={idx} story={story} />
               ))}
             </div>
           </Section>
         </div>
+        <AppBar
+          position="static"
+          color="primary"
+          style={{ marginBottom: 16, padding: 8 }}
+          classes={{
+            colorPrimary: "navbar-color"
+          }}
+        ></AppBar>
         <div>
           <NavLink to="/create-story" style={{ textDecoration: "none", color: "white" }}>
-            <Typography type="subheading" color="inherit">
+            <Typography type="subheading" color="primary">
               Create your own!
             </Typography>
           </NavLink>
         </div>
         <div>
           <NavLink to="/stories" style={{ textDecoration: "none", color: "white" }}>
-            <Typography type="subheading" color="inherit">
+            <Typography type="subheading" color="primary">
               Show all stories
             </Typography>
           </NavLink>

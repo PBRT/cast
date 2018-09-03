@@ -29,12 +29,12 @@ const styles = {
 const Story = (props: Props) => {
   const { classes } = props;
   return (
-    <div>
+    <div style={{ margin: 25 }}>
       <Card className={classes.card}>
         <CardMedia
           className={classes.media}
           image="/public/careful-mate.jpg"
-          title="Contemplative Reptile"
+          title="toDefine"
         />
         <CardContent>
           <Typography gutterBottom variant="headline" component="h2">
