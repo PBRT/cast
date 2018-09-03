@@ -16,11 +16,11 @@ class AboutUsContainer extends Component {
   render() {
     return (
       <div className="header">
-        <div style={{ textAlign: "center", marginTop: 100 }}>
+        <div style={{ textAlign: "center" }}>
           <div style={{ zIndex:1 }}>
             <img src="7.jpg" style={{ width: "100%" }}/>
           </div>
-          <div style={{ position: "absolute", color: "white", top: 360, zIndex:2, fontSize: "400%", marginLeft: 350 }}>
+          <div style={{ color: "black", top: 360, zIndex:2, fontSize: "400%" }}>
             <center><b>We love pinard but we want more !</b></center>
           </div> 
         </div>
