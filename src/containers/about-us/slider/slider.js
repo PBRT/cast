@@ -19,7 +19,7 @@ class ImageSlider extends Component<{}> {
   renderImage = (imageUrl) => {
     return (
       <div> 
-          <img src={imageUrl}/>
+          <img src={imageUrl} alt=""/>
       </div>
     );
   }

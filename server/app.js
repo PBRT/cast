@@ -56,6 +56,22 @@ app.post("/stories", (req, res) => {
   }
 });
 
+app.delete("/stories", (req, res) => {
+  const title = req.query.title;
+  if (title != null) {
+    postgresDriver
+      .query(
+        `DELETE FROM stories WHERE title='${title}'`
+      )
+    .then(() => {
+      res.send({ status: 200 });
+    });
+  } else {
+    res.status(400);
+    res.send("Missing params");
+  }
+})
+
 // Endpoint which return the DOM (needed to the browser to display our react app)
 // Pass here if none of the endpoint before match with the route (that's why the star)
 app.get("*", (req, res) => {

@@ -3,13 +3,13 @@ import React, { Component } from "react";
 
 import "./team-card.css"
  
-class TeamCard extends Component <{}> {
+class TeamCard extends Component {
   render() {
     return (
       <div style={{ textAlign: "center", display: "flex", marginLeft: 150 }}>
         <div className="member-card">
           <div className="member-img" >
-            <img src="migro.jpg" />
+            <img src="migro.jpg" alt=""/>
           </div>
           <div style={{ textAlign: "center", height: 200, width: 200 }}>
             <h1>Migro</h1>
@@ -19,7 +19,7 @@ class TeamCard extends Component <{}> {
         </div>
         <div className="member-card" >
           <div className="member-img">
-            <img src="8.jpg"/>
+            <img src="8.jpg" alt=""/>
           </div>
           <div style={{ textAlign: "center", height: 200, width: 200 }}>
             <h1>Hans</h1>

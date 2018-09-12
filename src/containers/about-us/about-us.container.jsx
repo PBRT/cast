@@ -2,7 +2,7 @@
 import React, { Component } from "react";
 import AppBar from "@material-ui/core/AppBar";
 
-import GoogleMapsContainer from "./map/maps";
+// import GoogleMapsContainer from "./map/maps";
 import ImageSlider from "./slider/slider";
 import TeamCard from "./team/team-cards"
 
@@ -18,7 +18,7 @@ class AboutUsContainer extends Component {
       <div className="header">
         <div style={{ textAlign: "center" }}>
           <div style={{ zIndex:1 }}>
-            <img src="7.jpg" style={{ width: "100%" }}/>
+            <img src="7.jpg" style={{ width: "100%" }} alt=""/>
           </div>
           <div style={{ color: "black", top: 360, zIndex:2, fontSize: "400%" }}>
             <center><b>We love pinard but we want more !</b></center>
@@ -61,9 +61,6 @@ class AboutUsContainer extends Component {
             colorPrimary: "navbar-color"
           }}
         ></AppBar>
-        <div>
-          <GoogleMapsContainer/>
-        </div>
       </div>
     )
   }

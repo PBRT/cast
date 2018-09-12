@@ -13,7 +13,6 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
 
-
 const styles = {
   card: {
     maxWidth: 345,
@@ -33,7 +32,7 @@ const Story = (props: Props) => {
       <Card className={classes.card}>
         <CardMedia
           className={classes.media}
-          image="/public/careful-mate.jpg"
+          image="/public/2 - Copy.jpg"
           title="toDefine"
         />
         <CardContent>
@@ -48,9 +47,6 @@ const Story = (props: Props) => {
           </Typography>
         </CardContent>
         <CardActions>
-          <Button size="small" color="primary">
-            Share
-          </Button>
           <Button size="small" color="primary">
             Learn More
           </Button>
