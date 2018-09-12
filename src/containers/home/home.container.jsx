@@ -34,7 +34,7 @@ class Home extends Component<Props> {
           <LoadingAnimation/> :
         <div>
           <Section title="Latest stories" info={{ error, timestamp }}>
-            <div style={{ display: "flex", marginLeft: 50 }}>
+            <div style={{ display: "flex", margin: "auto", maxWidth: 1200, overflow: "auto" }}>
               {stories.map((story: StoryType, idx: number) => (
                 <Story key={idx} story={story} />
               ))}

@@ -18,7 +18,10 @@ type Props = {
 };
 
 class StoriesContainer extends Component<Props> {
-  
+  componentDidMount = () => {
+    this.props.dispatch(requestStories("DESC"))
+  }
+
   orderStoriesByDesc = () => {
     this.props.dispatch(requestStories("DESC"))
   }
@@ -27,10 +30,10 @@ class StoriesContainer extends Component<Props> {
     this.props.dispatch(requestStories("ASC"))
   }
 
-  deleteThisStory = () => {
-    console.log(this.props)
-    this.props.dispatch(deleteStory("test"))
-  };
+  // deleteThisStory = () => {
+  //   console.log(this.props)
+  //   this.props.dispatch(deleteStory("test"))
+  // };
 
   render() {
     const { stories: { stories, error, timestamp } } = this.props;
@@ -41,21 +44,20 @@ class StoriesContainer extends Component<Props> {
     } else {
       return (
         <div>
-          <Section title="Latest stories" info={{ error, timestamp }}>
-            <div style={{ display: "flex" }}>
-              
-              {stories.map((story: StoryType, idx: number ) => (
-                  <Story key={idx} story={story} />
-              ))}
-              <Button onClick={this.deleteThisStory}>Delete</Button>
-            </div>
-          </Section>
           <Button onClick={this.orderStoriesByDesc}>
             Order by Desc
           </Button>
           <Button onClick={this.orderStoriesByAsc}>
             Order by Asc
           </Button>
+          <Section title="Latest stories" info={{ error, timestamp }} style={{ width: "100%" }}>
+            <div className="cards-container" style={{ display: "flex", margin: "auto", flexWrap: "wrap" }}>
+              
+              {stories.map((story: StoryType, idx: number ) => (
+                  <Story key={idx} story={story} />
+              ))}
+            </div>
+          </Section>
         </div>
       );
     }
