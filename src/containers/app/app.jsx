@@ -2,7 +2,7 @@
 
 import React from "react";
 
-import Typography from "@material-ui/core/Typography";
+import Button from "@material-ui/core/Button";
 import AppBar from "@material-ui/core/AppBar";
 import { NavLink } from "react-router-dom";
 
@@ -26,17 +26,17 @@ const App = (props: Props) => {
         <div style={{ display: "flex", padding: "0px 12px" }}>
           <div style={{ flex: 1 }}>
             <NavLink to="/" style={{ textDecoration: "none", color: "white" }}>
-              <Typography type="subheading" color="inherit">
+              <Button type="subheading" color="inherit">
                 Home
-              </Typography>
+              </Button>
             </NavLink>
           </div>
 
           <div style={{ flex: 1 }}>
             <NavLink to="/stories" style={{ textDecoration: "none", color: "white" }}>
-              <Typography type="subheading" color="inherit">
+              <Button type="subheading" color="inherit">
                 Stories
-              </Typography>
+              </Button>
             </NavLink>
           </div>
 
@@ -50,9 +50,9 @@ const App = (props: Props) => {
               }}
               to="/create-story"
             >
-              <Typography type="subheading" color="inherit">
+              <Button type="subheading" color="inherit">
                 Create story
-              </Typography>
+              </Button>
             </NavLink>
           </div>
 
@@ -66,9 +66,9 @@ const App = (props: Props) => {
               }}
               to="/about-us"
             >
-              <Typography type="subheading" color="inherit">
+              <Button type="subheading" color="inherit">
                 About us
-              </Typography>
+              </Button>
             </NavLink>
           </div>
 

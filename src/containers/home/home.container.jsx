@@ -11,7 +11,10 @@ import { connect } from "react-redux";
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import Typography from "material-ui/Typography";
+import Button from "@material-ui/core/Button"
 import LoadingAnimation from "../../components/loading-animation";
+
+import "./home.container.css"
 
 type Props = {
     stories: StoriesState,
@@ -26,7 +29,7 @@ class Home extends Component<Props> {
     const { stories: { stories, error, timestamp } } = this.props;
     return (
       <div>
-        <div className="home-header" style={{ backgroundColor: "orange", width: "100%", height: 250, textAlign: "center", color: "white" }}>
+        <div className="home-header" style={{ backgroundColor: "#fa983a", width: "100%", height: 250, textAlign: "center", color: "white" }}>
           <h1 style={{ paddingTop: 75 }}>Welcome to Cast</h1>
           <h2>A way to share all your stories</h2>
         </div>
@@ -34,7 +37,7 @@ class Home extends Component<Props> {
           <LoadingAnimation/> :
         <div>
           <Section title="Latest stories" info={{ error, timestamp }}>
-            <div style={{ display: "flex", margin: "auto", maxWidth: 1200, overflow: "auto" }}>
+            <div style={{ display: "flex", margin: "auto", overflow: "auto" }}>
               {stories.map((story: StoryType, idx: number) => (
                 <Story key={idx} story={story} />
               ))}
@@ -43,18 +46,18 @@ class Home extends Component<Props> {
         </div>
         }
 
-        <div>
-          <NavLink to="/create-story" style={{ textDecoration: "none", color: "white" }}>
-            <Typography type="subheading" color="primary">
+        <div className="link">
+          <NavLink to="/create-story">
+            <Button variant="contained" aria-label="Add">
               Create your own!
-            </Typography>
+            </Button>
           </NavLink>
         </div>
-        <div>
-          <NavLink to="/stories" style={{ textDecoration: "none", color: "white" }}>
-            <Typography type="subheading" color="primary">
+        <div className="link">
+          <NavLink to="/stories">
+            <Button variant="contained" aria-label="Add">
               Show all stories
-            </Typography>
+            </Button>
           </NavLink>
         </div>
       </div>
