@@ -32,6 +32,14 @@ const App = (props: Props) => {
             </NavLink>
           </div>
 
+          <div style={{ flex: 1 }}>
+            <NavLink to="/stories" style={{ textDecoration: "none", color: "white" }}>
+              <Typography type="subheading" color="inherit">
+                Stories
+              </Typography>
+            </NavLink>
+          </div>
+
           <div style={{ flex: 1, textAlign: "right" }}>
             <NavLink
               style={{
@@ -67,6 +75,9 @@ const App = (props: Props) => {
         </div>
       </AppBar>
       {props.children}
+      <footer>
+
+      </footer>
     </div>
   );
 };
