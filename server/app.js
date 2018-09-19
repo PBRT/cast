@@ -27,8 +27,8 @@ app.use(function(req, res, next) {
 
 // Retrieve stories endpoint
 app.get("/stories", (req, res) => {
-  const { username } = req.query.username;
-  const SQLQuery = `SELECT * FROM Stories WHERE username=${username}`;
+  const dateOrder = req.query.dateOrder;
+  const SQLQuery = "SELECT * FROM Stories ORDER BY timestamp " + dateOrder;
   // We do the query to the database
   postgresDriver.query(SQLQuery).then(stories => {
     // We send it back to the browser
