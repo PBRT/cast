@@ -11,7 +11,7 @@ import { connect } from "react-redux";
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import Typography from "material-ui/Typography";
-import AppBar from "material-ui/AppBar";
+import LoadingAnimation from "../../components/loading-animation";
 
 type Props = {
     stories: StoriesState,
@@ -20,7 +20,7 @@ type Props = {
 
 class Home extends Component<Props> {
     componentDidMount() {
-        this.props.dispatch(requestStories());
+        this.props.dispatch(requestStories("ASC"));
       }
   render() {
     const { stories: { stories, error, timestamp } } = this.props;
@@ -30,23 +30,19 @@ class Home extends Component<Props> {
           <h1 style={{ paddingTop: 75 }}>Welcome to Cast</h1>
           <h2>A way to share all your stories</h2>
         </div>
+        {stories.length === 0 ?
+          <LoadingAnimation/> :
         <div>
           <Section title="Latest stories" info={{ error, timestamp }}>
-            <div style={{ display: "flex", marginLeft: 50 }}>
+            <div style={{ display: "flex", margin: "auto", maxWidth: 1200, overflow: "auto" }}>
               {stories.map((story: StoryType, idx: number) => (
                 <Story key={idx} story={story} />
               ))}
             </div>
           </Section>
         </div>
-        <AppBar
-          position="static"
-          color="primary"
-          style={{ marginBottom: 16, padding: 8 }}
-          classes={{
-            colorPrimary: "navbar-color"
-          }}
-        ></AppBar>
+        }
+
         <div>
           <NavLink to="/create-story" style={{ textDecoration: "none", color: "white" }}>
             <Typography type="subheading" color="primary">

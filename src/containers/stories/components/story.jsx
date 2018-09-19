@@ -12,15 +12,12 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
-
-
 const styles = {
   card: {
     maxWidth: 345,
   },
   media: {
-    height: 0,
-    paddingTop: '56.25%', // 16:9
+    objectFit: 'cover',
   },
 };
 
@@ -29,12 +26,14 @@ const styles = {
 const Story = (props: Props) => {
   const { classes } = props;
   return (
-    <div style={{ margin: 25 }}>
+    <div className="cards" style={{ margin: 25, maxWidth: 225 }}>
       <Card className={classes.card}>
         <CardMedia
+          component="img"
           className={classes.media}
-          image="/public/careful-mate.jpg"
-          title="toDefine"
+          height="140"
+          image="1.jpg"
+          title="something"
         />
         <CardContent>
           <Typography gutterBottom variant="headline" component="h2">
@@ -43,7 +42,7 @@ const Story = (props: Props) => {
           <Typography type="caption" component="p">
             {moment(parseInt(props.story.timestamp)).format("DD-MM-YYYY")}
           </Typography>
-          <Typography style={{ marginTop: 8 }} type="subheading" component="p">
+          <Typography style={{ marginTop: 8, textOverflow: "ellipsis", width: 200, whiteSpace: "nowrap", overflow: "hidden" }} type="subheading" component="p">
             {props.story.description}
           </Typography>
         </CardContent>
@@ -65,3 +64,4 @@ Story.propTypes = {
 };
 
 export default withStyles(styles)(Story);
+

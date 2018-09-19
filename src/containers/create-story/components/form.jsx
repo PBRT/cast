@@ -91,6 +91,7 @@ const CreateStoryForm = (props: Props) => {
           value={props.values.description}
           handleChange={props.handleChange}
         />
+        
       </form>
     </div>
   );

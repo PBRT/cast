@@ -22,7 +22,7 @@ export const stories: StoriesReducer = (
       return fx({ ...state, loading: true }, [
         {
           effect: "fetch",
-          url: "stories",
+          url: "stories?dateOrder=" + action.dateOrder,
           method: "GET",
           onSuccess: "RECEIVE_STORIES",
           onError: "FAIL_STORIES"
@@ -48,7 +48,7 @@ export const stories: StoriesReducer = (
         {
           effect: "fetch",
           url: "stories",
-          method: "post",
+          method: "POST",
           onSuccess: "RECEIVE_CREATE_STORY",
           onError: "FAIL_CREATE_STORY",
           body: action.story
@@ -69,6 +69,23 @@ export const stories: StoriesReducer = (
         error: "FAIL",
         loading: false
       };
+    
+    case "REQUEST_DELETE_STORY":
+      return fx({ ...state, loading: true }, [
+        {
+          effect: "fetch",
+          url: "stories?title=" + action.title,
+          method: "DELETE",
+          onSuccess: "RECEIVE_DELETE_STORY",
+          onError: "FAIL_DELETE_STORY",
+        }
+      ]);
+
+    case "RECEIVE_DELETE_STORY":
+      return {
+
+      }
+
     default:
       return state;
   }
