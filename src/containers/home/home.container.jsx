@@ -10,7 +10,6 @@ import Story from "./../stories/components/story";
 import { connect } from "react-redux";
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
-import Typography from "material-ui/Typography";
 import Button from "@material-ui/core/Button"
 import LoadingAnimation from "../../components/loading-animation";
 

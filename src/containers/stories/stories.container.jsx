@@ -5,7 +5,7 @@ import type { StoriesState, Story as StoryType } from "./stories.type";
 
 import { connect } from "react-redux";
 import React, { Component } from "react";
-import { requestStories, deleteStory } from "./stories.actions.js";
+import { requestStories } from "./stories.actions.js";
 import Section from "../../components/section/section";
 import Story from "./components/story";
 import Button from "@material-ui/core/Button";

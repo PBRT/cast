@@ -5,6 +5,7 @@ import App from "./containers/app/app";
 import Stories from "./containers/stories/stories.container";
 import Home from "./containers/home/home.container";
 import AboutUsContainer from "./containers/about-us/about-us.container";
+import StoryPage from "./containers/stories/components/story.learn.more";
 import CreateStory from "./containers/create-story/create-story.container";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
@@ -24,6 +25,7 @@ const Root = (props: Props) => (
           <Route exact path="/stories" component={Stories} />
           <Route exact path="/create-story" component={CreateStory} />
           <Route exact path="/about-us" component={AboutUsContainer} />
+          <Route exact path="/learn-more/:id" component={StoryPage} />
           <Route
             component={() => (
               <div style={{ textAlign: "center" }}>

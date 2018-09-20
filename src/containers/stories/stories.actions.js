@@ -1,6 +1,7 @@
 // @flow
 import type { Stories } from "./stories.type";
 
+
 export type REQUEST_STORIES = "REQUEST_STORIES";
 export type RECEIVE_STORIES = "RECEIVE_STORIES";
 export type FAIL_STORIES = "FAIL_STORIES";
@@ -13,6 +14,9 @@ export type REQUEST_DELETE_STORY = "REQUEST_DELETE_STORY";
 export type RECEIVE_DELETE_STORY = "RECEIVE_DELETE_STORY";
 export type FAIL_DELETE_STORY = "FAIL_DELETE_STORY";
 
+export type REQUEST_ONE_STORY = "REQUEST_ONE_STORY";
+export type RECEIVE_ONE_STORY = "RECEIVE_ONE_STORY";
+export type FAIL_STORY = "FAIL_STORY";
 
 export type Action = {
   type:
@@ -24,7 +28,10 @@ export type Action = {
     | FAIL_CREATE_STORY
     | REQUEST_DELETE_STORY
     | RECEIVE_DELETE_STORY
-    | FAIL_DELETE_STORY,
+    | FAIL_DELETE_STORY
+    | REQUEST_ONE_STORY
+    | RECEIVE_ONE_STORY
+    | FAIL_STORY,
   payload?: Stories,
   story?: Object,
   timestamp?: number,
@@ -36,6 +43,11 @@ export const requestStories: RequestStories = (dateOrder: String) => ({
   type: "REQUEST_STORIES",
   dateOrder
 });
+
+export const requestOneStory: RequestStories = (timestamp: number) => ({
+  type: "REQUEST_ONE_STORY",
+  timestamp
+})
 
 type CreateStory = (story: Object) => Action;
 export const createStory: CreateStory = (story: Object) => ({
