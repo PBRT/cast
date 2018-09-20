@@ -6,21 +6,22 @@
 // import moment from "moment";
 import { connect } from "react-redux";
 import React from "react";
-
+import PropTypes from 'prop-types';
 import Typography from '@material-ui/core/Typography';
 
 
 
 const StoryPage = (props: Props) => {
-    // const stories = props.stories.stories;     
+    const stories = props.stories.stories;     
     const storyId = props.match.params.id;
     console.log(storyId)
-    console.log(props)
+    console.log(stories)
     return (
         <div>
          { storyId ?
-          props.stories.stories.filter((story: StoryType) => {
+          stories.filter((story: StoryType) => {
            if(story.timestamp === storyId) {
+             console.log(story)
              return (
                <div>
                  <Typography gutterBottom variant="headline" component="h2">
@@ -43,6 +44,9 @@ const StoryPage = (props: Props) => {
   );
 }
 
+StoryPage.propTypes = {
+  stories: PropTypes.object.isRequired,
+};
 
 export default connect((state: State) => ({
   stories: state.stories
