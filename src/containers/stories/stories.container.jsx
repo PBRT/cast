@@ -9,6 +9,7 @@ import { requestStories } from "./stories.actions.js";
 import Section from "../../components/section/section";
 import Story from "./components/story";
 import Button from "@material-ui/core/Button";
+import TextField from "@material-ui/core/TextField";
 
 import LoadingAnimation from "./../../../src/components/loading-animation";
 
@@ -44,17 +45,27 @@ class StoriesContainer extends Component<Props> {
     } else {
       return (
         <div>
-          <Button onClick={this.orderStoriesByDesc}>
-            Order by Desc
-          </Button>
-          <Button onClick={this.orderStoriesByAsc}>
-            Order by Asc
-          </Button>
+          <div style={{ display: "flex", width: "100%" }} >
+            <Button onClick={this.orderStoriesByDesc}>
+              Order by Desc
+            </Button>
+            <Button onClick={this.orderStoriesByAsc}>
+              Order by Asc
+            </Button>
+            <TextField
+              id="outlined-search"
+              label="Search field"
+              type="search"
+              className=""
+              margin="normal"
+              variant="outlined"
+              style={{ position: "relative", float: "right", width: 300 }}
+            />
+          </div>
           <Section title="Latest stories" info={{ error, timestamp }} style={{ width: "100%" }}>
             <div className="cards-container" style={{ display: "flex", margin: "auto", flexWrap: "wrap" }}>
-              
               {stories.map((story: StoryType, idx: number ) => (
-                  <Story key={idx} story={story} />
+              <Story key={idx} story={story} />
               ))}
             </div>
           </Section>

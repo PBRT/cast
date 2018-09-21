@@ -1,16 +1,17 @@
 /* @flow */
 
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 import Button from "@material-ui/core/Button";
 import AppBar from "@material-ui/core/AppBar";
-import { NavLink } from "react-router-dom";
 
 import "./app.css";
 
 type Props = {
   children: Array<Object> | Object
 };
+
 
 const App = (props: Props) => {
   return (
@@ -71,7 +72,7 @@ const App = (props: Props) => {
               </Button>
             </NavLink>
           </div>
-
+          
         </div>
       </AppBar>
       {props.children}
