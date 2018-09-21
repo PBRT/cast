@@ -28,8 +28,10 @@ const styles = {
 
 const Story = (props: Props) => {
   const { classes, story } = props;
+  console.log(props)
   
   return (
+
     <div className="cards" style={{ margin: 25, maxWidth: 225 }}>
       <Card className={classes.card}>
         <CardMedia
@@ -54,7 +56,7 @@ const Story = (props: Props) => {
           <Button size="small" color="primary">
             Share
           </Button>
-          <NavLink to={`learn-more/${story.timestamp}`} >
+          <NavLink to={`/learn-more/${story.timestamp}`}>
             <Button size="small" color="primary" >
               Learn More
             </Button>
@@ -71,3 +73,4 @@ Story.propTypes = {
 
 export default withStyles(styles)(Story);
 
+// `/learn-more/${story.timestamp}`

@@ -50,6 +50,7 @@ class StoriesContainer extends Component<Props> {
           <Button onClick={this.orderStoriesByAsc}>
             Order by Asc
           </Button>
+          
           <Section title="Latest stories" info={{ error, timestamp }} style={{ width: "100%" }}>
             <div className="cards-container" style={{ display: "flex", margin: "auto", flexWrap: "wrap" }}>
               

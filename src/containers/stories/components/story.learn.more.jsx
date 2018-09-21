@@ -9,7 +9,9 @@ import React from "react";
 import PropTypes from 'prop-types';
 import Typography from '@material-ui/core/Typography';
 
-
+type Props = {
+  stories: Array<Object> | Object
+};
 
 const StoryPage = (props: Props) => {
     const stories = props.stories.stories;     

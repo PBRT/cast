@@ -46,14 +46,14 @@ class Home extends Component<Props> {
         }
 
         <div className="link">
-          <NavLink to="/create-story">
+          <NavLink to="/create-story" style={{ textDecoration: 'none' }}>
             <Button variant="contained" aria-label="Add">
               Create your own!
             </Button>
           </NavLink>
         </div>
         <div className="link">
-          <NavLink to="/stories">
+          <NavLink to="/stories" style={{ textDecoration: 'none' }}>
             <Button variant="contained" aria-label="Add">
               Show all stories
             </Button>

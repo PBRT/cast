@@ -5,6 +5,7 @@ import type { StoriesState } from "../stories/stories.type";
 
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
+import { NavLink } from "react-router-dom";
 import React, { Component } from "react";
 import { requestStories, createStory } from "../stories/stories.actions.js";
 import Section from "../../components/section/section";
@@ -43,9 +44,14 @@ class StoriesContainer extends Component<Props, ContainerState> {
               values={this.state.values}
             />
             <div style={{ textAlign: "center" }}>
-              <Button color="primary" type="raised" onClick={this._onSubmit}>
-                Submit
-              </Button>
+              <NavLink to="/" style={{ textDecoration: 'none' }}>
+                <Button color="primary" type="raised">
+                  Cancel
+                </Button>
+              </NavLink>
+                <Button color="primary" type="raised" onClick={this._onSubmit}>
+                  Submit
+                </Button>
             </div>
           </div>
         </Section>
