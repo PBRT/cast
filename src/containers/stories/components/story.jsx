@@ -56,7 +56,7 @@ const Story = (props: Props) => {
           <Button size="small" color="primary">
             Share
           </Button>
-          <NavLink to={`/learn-more/${story.timestamp}`}>
+          <NavLink to={`/learn-more/${props.story.timestamp}`}>
             <Button size="small" color="primary" >
               Learn More
             </Button>
@@ -72,5 +72,3 @@ Story.propTypes = {
 };
 
 export default withStyles(styles)(Story);
-
-// `/learn-more/${story.timestamp}`

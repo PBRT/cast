@@ -30,7 +30,8 @@ class StoriesContainer extends Component<Props, ContainerState> {
       username: null,
       title: null,
       description: null,
-      timestamp: 0
+      timestamp: 0,
+      image: "",
     }
   };
   render() {

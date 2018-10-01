@@ -51,8 +51,8 @@ class StoriesContainer extends Component<Props> {
             Order by Asc
           </Button>
           
-          <Section title="Latest stories" info={{ error, timestamp }} style={{ width: "100%" }}>
-            <div className="cards-container" style={{ display: "flex", margin: "auto", flexWrap: "wrap" }}>
+          <Section title="Latest stories" info={{ error, timestamp }} style={{ width: "50%" }}>
+            <div className="cards-container" style={{ display: "flex", margin: "auto", flexWrap: "wrap", overflow: "auto" }}>
               
               {stories.map((story: StoryType, idx: number ) => (
                   <Story key={idx} story={story} />
