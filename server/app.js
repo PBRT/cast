@@ -50,7 +50,7 @@ app.post("/stories", (req, res) => {
     // we do the query
     postgresDriver
       .query(
-        `INSERT INTO Stories VALUES ('${username}', '${title}', '${description}', ${timestamp})`
+        `INSERT INTO Stories (id, username, title, description, timestamp) VALUES (default, '${username}', '${title}', '${description}', ${timestamp})`
       )
       .then(() => {
         // we inform the browser it's all good
