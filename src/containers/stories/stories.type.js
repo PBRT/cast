@@ -14,3 +14,10 @@ export type StoriesState = {
   +timestamp: number,
   +stories: Stories
 };
+
+export type StoryState = {
+  +error: ?string,
+  +loading: boolean,
+  +timestamp: number,
+  +story: Story
+};
