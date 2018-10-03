@@ -28,7 +28,7 @@ class Home extends Component<Props> {
     const { stories: { stories, error, timestamp } } = this.props;
     return (
       <div>
-        <div className="home-header" style={{ backgroundColor: "#fa983a", width: "100%", height: 250, textAlign: "center", color: "white" }}>
+        <div className="home-header" style={{ backgroundColor: "#fa983a", width: "100%", height: 250, textAlign: "center", color: "white", boxShadow: "1px 1px 8px #888888" }}>
           <h1 style={{ paddingTop: 75 }}>Welcome to Cast</h1>
           <h2>A way to share all your stories</h2>
         </div>

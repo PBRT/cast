@@ -28,21 +28,25 @@ class StoryContainer extends Component<Props> {
   render() {
     const { story } = this.props;
     console.log(this.props)
-      return (
-        <div>
-               <div>
-                 <Typography gutterBottom variant="headline" component="h2">
-                   {/* {story.title} */}a
-                 </Typography>
-                 <Typography gutterBottom variant="headline" component="h2">
-                   {/* {story.username} */}b
-                 </Typography>
-                 <Typography gutterBottom variant="headline" component="h2">
-                   {/* {story.description} */}c
-                 </Typography>
-               </div>
-             )
+    return (
+      <div>
+        <div style={{ height: 200, backgroundColor: "#fa983a", marginBottom: 50, display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "1px 1px 8px #888888" }}>
+          <h1 style= {{ margin: "auto" }}>Story title</h1>
         </div>
+
+        <div className="story-container">
+          <div className="details username" style={{ float: "right", marginRight: 100 }}>    
+            <h2>
+              {/* {story.username} */}by: username
+            </h2>
+          </div>
+          <div className="details description" style={{ width: "60%", margin: "auto", padding: 25, textAlign: "left", marginTop: 50, marginBottom: 50, border: "2px solid #fa983a", borderRadius: 12, overflowWrap: "break-word" }}>
+            <p style={{ fontSize: 32 }}>
+              {/* {story.description} */} {("Test").repeat(50)}
+            </p>
+          </div> 
+        </div>
+      </div>
     );
   }
 };

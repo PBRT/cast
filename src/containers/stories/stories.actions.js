@@ -31,11 +31,6 @@ export const requestStories: RequestStories = (dateOrder: String) => ({
   dateOrder
 });
 
-export const requestOneStory: RequestStories = (timestamp: number) => ({
-  type: "REQUEST_ONE_STORY",
-  timestamp
-})
-
 type CreateStory = (story: Object) => Action;
 export const createStory: CreateStory = (story: Object) => ({
   type: "REQUEST_CREATE_STORY",
