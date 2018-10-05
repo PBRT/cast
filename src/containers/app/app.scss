@@ -1,3 +1,35 @@
+
+@import "../../style/variables.scss";
+
+
+
 .navbar-color {
-  background-color: #fa983a !important;
+  background-color: $primary !important;
 }
+
+.nav-btn {
+  border: none;
+	background: #fa983a;
+	color: #f2f2f2;
+	padding: 10px;
+	font-size: 18px;
+	border-radius: 5px;
+	position: relative;
+	box-sizing: border-box;
+  transition: all 500ms ease; 
+  height: 100%;
+  padding: 10px 35px;  
+	overflow:hidden;
+  :before {
+    font-family: FontAwesome;
+    content:"\f07a";
+    position: absolute;
+    top: 11px;
+    left: -30px;
+    transition: all 200ms ease;
+  }
+  :hover:before {
+    left: 7px;
+  }
+}
+

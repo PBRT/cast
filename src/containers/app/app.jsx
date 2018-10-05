@@ -6,7 +6,13 @@ import Button from "@material-ui/core/Button";
 import AppBar from "@material-ui/core/AppBar";
 import { NavLink } from "react-router-dom";
 
+
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 import "./app.css";
+
+
 
 type Props = {
   children: Array<Object> | Object
@@ -26,15 +32,15 @@ const App = (props: Props) => {
         <div style={{ display: "flex", padding: "0px 12px" }}>
           <div style={{ flex: 1 }}>
             <NavLink to="/" style={{ textDecoration: "none", color: "white" }}>
-              <Button type="subheading" color="inherit">
+              <button className="nav-btn home" type="subheading" color="inherit">
                 Home
-              </Button>
+              </button>
             </NavLink>
           </div>
 
           <div style={{ flex: 1 }}>
             <NavLink to="/stories" style={{ textDecoration: "none", color: "white" }}>
-              <Button type="subheading" color="inherit">
+              <Button className="nav-btn stories" type="subheading" color="inherit">
                 Stories
               </Button>
             </NavLink>
@@ -50,7 +56,7 @@ const App = (props: Props) => {
               }}
               to="/create-story"
             >
-              <Button type="subheading" color="inherit">
+              <Button className="nav-btn create-story" type="subheading" color="inherit">
                 Create story
               </Button>
             </NavLink>
@@ -66,7 +72,7 @@ const App = (props: Props) => {
               }}
               to="/about-us"
             >
-              <Button type="subheading" color="inherit">
+              <Button className="nav-btn about-us" type="subheading" color="inherit">
                 About us
               </Button>
             </NavLink>
