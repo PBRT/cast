@@ -1,9 +1,9 @@
 /* @flow */
 import React, { Component } from "react";
-import AppBar from "@material-ui/core/AppBar";
+
 
 // import GoogleMapsContainer from "./map/maps";
-import ImageSlider from "./slider/slider";
+// import ImageSlider from "./slider/slider";
 import TeamCard from "./team/team-cards"
 
 import "./about-us.css";

@@ -79,7 +79,7 @@ const App = (props: Props) => {
                 }} 
                 onMouseOver={() => { showIcon("home-icon") }}
                 onMouseOut={() => { hideIcon("home-icon") }}
-                 >
+              >
                 Home
                 <FontAwesomeIcon id="home-icon" icon="heart" style={{ display: "none"}}/> 
               </Button>
