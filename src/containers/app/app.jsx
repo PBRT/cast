@@ -29,7 +29,10 @@ const styles = {
     fontSize: 24,
     height: 48,
     padding: "0 30px",
-    
+    width: "100%",
+    margin: 10,
+    display: "flex",
+    justifyContent: "space-between",
   },
   label: {
     textTransform: "capitalize",
@@ -42,7 +45,17 @@ type Props = {
 
 
 const App = (props: Props) => {
+
   const { classes } = props;
+
+  const showIcon = (icon) => {
+    document.getElementById(icon).style.display="block"
+  };
+
+  const hideIcon = (icon) => {
+    document.getElementById(icon).style.display="none"
+  };
+
   return (
     <div className="App">
       <AppBar
@@ -54,19 +67,18 @@ const App = (props: Props) => {
         }}
       >
         <div className="navbar-container">
-          <div classNamne="btn-container">
+          <div className="btn-container">
             <NavLink className="nav-link" to="/">
               <Button 
-                className="nav-btn home" 
+                className={classes.button}  
                 type="subheading" 
                 color="inherit" 
                 classes={{
                   root: classes.root, // class name, e.g. `classes-nesting-root-x`
                   label: classes.label, // class name, e.g. `classes-nesting-label-x`
                 }} 
-                style={{ width: "100%", margin: 10, display: "flex", justifyContent: "space-between" }}
-                onMouseOver={() => {document.getElementById("home-icon").style.display="block" }}
-                onMouseOut={() => {document.getElementById("home-icon").style.display="none" }}
+                onMouseOver={() => { showIcon("home-icon") }}
+                onMouseOut={() => { hideIcon("home-icon") }}
                  >
                 Home
                 <FontAwesomeIcon id="home-icon" icon="heart" style={{ display: "none"}}/> 
@@ -74,7 +86,7 @@ const App = (props: Props) => {
             </NavLink>
           </div>
 
-          <div classNamne="btn-container">
+          <div className="btn-container">
             <NavLink className="nav-link" to="/stories">
               <Button 
                 className={classes.button} 
@@ -83,10 +95,9 @@ const App = (props: Props) => {
                 classes={{
                   root: classes.root,
                   label: classes.label,
-                }} 
-                style={{ width: "100%", margin: 10, display: "flex", justifyContent: "space-between" }} 
-                onMouseOver={() => {document.getElementById("story-icon").style.display="block" }}
-                onMouseOut={() => {document.getElementById("story-icon").style.display="none" }}
+                }}
+                onMouseOver={() => { showIcon("story-icon") }}
+                onMouseOut={() => { hideIcon("story-icon") }}
               >
                 Stories
                 <FontAwesomeIcon id="story-icon" icon="swatchbook" style={{ display: "none"}}/>
@@ -94,18 +105,17 @@ const App = (props: Props) => {
             </NavLink>
           </div>
 
-          <div classNamne="btn-container">
+          <div className="btn-container">
             <NavLink className="nav-link" to="/create-story">
               <Button 
-                className="nav-btn create-story" 
+                className={classes.button} 
                 type="subheading" color="inherit" 
                 classes={{
                   root: classes.root,
                   label: classes.label, 
-                }} 
-                style={{ width: "100%", margin: 10, display: "flex", justifyContent: "space-between" }}
-                onMouseOver={() => {document.getElementById("create-story-icon").style.display="block" }}
-                onMouseOut={() => {document.getElementById("create-story-icon").style.display="none" }}
+                }}
+                onMouseOver={() => { showIcon("create-story-icon") }}
+                onMouseOut={() => { hideIcon("create-story-icon") }}
               >
                 Create story
                 <FontAwesomeIcon id="create-story-icon" icon="plus-circle" style={{ display: "none"}}/>
@@ -113,16 +123,18 @@ const App = (props: Props) => {
             </NavLink>
           </div>
 
-          <div classNamne="btn-container">
+          <div className="btn-container">
             <NavLink className="nav-link" to="/about-us">
-              <Button className="nav-btn about-us" type="subheading" color="inherit" classes={{
-                root: classes.root,
-                label: classes.label,
-              }} 
-              style={{ width: "100%", margin: 10, display: "flex", justifyContent: "space-between" }}
-              onMouseOver={() => {document.getElementById("about-us-icon").style.display="block" }}
-              onMouseOut={() => {document.getElementById("about-us-icon").style.display="none" }}
-                 >
+              <Button 
+                className={classes.button} 
+                type="subheading" color="inherit" 
+                classes={{
+                  root: classes.root,
+                  label: classes.label,
+                }}
+                onMouseOver={() => { showIcon("about-us-icon") }}
+                onMouseOut={() => { hideIcon("about-us-icon") }}
+              >
                 About us
                 <FontAwesomeIcon id="about-us-icon" icon="heart" style={{ display: "none"}}/>
               </Button>
