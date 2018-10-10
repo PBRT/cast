@@ -60,7 +60,7 @@ const App = (props: Props) => {
     <div className="App">
       <AppBar
         position="static"
-        color="primary"
+
         style={{ marginBottom: 16, padding: 8 }}
         classes={{
           colorPrimary: "navbar-color"
