@@ -1,3 +1,22 @@
+
+@import "../../style/variables.scss";
+
+.nav-link {
+  text-decoration: none;
+  color: $white;
+}
+
 .navbar-color {
-  background-color: #fa983a !important;
+  background-color: $primary !important;
+}
+
+.navbar-container {
+  display: flex;
+  padding: 0 12px;
+  .btn-container {
+    justify-content: space-between;
+    .story {
+      color: red !important;
+    }
+  }
 }

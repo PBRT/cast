@@ -15,52 +15,35 @@ class AboutUsContainer extends Component {
   
   render() {
     return (
-      <div className="header">
-        <div style={{ textAlign: "center" }}>
-          <div style={{ zIndex:1 }}>
-            <img src="7.jpg" style={{ width: "100%" }} alt=""/>
+      <div>
+
+        <div className="header">
+          <div className="head-image-container">
+            <img src="south-park.jpg" alt="wouf wouf"/>
+            <h1><b>We love pinard but we want more !</b></h1>
           </div>
-          <div style={{ color: "black", top: 360, zIndex:2, fontSize: "400%" }}>
-            <center><b>We love pinard but we want more !</b></center>
-          </div> 
-        </div>
-        <div>
-          <div style={{ textAlign: "right", marginRight: 16, marginTop: 75 }}>
+
+          <div className="definition">
             <p><a href="https://dictionary.cambridge.org/dictionary/english/animal">Cambridge dictionary</a>: animal noun [ C ] (BAD PERSON)</p>
             <p>Informal - an unpleasant, cruel person or someone who behaves badly: <br/><i>He's a real animal when he's had too much to drink.</i></p>
           </div>
         </div>
-        <AppBar
-          position="static"
-          color="primary"
-          style={{ marginBottom: 16, padding: 8 }}
-          classes={{
-            colorPrimary: "navbar-color"
-          }}
-        ></AppBar>
-        <div>
-          <p style={{ width: "60%", margin: "auto", padding: 25, textAlign: "center", marginTop: 50, marginBottom: 50, border: "1px solid black" }} >Proin vel eros a dolor aliquam placerat id at turpis. Sed facilisis et neque quis varius. Aliquam convallis nulla et pharetra cursus. Cras elementum nec quam quis pellentesque. Nunc molestie arcu dui, vel pellentesque nisi hendrerit ac. In a commodo est. Quisque ac ante arcu. Morbi maximus magna non purus condimentum iaculis. Nulla ultricies nec erat in pretium. Phasellus pharetra libero a libero ultricies, id faucibus mauris maximus. Donec consequat feugiat dolor. Morbi pretium gravida lacus sit amet tempor. Donec vel semper felis.</p>
-        </div>
-        <ImageSlider/> 
-        <AppBar
-          position="static"
-          color="primary"
-          style={{ marginBottom: 16, padding: 8 }}
-          classes={{
-            colorPrimary: "navbar-color"
-          }}
-        ></AppBar>
 
-          <TeamCard/>
       
-        <AppBar
-          position="static"
-          color="primary"
-          style={{ marginBottom: 16, padding: 8 }}
-          classes={{
-            colorPrimary: "navbar-color"
-          }}
-        ></AppBar>
+        <div className="top-resume">
+          <div className="separation-bar"></div>
+          <div className="text-resume">
+            <p>Proin vel eros a dolor aliquam placerat id at turpis. Sed facilisis et neque quis varius. Aliquam convallis nulla et pharetra cursus. Cras elementum nec quam quis pellentesque. Nunc molestie arcu dui, vel pellentesque nisi hendrerit ac. In a commodo est. Quisque ac ante arcu. Morbi maximus magna non purus condimentum iaculis. Nulla ultricies nec erat in pretium. Phasellus pharetra libero a libero ultricies, id faucibus mauris maximus. Donec consequat feugiat dolor. Morbi pretium gravida lacus sit amet tempor. Donec vel semper felis.</p>
+          </div>
+          {/* <ImageSlider/>  */}
+        </div>
+
+        <div className="team-resume">          
+          <div className="separation-bar"></div>
+            <TeamCard/>
+          <div className="separation-bar"></div>
+        </div>
+
       </div>
     )
   }

@@ -1,12 +1,45 @@
 /* @flow */
 
 import React from "react";
-import { NavLink } from "react-router-dom";
 
+import { NavLink } from "react-router-dom";
+import PropTypes from 'prop-types';
+
+
+import { withStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import AppBar from "@material-ui/core/AppBar";
 
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHeart } from '@fortawesome/free-solid-svg-icons'
+import { faSwatchbook } from '@fortawesome/free-solid-svg-icons'
+import { faPlusCircle } from '@fortawesome/free-solid-svg-icons'
+
 import "./app.css";
+
+library.add(faHeart);
+library.add(faSwatchbook);
+library.add(faPlusCircle);
+
+const styles = {
+  root: {
+    background: "$primary",
+    borderRadius: 3,
+    border: 0,
+    color: "white",
+    fontSize: 24,
+    height: 48,
+    padding: "0 30px",
+    width: "100%",
+    margin: 10,
+    display: "flex",
+    justifyContent: "space-between",
+  },
+  label: {
+    textTransform: "capitalize",
+  },
+};
 
 type Props = {
   children: Array<Object> | Object
@@ -14,6 +47,17 @@ type Props = {
 
 
 const App = (props: Props) => {
+
+  const { classes } = props;
+
+  const showIcon = (icon) => {
+    document.getElementById(icon).style.display="block"
+  };
+
+  const hideIcon = (icon) => {
+    document.getElementById(icon).style.display="none"
+  };
+
   return (
     <div className="App">
       <AppBar
@@ -24,51 +68,77 @@ const App = (props: Props) => {
           colorPrimary: "navbar-color"
         }}
       >
-        <div style={{ display: "flex", padding: "0px 12px" }}>
-          <div style={{ flex: 1 }}>
-            <NavLink to="/" style={{ textDecoration: "none", color: "white" }}>
-              <Button type="subheading" color="inherit">
+        <div className="navbar-container">
+          <div className="btn-container">
+            <NavLink className="nav-link" to="/">
+              <Button 
+                className={classes.button}  
+                type="subheading" 
+                color="inherit" 
+                classes={{
+                  root: classes.root, // class name, e.g. `classes-nesting-root-x`
+                  label: classes.label, // class name, e.g. `classes-nesting-label-x`
+                }} 
+                onMouseOver={() => { showIcon("home-icon") }}
+                onMouseOut={() => { hideIcon("home-icon") }}
+                 >
                 Home
+                <FontAwesomeIcon id="home-icon" icon="heart" style={{ display: "none"}}/> 
               </Button>
             </NavLink>
           </div>
 
-          <div style={{ flex: 1 }}>
-            <NavLink to="/stories" style={{ textDecoration: "none", color: "white" }}>
-              <Button type="subheading" color="inherit">
+          <div className="btn-container">
+            <NavLink className="nav-link" to="/stories">
+              <Button 
+                className={classes.button} 
+                type="subheading" 
+                color="inherit" 
+                classes={{
+                  root: classes.root,
+                  label: classes.label,
+                }}
+                onMouseOver={() => { showIcon("story-icon") }}
+                onMouseOut={() => { hideIcon("story-icon") }}
+              >
                 Stories
+                <FontAwesomeIcon id="story-icon" icon="swatchbook" style={{ display: "none"}}/>
               </Button>
             </NavLink>
           </div>
 
-          <div style={{ flex: 1, textAlign: "right" }}>
-            <NavLink
-              style={{
-                textDecoration: "none",
-                color: "white",
-                marginLeft: 12,
-                display: "inline-block"
-              }}
-              to="/create-story"
-            >
-              <Button type="subheading" color="inherit">
+          <div className="btn-container">
+            <NavLink className="nav-link" to="/create-story">
+              <Button 
+                className={classes.button} 
+                type="subheading" color="inherit" 
+                classes={{
+                  root: classes.root,
+                  label: classes.label, 
+                }}
+                onMouseOver={() => { showIcon("create-story-icon") }}
+                onMouseOut={() => { hideIcon("create-story-icon") }}
+              >
                 Create story
+                <FontAwesomeIcon id="create-story-icon" icon="plus-circle" style={{ display: "none"}}/>
               </Button>
             </NavLink>
           </div>
 
-          <div style={{ flex: 1, textAlign: "right", width: 25 }}>
-            <NavLink
-              style={{
-                textDecoration: "none",
-                color: "white",
-                marginLeft: 12,
-                display: "inline-block"
-              }}
-              to="/about-us"
-            >
-              <Button type="subheading" color="inherit">
+          <div className="btn-container">
+            <NavLink className="nav-link" to="/about-us">
+              <Button 
+                className={classes.button} 
+                type="subheading" color="inherit" 
+                classes={{
+                  root: classes.root,
+                  label: classes.label,
+                }}
+                onMouseOver={() => { showIcon("about-us-icon") }}
+                onMouseOut={() => { hideIcon("about-us-icon") }}
+              >
                 About us
+                <FontAwesomeIcon id="about-us-icon" icon="heart" style={{ display: "none"}}/>
               </Button>
             </NavLink>
           </div>
@@ -83,4 +153,8 @@ const App = (props: Props) => {
   );
 };
 
-export default App;
+App.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
+
+export default withStyles(styles)(App);
