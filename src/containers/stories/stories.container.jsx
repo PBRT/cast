@@ -37,14 +37,14 @@ class StoriesContainer extends Component<Props> {
   };
 
   componentDidMount = () => {
-    this.props.dispatch(requestStories("DESC"))
+    return this.props.dispatch(requestStories("DESC"))
   };
 
   onInputChange = (event) => {
 
     let newlyDisplayed = _.filter(this.props.stories.stories, story => story.title.includes(event.target.value.toLowerCase()))
 
-    this.setState({
+    return this.setState({
       searchTerm: event.target.value,
       currentDisplay: newlyDisplayed
     });
@@ -65,7 +65,8 @@ class StoriesContainer extends Component<Props> {
 
   render() {
     const { stories: { stories, error, timestamp } } = this.props;
-    console.log(this.state.currentDisplay)
+    console.log("current display : " + this.state.currentDisplay)
+    console.log("stories : " + stories)
     if(stories.length === 0) {
       return (
         <LoadingAnimation/>
@@ -92,14 +93,21 @@ class StoriesContainer extends Component<Props> {
                 value={this.state.searchTerm}
                 onChange={this.onInputChange}
               />
-              <Button onClick={() => this.performSearch(this.state.searchTerm)}>
-                <FontAwesomeIcon id="search-icon" icon="search" style={{ display: "block"}}/>
+              <Button >
+                <FontAwesomeIcon id="search-icon" icon="search"/>
               </Button>
             </div>
           </div>
-          <Section title="Latest stories" info={{ error, timestamp }} style={{ width: "100%" }}>
+          <Section style={{ width: "100%" }}>
             <div className="cards-container" style={{ display: "flex", margin: "auto", flexWrap: "wrap" }}>
               {this.state.currentDisplay.map((story: StoryType, idx: number ) => (
+              <Story key={idx} story={story} />
+              ))}
+            </div>
+          </Section>
+          <Section title="Latest stories" info={{ error, timestamp }} style={{ width: "100%" }}>
+            <div className="cards-container" style={{ display: "flex", margin: "auto", flexWrap: "wrap" }}>
+              {stories.map((story: StoryType, idx: number ) => (
               <Story key={idx} story={story} />
               ))}
             </div>
