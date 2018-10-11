@@ -3,6 +3,13 @@
     margin-top: 25px;
 }
 
+.home-header {
+    -webkit-box-shadow: -1px 9px 16px -8px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 9px 16px -8px rgba(0,0,0,0.75);
+    box-shadow: -1px 9px 16px -8px rgba(0,0,0,0.75);
+}
+  
+
 .slider-container {
     width: 75%;
     display: flex;
@@ -10,3 +17,4 @@
     overflow: auto;
 
 }
+
