@@ -32,7 +32,7 @@ class StoriesContainer extends Component<Props> {
     super(props);
     this.state = {
       searchTerm : "",
-      currentDisplay: this.props.stories.stories
+      currentDisplay: ""
     };
   };
 
@@ -64,6 +64,7 @@ class StoriesContainer extends Component<Props> {
   // };
 
   render() {
+
     const { stories: { stories, error, timestamp } } = this.props;
     console.log("current display : " + this.state.currentDisplay)
     console.log("stories : " + stories)
@@ -98,13 +99,16 @@ class StoriesContainer extends Component<Props> {
               </Button>
             </div>
           </div>
+          {this.state.currentDisplay ?
+
           <Section style={{ width: "100%" }}>
             <div className="cards-container" style={{ display: "flex", margin: "auto", flexWrap: "wrap" }}>
               {this.state.currentDisplay.map((story: StoryType, idx: number ) => (
               <Story key={idx} story={story} />
               ))}
             </div>
-          </Section>
+          </Section> : null
+          }
           <Section title="Latest stories" info={{ error, timestamp }} style={{ width: "100%" }}>
             <div className="cards-container" style={{ display: "flex", margin: "auto", flexWrap: "wrap" }}>
               {stories.map((story: StoryType, idx: number ) => (

@@ -27,11 +27,16 @@ const styles = {
 
 
 const Story = (props: Props) => {
+
   const { classes, story } = props;
   
+
   return (
-    <div className="cards" style={{ margin: 25, maxWidth: 225 }}>
-      <Card className={classes.card}>
+    <div  
+      className="card-container" 
+      style={{ margin: 25, maxWidth: 225 }} 
+      >
+      <Card id="cards" className={classes.card} >
         <CardMedia
           component="img"
           className={classes.media}
@@ -51,7 +56,7 @@ const Story = (props: Props) => {
           </Typography>
         </CardContent>
         <CardActions>
-          <Button size="small" color="primary">
+          <Button size="small" color="secondary">
             Share
           </Button>
           <NavLink to={`learn-more/${story.timestamp}`} >
@@ -59,6 +64,7 @@ const Story = (props: Props) => {
               Learn More
             </Button>
           </NavLink>
+
         </CardActions>
       </Card>
     </div>
