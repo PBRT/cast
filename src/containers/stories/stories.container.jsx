@@ -4,28 +4,26 @@ import type { Action } from "./stories.actions.js";
 import type { StoriesState, Story as StoryType } from "./stories.type";
 
 import _ from "lodash";
+import PropTypes from 'prop-types';
 import { connect } from "react-redux";
 import React, { Component } from "react";
 import { requestStories } from "./stories.actions.js";
 import Section from "../../components/section/section";
 import Story from "./components/story";
-import Button from "@material-ui/core/Button";
-import TextField from "@material-ui/core/TextField";
+import SearchField from "./components/search-field"
 
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
+
+import Button from "@material-ui/core/Button";
 
 import LoadingAnimation from "./../../../src/components/loading-animation";
-
-
-library.add(faSearch);
 
 
 type Props = {
   stories: StoriesState,
   dispatch: Action => void
 };
+
+
 
 class StoriesContainer extends Component<Props> {
   constructor(props) {
@@ -43,7 +41,7 @@ class StoriesContainer extends Component<Props> {
   onInputChange = (event) => {
 
     let newlyDisplayed = _.filter(this.props.stories.stories, story => story.title.includes(event.target.value.toLowerCase()))
-
+    console.log(newlyDisplayed)
     return this.setState({
       searchTerm: event.target.value,
       currentDisplay: newlyDisplayed
@@ -75,7 +73,15 @@ class StoriesContainer extends Component<Props> {
     } else {
       return (
         <div>
-          <div style={{ display: "flex", width: "100%", justifyContent: "space-between" }} >
+          <div className="home-header" style={{ backgroundColor: "#fa983a", width: "100%", height: 250, textAlign: "center", color: "white" }}>
+            <h1 style={{ paddingTop: 75, marginBottom: 100 }}>Search a story</h1>
+            <SearchField 
+            handlechange={this.onInputChange}
+            value={this.state.searchTerm}
+            />
+          </div>
+          
+          <div style={{ paddingTop: 100, margin: "auto", width: "70%" }} >
             <div style={{ margin: 20 }}>
               <Button onClick={this.orderStoriesByDesc}>
                 Order by Desc
@@ -84,33 +90,20 @@ class StoriesContainer extends Component<Props> {
                 Order by Asc
               </Button>
             </div>
-            <div style={{ width: 300 }} >
-              <TextField
-                id="outlined-search"
-                label="Search field"
-                type="search"
-                margin="normal"
-                variant="outlined"
-                value={this.state.searchTerm}
-                onChange={this.onInputChange}
-              />
-              <Button >
-                <FontAwesomeIcon id="search-icon" icon="search"/>
-              </Button>
-            </div>
           </div>
-          {this.state.currentDisplay ?
-
+          {this.state.currentDisplay && this.state.searchTerm != "" ?
           <Section style={{ width: "100%" }}>
-            <div className="cards-container" style={{ display: "flex", margin: "auto", flexWrap: "wrap" }}>
-              {this.state.currentDisplay.map((story: StoryType, idx: number ) => (
+            <div className="cards-container" style={{ display: "flex", margin: "auto", flexWrap: "wrap", width: "70%" }}>
+              {this.state.currentDisplay.length == 0 ?
+               <div>No results</div> :
+                this.state.currentDisplay.map((story: StoryType, idx: number ) => (
               <Story key={idx} story={story} />
               ))}
             </div>
           </Section> : null
           }
           <Section title="Latest stories" info={{ error, timestamp }} style={{ width: "100%" }}>
-            <div className="cards-container" style={{ display: "flex", margin: "auto", flexWrap: "wrap" }}>
+            <div className="cards-container" style={{ display: "flex", margin: "auto", flexWrap: "wrap", width: "70%" }}>
               {stories.map((story: StoryType, idx: number ) => (
               <Story key={idx} story={story} />
               ))}

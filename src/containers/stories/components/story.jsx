@@ -17,7 +17,7 @@ import StoryPage from "./story.learn.more";
 
 const styles = {
   card: {
-    maxWidth: 345,
+    width: "100%"
   },
   media: {
     objectFit: 'cover',
@@ -34,7 +34,7 @@ const Story = (props: Props) => {
   return (
     <div  
       className="card-container" 
-      style={{ margin: 25, maxWidth: 225 }} 
+      style={{ margin: 25, width: 300, height: 600, margin: "auto" }} 
       >
       <Card id="cards" className={classes.card} >
         <CardMedia
