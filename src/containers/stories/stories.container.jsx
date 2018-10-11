@@ -36,7 +36,9 @@ class StoriesContainer extends Component<Props> {
   // };
 
   render() {
+
     const { stories: { stories, error, timestamp } } = this.props;
+
     if(stories.length === 0) {
       return (
         <LoadingAnimation/>
@@ -51,8 +53,10 @@ class StoriesContainer extends Component<Props> {
             Order by Asc
           </Button>
           <Section title="Latest stories" info={{ error, timestamp }} style={{ width: "100%" }}>
-            <div className="cards-container" style={{ display: "flex", margin: "auto", flexWrap: "wrap" }}>
-              
+            <div 
+              className="cards-container" 
+              style={{ display: "flex", margin: "auto", flexWrap: "wrap" }}
+            >
               {stories.map((story: StoryType, idx: number ) => (
                   <Story key={idx} story={story} />
               ))}

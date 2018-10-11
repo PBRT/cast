@@ -39,7 +39,7 @@ class Home extends Component<Props> {
           <LoadingAnimation/> :
         <div>
           <Section title="Latest stories" info={{ error, timestamp }}>
-            <div style={{ display: "flex", margin: "auto", overflow: "auto" }}>
+            <div className="slider-container">
               {stories.map((story: StoryType, idx: number) => (
                 <Story key={idx} story={story} />
               ))}

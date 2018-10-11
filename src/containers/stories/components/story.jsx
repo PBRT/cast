@@ -24,10 +24,15 @@ const styles = {
 
 
 const Story = (props: Props) => {
+
   const { classes } = props;
+
   return (
-    <div className="cards" style={{ margin: 25, maxWidth: 225 }}>
-      <Card className={classes.card}>
+    <div  
+      className="card-container" 
+      style={{ margin: 25, maxWidth: 225 }} 
+      >
+      <Card id="cards" className={classes.card} >
         <CardMedia
           component="img"
           className={classes.media}
