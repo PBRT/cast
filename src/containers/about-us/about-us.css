@@ -18,6 +18,62 @@
   100% {
     left: -400%; } }
 
+.header .head-image-container {
+  text-align: center; }
+  .header .head-image-container img {
+    width: 100%; }
+  .header .head-image-container h1 {
+    font-size: 24px;
+    color: red; }
+
+.header .definition {
+  text-align: right;
+  margin: 75px 16px 0 0; }
+  .header .definition p {
+    font-size: 12px;
+    color: black; }
+    .header .definition p a {
+      color: orange;
+      text-decoration: none; }
+
+.top-resume {
+  margin: auto;
+  align-items: center;
+  text-align: center; }
+  .top-resume .text-resume {
+    width: 60%;
+    margin: auto;
+    padding: 25px;
+    text-align: center;
+    margin: 50px 0;
+    border: 2px solid #fa983a;
+    justify-content: center; }
+
+.team-resume .member-container {
+  text-align: center;
+  display: flex;
+  margin-left: 150px; }
+  .team-resume .member-container .member-card {
+    text-align: "center";
+    display: flex;
+    margin: 100px 50px;
+    padding-left: 100px;
+    border: 1px solid black; }
+    .team-resume .member-container .member-card .member-img {
+      text-align: "center";
+      height: 200px;
+      width: 200px; }
+      .team-resume .member-container .member-card .member-img img {
+        height: 200px;
+        width: 200px;
+        overflow: hidden;
+        border-radius: 50%;
+        margin-bottom: 150px; }
+    .team-resume .member-container .member-card .member-description {
+      text-align: center;
+      height: 200px;
+      width: 200px; }
+
 div#slider {
   width: 100%;
   overflow: hidden; }
@@ -33,4 +89,10 @@ div#slider {
       width: 95%;
       max-height: 250px;
       height: auto;
-      margin-bottom: 50px; }
+      margin-bottom: 100px; }
+
+.separation-bar {
+  height: 25px;
+  background-color: #fa983a;
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+  margin: 35px 0; }
