@@ -30,15 +30,9 @@ class StoriesContainer extends Component<Props> {
     this.props.dispatch(requestStories("ASC"))
   }
 
-  // deleteThisStory = () => {
-  //   console.log(this.props)
-  //   this.props.dispatch(deleteStory("test"))
-  // };
 
   render() {
     const { stories: { stories, error, timestamp } } = this.props;
-    console.log("hey")
-    console.log(this.props)
     if(stories.length === 0) {
       return (
         <LoadingAnimation/>

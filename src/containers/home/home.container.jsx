@@ -13,7 +13,7 @@ import { NavLink } from "react-router-dom";
 import Button from "@material-ui/core/Button"
 import LoadingAnimation from "../../components/loading-animation";
 
-import "./home.container.css"
+// import "./home.css"
 
 type Props = {
     stories: StoriesState,
@@ -47,14 +47,14 @@ class Home extends Component<Props> {
 
         <div className="link">
           <NavLink to="/create-story" style={{ textDecoration: 'none' }}>
-            <Button variant="contained" aria-label="Add">
+            <Button variant="contained">
               Create your own!
             </Button>
           </NavLink>
         </div>
         <div className="link">
           <NavLink to="/stories" style={{ textDecoration: 'none' }}>
-            <Button variant="contained" aria-label="Add">
+            <Button variant="contained">
               Show all stories
             </Button>
           </NavLink>

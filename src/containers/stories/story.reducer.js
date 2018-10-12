@@ -4,8 +4,8 @@ import type { Action } from "./story.actions";
 
 import { fx } from "redux-data-fx";
 
-export const initialState: StoryState = {
-    story: {},
+export const initialStoryState: StoryState = {
+    story: [],
     error: null,
     loading: false,
     timestamp: Date.now(),
@@ -14,7 +14,7 @@ export const initialState: StoryState = {
 
   type StoryReducer = (state: StoryState, action: Action) => StoryState;
   export const story: StoryReducer = (
-    state: StoryState = initialState,
+    state: StoryState = initialStoryState,
     action: Action
   ) => {
     switch (action.type) {
@@ -23,7 +23,7 @@ export const initialState: StoryState = {
       return fx({ ...state, loading: true }, [
         {
           effect: "fetch",
-          url: "story?id=" + action.id.id,
+          url: "stories/" + action.id,
           method: "GET",
           onSuccess: "RECEIVE_ONE_STORY",
           onError: "FAIL_STORY"
@@ -43,17 +43,6 @@ export const initialState: StoryState = {
         error: "FAIL",
         loading: false
       };
-
-    // case "REQUEST_DELETE_STORY":
-    //   return fx({ ...state, loading: true }, [
-    //     {
-    //       effect: "fetch",
-    //       url: "stories?id=" + action.id,
-    //       method: "DELETE",
-    //       onSuccess: "RECEIVE_DELETE_STORY",
-    //       onError: "FAIL_DELETE_STORY",
-    //     }
-    //   ]);
 
     default:
       return state;

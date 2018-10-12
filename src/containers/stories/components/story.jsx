@@ -1,5 +1,5 @@
 /* @flow */
-// import type { Story as StoryType } from "../stories.type.js";
+import type { Story as StoryType } from "../stories.type.js";
 
 import moment from "moment";
 import React from "react";
@@ -13,11 +13,11 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
-import StoryContainer from "../story.container";
+import StoryPage from "./learnMore";
 
 const styles = {
   card: {
-    maxWidth: 345,
+    width: "100%"
   },
   media: {
     objectFit: 'cover',
@@ -27,13 +27,16 @@ const styles = {
 
 
 const Story = (props: Props) => {
+
   const { classes, story } = props;
-  console.log(props)
+  console.log(story)
 
   return (
-
-    <div className="cards" style={{ margin: 25, maxWidth: 225 }}>
-      <Card className={classes.card}>
+    <div  
+      className="card-container" 
+      style={{ margin: 25, width: 300, height: 600, margin: "auto" }} 
+      >
+      <Card id="cards" className={classes.card} >
         <CardMedia
           component="img"
           className={classes.media}
@@ -53,14 +56,15 @@ const Story = (props: Props) => {
           </Typography>
         </CardContent>
         <CardActions>
-          <Button size="small" color="primary">
+          <Button size="small" color="secondary">
             Share
           </Button>
-          <NavLink to={`/story/${props.story.id}`}>
+          <NavLink to={`stories/${story.id}`} >
             <Button size="small" color="primary" >
               Learn More
             </Button>
           </NavLink>
+
         </CardActions>
       </Card>
     </div>
@@ -72,3 +76,4 @@ Story.propTypes = {
 };
 
 export default withStyles(styles)(Story);
+

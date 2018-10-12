@@ -6,9 +6,12 @@ import type { StoryState, Story as StoryType } from "./stories.type";
 import { connect } from "react-redux";
 import React, { Component } from "react";
 import { requestStory } from "./story.actions.js";
-import Typography from "@material-ui/core/Typography";
+import Section from "../../components/section/section";
+
 
 import LoadingAnimation from "./../../../src/components/loading-animation";
+
+import StoryPage from "./components/learnMore"
 
 type Props = {
   story: StoryState,
@@ -17,37 +20,29 @@ type Props = {
 
 class StoryContainer extends Component<Props> {
   componentDidMount = () => {
-    this.props.dispatch(requestStory(this.props.match.params))
+    this.props.dispatch(requestStory(this.props.match.params.id))
   }
 
-  // deleteThisStory = () => {
-  //   console.log(this.props)
-  //   this.props.dispatch(deleteStory("test"))
-  // };
-
   render() {
-    const { story } = this.props;
-    console.log(this.props)
-    return (
-      <div>
-        <div style={{ height: 200, backgroundColor: "#fa983a", marginBottom: 50, display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "1px 1px 8px #888888" }}>
-          <h1 style= {{ margin: "auto" }}>Story title</h1>
+    const { story: { story, error, timestamp } } = this.props;
+    if(story.length === 0) {
+      return (
+        <LoadingAnimation/>
+      )
+    } else {
+      return (
+        <div>
+          <Section title="Latest stories" info={{ error, timestamp }} style={{ width: "50%" }}>
+              <div className="cards-container" style={{ display: "flex", margin: "auto", flexWrap: "wrap", overflow: "auto" }}>
+                
+                {story.map((story: StoryType, idx: number ) => (
+                    <StoryPage key={idx} story={story} />
+                ))}
+              </div>
+            </Section>
         </div>
-
-        <div className="story-container">
-          <div className="details username" style={{ float: "right", marginRight: 100 }}>    
-            <h2>
-              {/* {story.username} */}by: username
-            </h2>
-          </div>
-          <div className="details description" style={{ width: "60%", margin: "auto", padding: 25, textAlign: "left", marginTop: 50, marginBottom: 50, border: "2px solid #fa983a", borderRadius: 12, overflowWrap: "break-word" }}>
-            <p style={{ fontSize: 32 }}>
-              {/* {story.description} */} {("Test").repeat(50)}
-            </p>
-          </div> 
-        </div>
-      </div>
-    );
+      );
+    }
   }
 };
 

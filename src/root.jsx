@@ -25,7 +25,7 @@ const Root = (props: Props) => (
           <Route exact path="/stories" component={Stories} />
           <Route exact path="/create-story" component={CreateStory} />
           <Route exact path="/about-us" component={AboutUsContainer} />
-          <Route exact path="/story/:id" component={StoryContainer} />
+          <Route exact path="/stories/:id" component={StoryContainer} />
           <Route
             component={() => (
               <div style={{ textAlign: "center" }}>

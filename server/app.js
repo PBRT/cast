@@ -43,8 +43,8 @@ app.get("/stories", (req, res) => {
 });
 
 // Retrieve 1 story endpoint
-app.get("/story", (req, res) => {
-  const id = req.query.id;
+app.get("/stories/:story_id", (req, res) => {
+  const id = req.params.story_id;
   SQLQuery = `SELECT * FROM stories WHERE id='${id}'`;
   postgresDriver.query(SQLQuery).then(story => {
     res.send(story);
