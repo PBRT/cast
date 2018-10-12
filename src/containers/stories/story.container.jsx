@@ -5,8 +5,11 @@ import type { StoryState, Story as StoryType } from "./stories.type";
 
 import { connect } from "react-redux";
 import React, { Component } from "react";
+import { NavLink } from "react-router-dom";
 import { requestStory } from "./story.actions.js";
 import Section from "../../components/section/section";
+
+import Button from "@material-ui/core/Button";
 
 
 import LoadingAnimation from "./../../../src/components/loading-animation";
@@ -32,6 +35,10 @@ class StoryContainer extends Component<Props> {
     } else {
       return (
         <div>
+          <NavLink to="/stories">
+
+              <Button>Return to stories</Button>
+          </NavLink>
           <Section title="Latest stories" info={{ error, timestamp }} style={{ width: "50%" }}>
               <div className="cards-container" style={{ display: "flex", margin: "auto", flexWrap: "wrap", overflow: "auto" }}>
                 
