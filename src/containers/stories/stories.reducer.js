@@ -69,52 +69,6 @@ export const stories: StoriesReducer = (
         error: "FAIL",
         loading: false
       };
-<<<<<<< HEAD
-=======
-    
-    // case "REQUEST_DELETE_STORY":
-    //   return fx({ ...state, loading: true }, [
-    //     {
-    //       effect: "fetch",
-    //       url: "stories?title=" + action.title,
-    //       method: "DELETE",
-    //       onSuccess: "RECEIVE_DELETE_STORY",
-    //       onError: "FAIL_DELETE_STORY",
-    //     }
-    //   ]);
-
-
-
-
-
-
-
-      case "REQUEST_ONE_STORY":
-      return fx({ ...state, loading: true }, [
-        {
-          effect: "fetch",
-          url: "stories?timestamp=" + action.timestamp,
-          method: "GET",
-          onSuccess: "RECEIVE_ONE_STORIES",
-          onError: "FAIL_STORY"
-        }
-      ]);
-    case "RECEIVE_ONE_STORY":
-      return {
-        ...state,
-        stories: action.payload,
-        loading: false,
-        error: null,
-        timestamp: action.timestamp,
-      };
-
-    case "FAIL_STORY":
-      return {
-        ...state,
-        error: "FAIL",
-        loading: false
-      };
->>>>>>> fe8cac762e617ecbe8676d2ae919e8ef21b49017
 
     default:
       return state;
