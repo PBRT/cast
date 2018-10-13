@@ -1,107 +1,75 @@
 /* @flow */
 import React, { Component } from "react";
 
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
-import { withStyles } from '@material-ui/core/styles';
 import Avatar from '@material-ui/core/Avatar';
 import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
  
-import "./team-card.css";
-
-const styles = {
-  row: {
-    display: 'flex',
-  },
-  avatar: {
-    marginBottom: 15,
-  },
-  bigAvatar: {
-    width: 200,
-    height: 200,
-    margin: "auto",
-  },
-  card: {
-    minWidth: 275,
-    textAlign: "center",
-    justifyContent: "center",
-    margin: "15px 15px" ,
-    border: "none",
-  },
-  bullet: {
-    display: 'inline-block',
-    margin: '0 2px',
-    transform: 'scale(0.8)',
-  },
-  title: {
-    fontSize: 14,
-  },
-  pos: {
-    marginBottom: 12,
-  },
-};
+import "./teamCard.css";
 
 
 
-const TeamCard = (props) => {
 
-  const { classes } = props;
-  const bull = <span className={classes.bullet}>•</span>;
+const TeamCard = () => {
+
+  const bull = <span className="bullet">•</span>;
 
 
     return (
       
       <div className="member-container" >
-        <Card className={classes.card}>
-          <CardContent>
-            <div className={classes.row}>
-              <Avatar alt="Mimi" src="migro.jpg" className={classNames(classes.avatar, classes.bigAvatar)} />
+        <Card className="card">
+          <CardContent className="card-content">
+
+            <div className="card-img">
+              <Avatar alt="Mimi" src="migro.jpg" className="avatar bigAvatar" />
             </div>
-            <Typography className={classes.title} color="textSecondary" gutterBottom>
-              {/* Word of the Day */}
-            </Typography>
-            <Typography variant="h5" component="h2">
-              {bull}Migro{bull}
-            </Typography>
-            <Typography className={classes.pos} color="textSecondary">
-              "La limace"
-            </Typography>
-            <Typography component="p">
-              Adore les insectes et les shooters
-              <br />
-              {'"a benevolent smile"'}
-            </Typography>
+            <div className="card-text">
+              <Typography className="title" color="textSecondary" gutterBottom>
+                {/* Word of the Day */}
+              </Typography>
+              <Typography variant="h5" component="h2">
+                {bull}Migro{bull}
+              </Typography>
+              <Typography className="pos" color="textSecondary">
+                "La limace"
+              </Typography>
+              <Typography component="p" className="hideOnMobile">
+                Adore les insectes et les shooters
+                <br />
+                {'"a benevolent smile"'}
+              </Typography>
+            </div>
           </CardContent>
         </Card>
-        <Card className={classes.card}>
-          <CardContent>
-            <Avatar alt="Hans" src="8.jpg" className={classNames(classes.avatar, classes.bigAvatar)} />
-            <Typography className={classes.title} color="textSecondary" gutterBottom>
-              {/* Word of the Day */}
-            </Typography>
-            <Typography variant="h5" component="h2">
-              {bull}Hans{bull}
-            </Typography>
-            <Typography className={classes.pos} color="textSecondary">
-              "Wildfire"
-            </Typography>
-            <Typography component="p">
-              Adore le champagne
-              <br />
-              {'"a benevolent smile"'}
-            </Typography>
+
+        <Card className="card">
+          <CardContent className="card-content">
+            <div className="card-img">
+              <Avatar alt="Mimi" src="8.jpg" className="avatar bigAvatar" />
+            </div>
+            <div className="card-text">
+              <Typography className="title" color="textSecondary" gutterBottom>
+                {/* Word of the Day */}
+              </Typography>
+              <Typography variant="h5" component="h2">
+                {bull}Hans{bull}
+              </Typography>
+              <Typography className="pos" color="textSecondary">
+                "Wildfire"
+              </Typography>
+              <Typography component="p" className="hideOnMobile">
+                Adore le champagne
+                <br />
+                {'"a benevolent smile"'}
+              </Typography>
+            </div>
+
           </CardContent>
         </Card>
       </div>
     );
   };
-
-  TeamCard.propTypes = {
-    classes: PropTypes.object.isRequired,
-  };
   
-  export default withStyles(styles)(TeamCard);
+  export default TeamCard;

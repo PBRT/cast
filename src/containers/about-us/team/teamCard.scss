@@ -1,0 +1,62 @@
+@import "../../../style/variables.scss";
+@import "../../../style/mixins.scss";
+
+
+
+
+.member-container {
+    .card {
+        min-width: 275px;
+        text-align: center;
+        margin: 15px;
+        background-color: $primaryLight;
+        @include bp-mobileOnly {
+            height: 100px;
+        }
+        .card-content {
+            padding-top: 7.5px!important;
+            @include bp-mobileOnly {
+                display: flex;
+            }
+            .card-text {
+                width: 100%;
+                p {
+                    @include bp-mobileOnly {
+                        font-size: 24px;
+                    }
+                }
+                .title {
+                    font-size: 14px;
+                    @include bp-mobileOnly {
+                        font-size: 36px;
+                    }
+                }
+                .pos {
+                    margin-bottom: 12px;
+                    @include bp-mobileOnly {
+                        margin-bottom: 0;
+                    }
+                }
+                .bullet {
+                    display: inline-block;
+                    margin: 0px 2px;
+                    transform: scale(0.8);
+                }
+            }
+            .card-img {
+                .avatar {
+                    margin-bottom: 15px;
+                }
+                .bigAvatar {
+                    width: 200px;
+                    height: 200px;
+                    margin: auto;
+                    @include bp-mobileOnly {
+                        width: 85px;
+                        height: 85px;
+                    }
+                }
+            }
+        }
+    }
+}
