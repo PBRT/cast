@@ -1,12 +1,14 @@
 /* @flow */
 
 import React from "react";
+
+import { NavLink } from "react-router-dom";
 import PropTypes from 'prop-types';
+
 
 import { withStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import AppBar from "@material-ui/core/AppBar";
-import { NavLink } from "react-router-dom";
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -140,7 +142,7 @@ const App = (props: Props) => {
               </Button>
             </NavLink>
           </div>
-
+          
         </div>
       </AppBar>
       {props.children}
