@@ -32,8 +32,19 @@ html {
   .container .header .head-image-container img {
     width: 100%; }
   .container .header .head-image-container h1 {
-    font-size: 24px;
+    font-size: 50px;
     color: red; }
+    @media only screen and (max-width: 480px) {
+      .container .header .head-image-container h1 {
+        font-size: 16px;
+        color: blue; } }
+    @media only screen and (min-width: 481px) and (max-width: 767px) {
+      .container .header .head-image-container h1 {
+        font-size: 16px;
+        color: blue; } }
+    @media only screen and (min-width: 768px) and (max-width: 1024px) {
+      .container .header .head-image-container h1 {
+        font-size: 1.5em; } }
   .container .header .definition {
     text-align: right;
     margin: 75px 16px 0 0; }
@@ -60,8 +71,14 @@ html {
     @media only screen and (min-width: 768px) and (max-width: 1024px) {
       .container .top-resume .text-resume {
         font-size: 1.5em; } }
+
+.container .mobile-only {
+  width: 70%;
+  margin: auto; }
+  .container .mobile-only p {
+    display: none; }
     @media only screen and (max-width: 480px) {
-      .container .top-resume .text-resume .mobile-only {
+      .container .mobile-only p {
         display: block !important; } }
 
 .team-resume .member-container {
@@ -95,3 +112,6 @@ div#slider {
   background-color: #fa983a;
   box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
   margin: 35px 0; }
+  @media only screen and (max-width: 480px) {
+    .separation-bar {
+      height: 12px; } }
