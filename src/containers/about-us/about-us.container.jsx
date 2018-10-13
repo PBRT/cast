@@ -1,21 +1,28 @@
 /* @flow */
-import React, { Component } from "react";
-import AppBar from "@material-ui/core/AppBar";
+import type { State } from "../../state/state.type.js";
+import type { Action } from "./stories.actions.js";
+import type { StoriesState, Story as StoryType } from "./stories.type";
 
+import React, { Component } from "react";
+
+import { connect } from "react-redux";
 // import GoogleMapsContainer from "./map/maps";
-import ImageSlider from "./slider/slider";
+// import ImageSlider from "./slider/slider";
 import TeamCard from "./team/team-cards"
 
 import "./about-us.css";
 
-
+type Props = {
+  stories: StoriesState,
+  dispatch: Action => void
+};
 
 class AboutUsContainer extends Component {
 
   
   render() {
     return (
-      <div>
+      <div className="container">
 
         <div className="header">
           <div className="head-image-container">
@@ -29,9 +36,9 @@ class AboutUsContainer extends Component {
           </div>
         </div>
 
-      
+        <div className="separation-bar"></div>
+        
         <div className="top-resume">
-          <div className="separation-bar"></div>
           <div className="text-resume">
             <p>Proin vel eros a dolor aliquam placerat id at turpis. Sed facilisis et neque quis varius. Aliquam convallis nulla et pharetra cursus. Cras elementum nec quam quis pellentesque. Nunc molestie arcu dui, vel pellentesque nisi hendrerit ac. In a commodo est. Quisque ac ante arcu. Morbi maximus magna non purus condimentum iaculis. Nulla ultricies nec erat in pretium. Phasellus pharetra libero a libero ultricies, id faucibus mauris maximus. Donec consequat feugiat dolor. Morbi pretium gravida lacus sit amet tempor. Donec vel semper felis.</p>
           </div>
@@ -49,4 +56,6 @@ class AboutUsContainer extends Component {
   }
 }
 
-export default AboutUsContainer;
+export default connect((state: State) => ({
+  stories: state.stories
+}))(AboutUsContainer);

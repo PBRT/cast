@@ -3,12 +3,8 @@
   color: #ffffff; }
 
 .navbar-color {
-  background-color: #fa983a !important; }
+  background-color: #e5760d !important; }
 
 .navbar-container {
   display: flex;
   padding: 0 12px; }
-  .navbar-container .btn-container {
-    justify-content: space-between; }
-    .navbar-container .btn-container .story {
-      color: red !important; }

@@ -6,15 +6,14 @@ import type { StoriesState, Story as StoryType } from "./stories.type";
 import { requestStories } from "./../stories/stories.actions";
 import Section from "../../components/section/section";
 import Story from "./../stories/components/story";
+import HomeButton from "./components/home-button";
 
 import { connect } from "react-redux";
 import React, { Component } from "react";
-import { NavLink } from "react-router-dom";
-import Typography from "material-ui/Typography";
-import Button from "@material-ui/core/Button"
 import LoadingAnimation from "../../components/loading-animation";
 
 import "./home.container.css"
+
 
 type Props = {
     stories: StoriesState,
@@ -37,7 +36,7 @@ class Home extends Component<Props> {
           <LoadingAnimation/> :
         <div>
           <Section title="Latest stories" info={{ error, timestamp }}>
-            <div style={{ display: "flex", margin: "auto", overflow: "auto" }}>
+            <div className="slider-container">
               {stories.map((story: StoryType, idx: number) => (
                 <Story key={idx} story={story} />
               ))}
@@ -46,20 +45,7 @@ class Home extends Component<Props> {
         </div>
         }
 
-        <div className="link">
-          <NavLink to="/create-story">
-            <Button variant="contained" aria-label="Add">
-              Create your own!
-            </Button>
-          </NavLink>
-        </div>
-        <div className="link">
-          <NavLink to="/stories">
-            <Button variant="contained" aria-label="Add">
-              Show all stories
-            </Button>
-          </NavLink>
-        </div>
+        <HomeButton />
       </div>
     );
   }

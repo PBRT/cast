@@ -7,16 +7,10 @@
 }
 
 .navbar-color {
-  background-color: $primary !important;
+  background-color: $primaryDark !important;
 }
 
 .navbar-container {
   display: flex;
   padding: 0 12px;
-  .btn-container {
-    justify-content: space-between;
-    .story {
-      color: red !important;
-    }
-  }
 }

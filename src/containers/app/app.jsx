@@ -1,12 +1,14 @@
 /* @flow */
 
 import React from "react";
+
+import { NavLink } from "react-router-dom";
 import PropTypes from 'prop-types';
+
 
 import { withStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import AppBar from "@material-ui/core/AppBar";
-import { NavLink } from "react-router-dom";
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -60,8 +62,8 @@ const App = (props: Props) => {
     <div className="App">
       <AppBar
         position="static"
-        color="primary"
-        style={{ marginBottom: 16, padding: 8 }}
+
+        
         classes={{
           colorPrimary: "navbar-color"
         }}
@@ -79,7 +81,7 @@ const App = (props: Props) => {
                 }} 
                 onMouseOver={() => { showIcon("home-icon") }}
                 onMouseOut={() => { hideIcon("home-icon") }}
-                 >
+              >
                 Home
                 <FontAwesomeIcon id="home-icon" icon="heart" style={{ display: "none"}}/> 
               </Button>
@@ -140,7 +142,7 @@ const App = (props: Props) => {
               </Button>
             </NavLink>
           </div>
-
+          
         </div>
       </AppBar>
       {props.children}

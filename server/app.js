@@ -28,7 +28,25 @@ app.use(function(req, res, next) {
 // Retrieve stories endpoint
 app.get("/stories", (req, res) => {
   const dateOrder = req.query.dateOrder;
-  const SQLQuery = "SELECT * FROM Stories ORDER BY timestamp " + dateOrder;
+  const timestamp = req.query.timestamp;
+  let SQLQuery;
+  if(req.query.timestamp) {
+    SQLQuery = `SELECT * FROM stories WHERE timestamp='${timestamp}'`;
+  } else {
+    SQLQuery = "SELECT * FROM Stories ORDER BY timestamp " + dateOrder;
+  }
+  // We do the query to the database
+  postgresDriver.query(SQLQuery).then(stories => {
+    // We send it back to the browser
+    res.send(stories);
+  });
+});
+
+
+// Retrieve only one story
+app.get("/stories/:id", (req, res) => {
+  const timestamp = req.query.timestamp;
+  const SQLQuery = `SELECT * FROM stories WHERE timestamp='${timestamp}'`;
   // We do the query to the database
   postgresDriver.query(SQLQuery).then(stories => {
     // We send it back to the browser
@@ -70,7 +88,7 @@ app.delete("/stories", (req, res) => {
     res.status(400);
     res.send("Missing params");
   }
-})
+});
 
 // Endpoint which return the DOM (needed to the browser to display our react app)
 // Pass here if none of the endpoint before match with the route (that's why the star)
