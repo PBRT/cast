@@ -1,0 +1,18 @@
+@import "../../../style/mixins.scss";
+@import "../../../style/variables.scss";
+
+
+
+.form-container {
+    width: 35%;
+    margin: auto;
+    @include bp-medium {
+        width: 35%;
+      }
+    @include bp-small {
+        width: 80%;
+      }
+    @include bp-mobileOnly {
+        width: 80% !important;
+    }
+}

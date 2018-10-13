@@ -1,3 +1,12 @@
+/*Utils*/
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+/*Media Queries*/
+/*Transitions*/
 @keyframes slidy {
   0% {
     left: 0%; }
@@ -45,6 +54,15 @@
     border: 5px solid #e5760d;
     border-radius: 20px;
     font-size: 200%; }
+    @media only screen and (min-width: 481px) and (max-width: 767px) {
+      .container .top-resume .text-resume {
+        font-size: 1em; } }
+    @media only screen and (min-width: 768px) and (max-width: 1024px) {
+      .container .top-resume .text-resume {
+        font-size: 1.5em; } }
+    @media only screen and (max-width: 480px) {
+      .container .top-resume .text-resume .mobile-only {
+        display: block !important; } }
 
 .team-resume .member-container {
   text-align: center;
@@ -52,7 +70,8 @@
   margin: auto;
   max-width: 80%;
   width: 75%;
-  justify-content: center; }
+  justify-content: center;
+  flex-wrap: wrap; }
 
 div#slider {
   width: 100%;

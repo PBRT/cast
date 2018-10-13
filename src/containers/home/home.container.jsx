@@ -12,7 +12,7 @@ import { connect } from "react-redux";
 import React, { Component } from "react";
 import LoadingAnimation from "../../components/loading-animation";
 
-import "./home.container.css"
+import "./home.css"
 
 
 type Props = {
@@ -22,15 +22,16 @@ type Props = {
 
 class Home extends Component<Props> {
   componentDidMount() {
-      this.props.dispatch(requestStories("ASC"));
+    window.scrollTo(0, 0)
+    this.props.dispatch(requestStories("ASC"));
     }
   render() {
     const { stories: { stories, error, timestamp } } = this.props;
     return (
       <div>
-        <div className="home-header" style={{ backgroundColor: "#fa983a", width: "100%", height: 250, textAlign: "center", color: "white" }}>
-          <h1 className="animated bounce" style={{ paddingTop: 75 }}>Welcome to Cast</h1>
-          <h2 className="animated bounce">A way to share all your stories</h2>
+        <div className="home-header">
+          <h1 className="animated tada">Welcome to Cast</h1>
+          <h2>A way to share all your stories</h2>
         </div>
         {stories.length === 0 ?
           <LoadingAnimation/> :

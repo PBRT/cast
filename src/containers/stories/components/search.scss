@@ -1,0 +1,54 @@
+
+@import "../../../style/mixins.scss";
+
+.search-container {
+    width: 50%;
+    border-radius: 10;
+    border: 2px solid #fa983a;
+    margin: auto;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-around;
+    box-shadow: -1px 9px 16px -8px rgba(0,0,0,0.75);
+    color: black;
+    @include bp-mobileOnly {
+        width: 100%;
+    }
+    h3 {
+        margin: auto;
+        padding-left: 25px;
+        width: 40%;
+        @include bp-medium {
+            display: none;
+        }
+        @include bp-small {
+            display: none;
+        }
+        @include bp-mobileOnly {
+            display: none;
+        }
+    }
+    .textfield-container {
+        width: 60%;
+        margin: auto;
+        .textField {
+            width: 60%;
+            color: red;
+            @include bp-medium {
+                width: 100%;
+            }
+            @include bp-small {
+                width: 100%;
+            }
+            @include bp-mobileOnly {
+                width: 100%;
+            }
+        }
+    }
+    .search-icon {
+        width: 100px;
+        margin: auto;
+        margin-right: 20px;
+    }
+}
+

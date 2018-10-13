@@ -13,28 +13,20 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
-
-const styles = {
-  card: {
-    width: "100%"
-  },
-  media: {
-    objectFit: 'cover',
-  },
-};
+import "./story.css"
 
 
 
 const Story = (props: Props) => {
 
-  const { classes, story } = props;
+  const { story } = props;
 
   return ( 
-    <div className="card-container" style={{ margin: 25, width: 300, height: 600, margin: "auto" }} >
-      <Card className={classes.card} >
+    <div className="card-container" >
+      <Card className="card" >
         <CardMedia
           component="img"
-          className={classes.media}
+          className="media"
           height="140"
           image="1.jpg"
           title="something"
@@ -46,7 +38,7 @@ const Story = (props: Props) => {
           <Typography type="caption" component="p">
             {moment(parseInt(props.story.timestamp)).format("DD-MM-YYYY")}
           </Typography>
-          <Typography style={{ marginTop: 8, textOverflow: "ellipsis", width: 200, whiteSpace: "nowrap", overflow: "hidden" }} type="subheading" component="p">
+          <Typography className="description" type="subheading" component="p">
             {props.story.description}
           </Typography>
         </CardContent>
@@ -67,8 +59,8 @@ const Story = (props: Props) => {
 }
 
 Story.propTypes = {
-  classes: PropTypes.object.isRequired,
+  story: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(Story);
+export default Story;
 

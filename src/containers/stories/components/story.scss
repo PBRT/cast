@@ -1,0 +1,20 @@
+@import "../../../style/mixins.scss";
+
+.card-container {
+    width: 250px;
+    margin: auto;
+    .card {
+        width: 100%;
+        .media {
+            object-fit: cover;
+        }
+        .description {
+            margin-top: 8px;
+            text-overflow: ellipsis;
+            width: 200px;
+            white-space: nowrap;
+            overflow: hidden;
+
+        }
+    }
+}

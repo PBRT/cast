@@ -55,7 +55,7 @@ const TeamCard = (props) => {
 
     return (
       
-      <div id="pulse" className="member-container" >
+      <div className="member-container" >
         <Card className={classes.card}>
           <CardContent>
             <div className={classes.row}>

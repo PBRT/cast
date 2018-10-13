@@ -107,6 +107,7 @@ p {
   width: 50px; }
 
 body {
+  width: 100%;
   margin: 0;
   padding: 0;
   font-family: sans-serif; }
@@ -124,6 +125,10 @@ body {
 ::-moz-selection {
   background: #fa983a;
   color: #ffffff; }
+
+@media only screen and (max-width: 480px) {
+  .hideOnMobile {
+    display: none !important; } }
 
 .material-icons {
   font-family: 'Material Icons';

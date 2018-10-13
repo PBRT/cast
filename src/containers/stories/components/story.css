@@ -1,0 +1,22 @@
+/*Utils*/
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+/*Media Queries*/
+/*Transitions*/
+.card-container {
+  width: 250px;
+  margin: auto; }
+  .card-container .card {
+    width: 100%; }
+    .card-container .card .media {
+      object-fit: cover; }
+    .card-container .card .description {
+      margin-top: 8px;
+      text-overflow: ellipsis;
+      width: 200px;
+      white-space: nowrap;
+      overflow: hidden; }

@@ -1,4 +1,5 @@
 @import "../../style/variables.scss";
+@import "../../style/mixins.scss";
 
 @keyframes slidy {
     0% { left: 0%; }
@@ -49,6 +50,17 @@
             border: 5px solid $primaryDark;
             border-radius: 20px;
             font-size: 200%;
+            @include bp-small {
+                font-size: 1em;
+            }
+            @include bp-medium {
+                font-size: 1.5em;
+            }
+            .mobile-only {
+                @include bp-mobileOnly {
+                    display: block !important;
+                }
+            }
         }
     }
 }
@@ -61,6 +73,7 @@
         max-width: 80%;
         width: 75%;
         justify-content: center;
+        flex-wrap: wrap;
     }
 }
 

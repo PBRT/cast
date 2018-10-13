@@ -3,6 +3,8 @@ import type { SupportedInputs } from "../create-story.container.jsx";
 import TextField from "@material-ui/core/TextField";
 import React, { Component } from "react";
 
+import "./form.css";
+
 type HandleChange = (key: string, val: string) => void;
 type StoryTextInputProps = {
   inputKey: string,
@@ -59,7 +61,7 @@ class StoryTextInput extends Component<StoryTextInputProps> {
 
 const CreateStoryForm = (props: Props) => {
   return (
-    <div style={{ width: 400, margin: "auto" }}>
+    <div className="form-container">
       <form noValidate autoComplete="off">
         <StoryTextInput
           label="Username"
