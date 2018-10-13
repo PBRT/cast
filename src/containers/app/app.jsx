@@ -53,7 +53,7 @@ const App = (props: Props) => {
   };
 
   const hideIcon = (icon) => {
-    document.getElementById(icon).style.display="none"
+    document.getElementById(icon).style.display="none";
   };
 
   return (

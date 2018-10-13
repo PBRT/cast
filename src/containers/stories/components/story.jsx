@@ -2,8 +2,9 @@
 import type { Story as StoryType } from "../stories.type.js";
 
 import moment from "moment";
-import React, { Component } from "react";
+import React from "react";
 import PropTypes from 'prop-types';
+import { NavLink } from "react-router-dom";
 import { withStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
@@ -12,9 +13,11 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
+
+
 const styles = {
   card: {
-    maxWidth: 345,
+    width: "100%"
   },
   media: {
     objectFit: 'cover',
@@ -25,14 +28,11 @@ const styles = {
 
 const Story = (props: Props) => {
 
-  const { classes } = props;
+  const { classes, story } = props;
 
-  return (
-    <div  
-      className="card-container" 
-      style={{ margin: 25, maxWidth: 225 }} 
-      >
-      <Card id="cards" className={classes.card} >
+  return ( 
+    <div className="card-container" style={{ margin: 25, width: 300, height: 600, margin: "auto" }} >
+      <Card className={classes.card} >
         <CardMedia
           component="img"
           className={classes.media}
@@ -55,9 +55,12 @@ const Story = (props: Props) => {
           <Button size="small" color="secondary">
             Share
           </Button>
-          <Button size="small" color="secondary">
-            Learn More
-          </Button>
+          <NavLink to={`stories/${story.id}`} >
+            <Button size="small" color="primary" >
+              Learn More
+            </Button>
+          </NavLink>
+
         </CardActions>
       </Card>
     </div>

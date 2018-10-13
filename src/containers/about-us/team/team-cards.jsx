@@ -11,6 +11,8 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
  
+import "./team-card.css";
+
 const styles = {
   row: {
     display: 'flex',
@@ -21,12 +23,14 @@ const styles = {
   bigAvatar: {
     width: 200,
     height: 200,
+    margin: "auto",
   },
   card: {
     minWidth: 275,
     textAlign: "center",
     justifyContent: "center",
     margin: "15px 15px" ,
+    border: "none",
   },
   bullet: {
     display: 'inline-block',
@@ -41,12 +45,17 @@ const styles = {
   },
 };
 
+
+
 const TeamCard = (props) => {
+
   const { classes } = props;
   const bull = <span className={classes.bullet}>•</span>;
+
+
     return (
       
-      <div className="member-container">
+      <div id="pulse" className="member-container" >
         <Card className={classes.card}>
           <CardContent>
             <div className={classes.row}>

@@ -47,7 +47,7 @@ class StoriesContainer extends Component<Props> {
       return (
         <div>
           <div className="home-header" style={{ backgroundColor: "#fa983a", width: "100%", height: 250, textAlign: "center", color: "white" }}>
-            <h1 style={{ paddingTop: 75 }}>Search a story</h1>
+            <h1 className="animated bounce" style={{ paddingTop: 75 }}>Search a story</h1>
             <h2></h2>
           </div>
           <Button onClick={this.orderStoriesByDesc}>

@@ -69,22 +69,6 @@ export const stories: StoriesReducer = (
         error: "FAIL",
         loading: false
       };
-    
-    case "REQUEST_DELETE_STORY":
-      return fx({ ...state, loading: true }, [
-        {
-          effect: "fetch",
-          url: "stories?title=" + action.title,
-          method: "DELETE",
-          onSuccess: "RECEIVE_DELETE_STORY",
-          onError: "FAIL_DELETE_STORY",
-        }
-      ]);
-
-    case "RECEIVE_DELETE_STORY":
-      return {
-
-      }
 
     default:
       return state;
