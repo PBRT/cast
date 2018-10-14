@@ -38,11 +38,11 @@ const Story = (props: Props) => {
           <Typography type="caption" component="p">
             {moment(parseInt(props.story.timestamp)).format("DD-MM-YYYY")}
           </Typography>
-          <Typography className="description" type="subheading" component="p">
+          <Typography className="description hideOnMobile" type="subheading" component="p">
             {props.story.description}
           </Typography>
         </CardContent>
-        <CardActions>
+        <CardActions className="hideOnMobile">
           <Button size="small" color="secondary">
             Share
           </Button>

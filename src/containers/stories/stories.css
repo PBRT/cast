@@ -40,6 +40,9 @@ html {
   padding-top: 100px;
   margin: auto;
   width: 70%; }
+  @media only screen and (max-width: 480px) {
+    .btn-filter {
+      padding-top: 70px; } }
   .btn-filter .btn.container {
     margin: 20; }
 

@@ -36,6 +36,9 @@
     padding-top: 100px;
     margin: auto;
     width: 70%;
+    @include bp-mobileOnly {
+        padding-top: 70px;
+    }
     .btn.container {
          margin: 20;
      }

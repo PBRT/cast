@@ -18,9 +18,12 @@
 .container {
     .header {
         text-align: center;
+        width: 100%;
         .head-image-container {
+            
             img {
                 width: 100%;
+                object-fit: cover;
             }
             h1 {
                 font-size: 50px;

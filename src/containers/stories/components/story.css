@@ -9,11 +9,18 @@ html {
 /*Transitions*/
 .card-container {
   width: 250px;
-  margin: auto; }
+  margin: auto;
+  padding-bottom: 25px; }
   .card-container .card {
     width: 100%; }
+    @media only screen and (max-width: 480px) {
+      .card-container .card h2 {
+        text-align: center; } }
     .card-container .card .media {
       object-fit: cover; }
+      @media only screen and (max-width: 480px) {
+        .card-container .card .media {
+          height: 100px; } }
     .card-container .card .description {
       margin-top: 8px;
       text-overflow: ellipsis;
