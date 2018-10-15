@@ -48,5 +48,9 @@
     display: flex;
     margin: auto;
     flex-wrap: wrap;
+    width: 75%;
+    @include bp-mobileOnly {
+        width: 100%;
+    }
 
 }
