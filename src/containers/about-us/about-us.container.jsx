@@ -1,13 +1,11 @@
 /* @flow */
 import type { State } from "../../state/state.type.js";
 import type { Action } from "./stories.actions.js";
-import type { StoriesState, Story as StoryType } from "./stories.type";
+import type { StoriesState } from "./stories.type";
 
 import React, { Component } from "react";
 
 import { connect } from "react-redux";
-// import GoogleMapsContainer from "./map/maps";
-// import ImageSlider from "./slider/slider";
 import TeamCard from "./team/team-cards"
 
 import "./about-us.css";
@@ -17,7 +15,7 @@ type Props = {
   dispatch: Action => void
 };
 
-class AboutUsContainer extends Component {
+class AboutUsContainer extends Component<Props> {
 
   componentDidMount() {
     window.scrollTo(0, 0);

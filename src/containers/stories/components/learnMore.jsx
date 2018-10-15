@@ -1,12 +1,13 @@
 /* @flow */
 import type { Story as StoryType } from "../stories.type.js";
 
-import { connect } from "react-redux";
 import React from "react";
 import PropTypes from 'prop-types';
 import Typography from '@material-ui/core/Typography';
 
-
+type Props = {
+  story: StoryType,
+};
 
 const StoryPage = (props: Props) => {
 
@@ -29,7 +30,7 @@ const StoryPage = (props: Props) => {
 }
 
 StoryPage.propTypes = {
-  stories: PropTypes.object.isRequired,
+  story: PropTypes.object.isRequired,
 };
 
 export default StoryPage;

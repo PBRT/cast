@@ -7,7 +7,7 @@ import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
 import React, { Component } from "react";
-import { requestStories, createStory } from "../stories/stories.actions.js";
+import { createStory } from "../stories/stories.actions.js";
 import Section from "../../components/section/section";
 import CreateStoryForm from "./components/form.jsx";
 import Button from "@material-ui/core/Button";
@@ -36,6 +36,7 @@ class StoriesContainer extends Component<Props, ContainerState> {
   };
   render() {
     const { stories: { stories, error, timestamp } } = this.props;
+    console.log(stories)
     return (
       <div>
         <Section title="Create story" info={{ error, timestamp }}>
