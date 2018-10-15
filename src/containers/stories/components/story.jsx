@@ -1,5 +1,5 @@
 /* @flow */
-import type { Story as StoryType } from "../stories.type.js";
+import type { Story as StoryType } from "./../stories.type.js";
 
 import moment from "moment";
 import React from "react";

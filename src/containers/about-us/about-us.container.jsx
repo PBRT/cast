@@ -1,12 +1,12 @@
 /* @flow */
 import type { State } from "../../state/state.type.js";
-import type { Action } from "./stories.actions.js";
-import type { StoriesState } from "./stories.type";
+import type { Action } from "./../stories/actions/stories.actions.js";
+import type { StoriesState } from "./../stories/stories.type.js";
 
 import React, { Component } from "react";
 
 import { connect } from "react-redux";
-import TeamCard from "./team/team-cards"
+import TeamCard from "./components/team/team-cards"
 
 import "./about-us.css";
 

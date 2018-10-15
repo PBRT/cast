@@ -1,7 +1,6 @@
 // @flow
-import type { StoryState } from "./stories.type";
+import type { StoryState } from "../stories/stories.type";
 import type { Action } from "./story.actions";
-
 import { fx } from "redux-data-fx";
 
 export const initialStoryState: StoryState = {

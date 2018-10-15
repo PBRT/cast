@@ -5,7 +5,7 @@ import App from "./containers/app/app";
 import Stories from "./containers/stories/stories.container";
 import Home from "./containers/home/home.container";
 import AboutUsContainer from "./containers/about-us/about-us.container";
-import StoryContainer from "./containers/stories/story.container";
+import StoryContainer from "./containers/story/story.container";
 import CreateStory from "./containers/create-story/create-story.container";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 

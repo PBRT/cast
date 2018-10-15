@@ -13,7 +13,7 @@ const StoryPage = (props: Props) => {
 
   const { story } = props;
   let newStory = story[0];
-  console.log(newStory)
+  console.log(newStory);
   return (
     <div>
       <Typography gutterBottom variant="headline" component="h2">
@@ -27,7 +27,7 @@ const StoryPage = (props: Props) => {
       </Typography>
     </div>
   );
-}
+};
 
 StoryPage.propTypes = {
   story: PropTypes.object.isRequired,

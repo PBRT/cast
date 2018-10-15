@@ -1,7 +1,7 @@
 /* @flow */
 import type { State } from "../../state/state.type.js";
 import type { Action } from "./stories.actions.js";
-import type { StoriesState, Story as StoryType } from "./stories.type";
+import type { StoriesState, Story as StoryType } from "./stories.type.js";
 
 import _ from "lodash";
 import { connect } from "react-redux";

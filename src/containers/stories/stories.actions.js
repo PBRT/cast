@@ -23,6 +23,7 @@ export type Action = {
   story?: Object,
   timestamp?: number,
   title?: string,
+  id?: number,
 };
 
 type RequestStories = () => Action;

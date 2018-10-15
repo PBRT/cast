@@ -1,7 +1,6 @@
 /* @flow */
-import type { State } from "../../state/state.type.js";
 import type { Action } from "./story.actions.js";
-import type { StoryState, Story as StoryType } from "./stories.type";
+import type { StoryState, Story as StoryType } from "../stories/stories.type.js";
 
 import { connect } from "react-redux";
 import React, { Component } from "react";
@@ -12,9 +11,9 @@ import Section from "../../components/section/section";
 import Button from "@material-ui/core/Button";
 
 
-import LoadingAnimation from "./../../../src/components/loading-animation";
+import LoadingAnimation from "../../components/loading-animation";
 
-import StoryPage from "./components/learnMore"
+import StoryPage from "./components/learnMore";
 
 type Props = {
   story: StoryState,
@@ -24,7 +23,7 @@ type Props = {
 class StoryContainer extends Component<Props> {
   componentDidMount = () => {
     this.props.dispatch(requestStory(this.props.match.params.id))
-  }
+  };
 
   render() {
     const { story: { story, error, timestamp } } = this.props;
@@ -49,8 +48,8 @@ class StoryContainer extends Component<Props> {
             </Section>
         </div>
       );
-    }
-  }
+    };
+  };
 };
 
 export default connect((state: State) => ({

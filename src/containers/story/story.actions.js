@@ -1,5 +1,5 @@
 // @flow
-import type { Story } from "./stories.type";
+import type { Story } from "../stories/stories.type";
 
 export type REQUEST_ONE_STORY = "REQUEST_ONE_STORY";
 export type RECEIVE_ONE_STORY = "RECEIVE_ONE_STORY";
