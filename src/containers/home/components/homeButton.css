@@ -1,0 +1,69 @@
+/*Utils*/
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+/*Media Queries*/
+/*Transitions*/
+.bigButtonsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  min-width: 300px;
+  width: 100%;
+  opacity: 1; }
+  .bigButtonsContainer :hover {
+    opacity: 0.5; }
+  .bigButtonsContainer .image {
+    position: relative;
+    height: 200px; }
+    @media only screen and (max-width: 480px) {
+      .bigButtonsContainer .image {
+        width: 100% !important;
+        height: 100px; } }
+    .bigButtonsContainer .image :hover {
+      opacity: 1.0; }
+      .bigButtonsContainer .image :hover .imageMarked {
+        display: none; }
+      .bigButtonsContainer .image :hover .imageTitle {
+        border: 4px solid white; }
+    .bigButtonsContainer .image .imageButton {
+      font-size: 24px;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      color: white; }
+      .bigButtonsContainer .image .imageButton .imageTitle {
+        margin: auto; }
+        .bigButtonsContainer .image .imageButton .imageTitle .imageMarked {
+          height: 3px;
+          width: 18px;
+          background-color: white;
+          position: absolute;
+          bottom: -2px;
+          left: calc(50% - 9px); }
+    .bigButtonsContainer .image .imageSrc {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background-size: cover;
+      background-position: center 40%; }
+    .bigButtonsContainer .image .imageBackDrop {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background-color: black;
+      opacity: 0.4;
+      -webkit-transition: .25s ease-in-out 0.25s;
+      -moz-transition: .25s ease-in-out 0.25s;
+      -o-transition: .25s ease-in-out 0.25s;
+      transition: .25s ease-in-out 0.25s; }

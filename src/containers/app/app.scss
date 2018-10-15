@@ -24,10 +24,10 @@
   display: flex;
   padding: 10;
   @include bp-small {
-    justify-content: space-evenly;
+    justify-content: center;
   }
   @include bp-mobileOnly {
-    justify-content: space-evenly;
+    justify-content: center;
     }
   
   .btn-container {
@@ -50,6 +50,18 @@
       @include bp-mobileOnly {
         font-size: 1.5em;
         width: 25%;
+        background: $primary;
+        border-radius: 3px;
+        border: 0px;
+        color: $white;
+        font-size: 24px;
+        height: 4px;
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+      }
+      p {
+        padding-right: 15px;
       }
     }
   }

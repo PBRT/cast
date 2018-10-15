@@ -6,7 +6,7 @@ import type { StoriesState, Story as StoryType } from "./../stories/stories.type
 import { requestStories } from "../stories/stories.actions";
 import Section from "../../components/section/section";
 import Story from "./../stories/components/story";
-import HomeButton from "./components/home-button";
+import HomeButton from "./components/homeButton";
 
 import { connect } from "react-redux";
 import React, { Component } from "react";

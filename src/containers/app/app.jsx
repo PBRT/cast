@@ -41,9 +41,6 @@ const styles = {
     display: "flex",
     justifyContent: "space-between",
   },
-  label: {
-    textTransform: "capitalize",
-  },
 };
 
 type Props = {
@@ -75,15 +72,17 @@ const App = (props: Props) => {
       >
         <div className="navbar-container">
           <div className="btn-container">
-            <NavLink className="nav-link" to="/">
+            <NavLink 
+              className="nav-link" 
+              to="/" 
+              activeStyle={{
+                fontWeight: "bold",
+                color: "red!important"
+              }}>
               <Button 
                 className="" 
                 type="subheading" 
                 color="inherit" 
-                classes={{
-                  root: classes.root, // class name, e.g. `classes-nesting-root-x`
-                  label: classes.label, // class name, e.g. `classes-nesting-label-x`
-                }} 
                 onMouseOver={() => { showIcon("home-icon") }}
                 onMouseOut={() => { hideIcon("home-icon") }}
               >
@@ -100,10 +99,6 @@ const App = (props: Props) => {
                 className={classes.button} 
                 type="subheading" 
                 color="inherit" 
-                classes={{
-                  root: classes.root,
-                  label: classes.label,
-                }}
                 onMouseOver={() => { showIcon("story-icon") }}
                 onMouseOut={() => { hideIcon("story-icon") }}
               >
@@ -119,10 +114,6 @@ const App = (props: Props) => {
               <Button 
                 className={classes.button} 
                 type="subheading" color="inherit" 
-                classes={{
-                  root: classes.root,
-                  label: classes.label, 
-                }}
                 onMouseOver={() => { showIcon("create-story-icon") }}
                 onMouseOut={() => { hideIcon("create-story-icon") }}
               >
@@ -138,10 +129,6 @@ const App = (props: Props) => {
               <Button 
                 className={classes.button} 
                 type="subheading" color="inherit" 
-                classes={{
-                  root: classes.root,
-                  label: classes.label,
-                }}
                 onMouseOver={() => { showIcon("about-us-icon") }}
                 onMouseOut={() => { hideIcon("about-us-icon") }}
               >

@@ -9,30 +9,26 @@ html {
 /*Media Queries*/
 
 @mixin bp-mobileOnly {
-  //ONLY for small screns
-  //480px
+
   @media only screen and (max-width: 480px) {
     @content;
   }
 }
 
 @mixin bp-small {
-  //480px
   @media only screen and (min-width: 481px) and (max-width: 767px) {
     @content;
   }
 }
 
 @mixin bp-medium {
-  //640px
   @media only screen and (min-width: 768px) and (max-width: 1024px) {
     @content;
   }
 }
 
 @mixin bp-large {
-  //960px
-  @media only screen and (min-width: 1025px) and (max-width: 1280px) {
+  @media only screen and (min-width: 1025px) {
     @content;
   }
 }

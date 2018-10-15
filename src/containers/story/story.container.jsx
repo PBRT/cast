@@ -9,8 +9,6 @@ import { requestStory } from "./story.actions.js";
 import Section from "../../components/section/section";
 
 import Button from "@material-ui/core/Button";
-
-
 import LoadingAnimation from "../../components/loading-animation";
 
 import StoryPage from "./components/learnMore";
@@ -48,7 +46,7 @@ class StoryContainer extends Component<Props> {
             </Section>
         </div>
       );
-    };
+    }
   };
 };
 

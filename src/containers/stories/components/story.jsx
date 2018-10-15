@@ -22,22 +22,29 @@ type Props = {
 const Story = (props: Props) => {
 
   const { story } = props;
+  console.log(props.params)
 
   return ( 
     <div className="card-container" >
+    <div className="storyPageOnly">
       <Card className="card" >
-        <CardMedia
-          component="img"
-          className="media"
-          height="140"
-          image="1.jpg"
-          title="something"
-        />
+        <NavLink to={`stories/${story.id}`} >
+          <CardMedia
+            component="img"
+            className="media"
+            height="140"
+            image="1.jpg"
+            title="something"
+          />
+        </NavLink>
         <CardContent>
           <Typography gutterBottom variant="headline" component="h2">
             {props.story.title}
           </Typography>
-          <Typography type="caption" component="p">
+          <Typography className="" type="subheading" component="p">
+            By: {props.story.username}
+          </Typography>
+          <Typography type="caption" component="p" className="hideOnMobile">
             {moment(parseInt(props.story.timestamp, 10)).format("DD-MM-YYYY")}
           </Typography>
           <Typography className="description hideOnMobile" type="subheading" component="p">
@@ -56,6 +63,7 @@ const Story = (props: Props) => {
 
         </CardActions>
       </Card>
+      </div>
     </div>
   );
 }

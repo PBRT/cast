@@ -35,11 +35,10 @@ class StoriesContainer extends Component<Props, ContainerState> {
     }
   };
   render() {
-    const { stories: { stories, error, timestamp } } = this.props;
-    console.log(stories)
+    
     return (
       <div>
-        <Section title="Create story" info={{ error, timestamp }}>
+        <Section title="Create story">
           <div>
             <CreateStoryForm
               handleChange={this._handleChange}

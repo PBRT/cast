@@ -1,0 +1,77 @@
+@import "../../../style/mixins.scss";
+@import "../../../style/variables.scss";
+
+.bigButtonsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    min-width: 300px;
+    width: 100%;
+    opacity: 1;
+    :hover {
+        opacity: 0.5;
+    }
+    .image {
+        position: relative;
+        height: 200px;
+        @include bp-mobileOnly {
+            width: 100% !important;
+            height: 100px;
+        };
+        :hover {
+            
+            opacity: 1.0;
+            .imageMarked {
+                display: none;
+            }
+            .imageTitle {
+                border: 4px solid white;
+            }
+        }
+        .imageButton {
+            font-size: 24px;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            color: white;
+            .imageTitle {
+                margin: auto;
+                .imageMarked {
+                    height: 3px;
+                    width: 18px;
+                    background-color: white;
+                    position: absolute;
+                    bottom: -2px;
+                    left: calc(50% - 9px);
+                }
+                
+            }
+        }
+        .imageSrc {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background-size: cover;
+            background-position: center 40%;
+
+        }
+        .imageBackDrop {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background-color: black;
+            opacity: 0.4;
+            -webkit-transition: .25s ease-in-out 0.25s;
+            -moz-transition: .25s ease-in-out 0.25s;
+            -o-transition: .25s ease-in-out 0.25s;
+            transition: .25s ease-in-out 0.25s;
+        }
+    }
+}

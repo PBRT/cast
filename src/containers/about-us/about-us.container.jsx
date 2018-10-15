@@ -6,7 +6,7 @@ import type { StoriesState } from "./../stories/stories.type.js";
 import React, { Component } from "react";
 
 import { connect } from "react-redux";
-import TeamCard from "./components/team/team-cards";
+import TeamCard from "./components/team/teamCards";
 
 import "./about-us.css";
 
