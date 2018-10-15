@@ -5,8 +5,9 @@ import type { StoriesState } from "../stories/stories.type";
 
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
+import { NavLink } from "react-router-dom";
 import React, { Component } from "react";
-import { requestStories, createStory } from "../stories/stories.actions.js";
+import { createStory } from "../stories/stories.actions.js";
 import Section from "../../components/section/section";
 import CreateStoryForm from "./components/form.jsx";
 import Button from "@material-ui/core/Button";
@@ -29,11 +30,13 @@ class StoriesContainer extends Component<Props, ContainerState> {
       username: null,
       title: null,
       description: null,
-      timestamp: 0
+      timestamp: 0,
+      image: "",
     }
   };
   render() {
     const { stories: { stories, error, timestamp } } = this.props;
+    console.log(stories)
     return (
       <div>
         <Section title="Create story" info={{ error, timestamp }}>
@@ -43,9 +46,14 @@ class StoriesContainer extends Component<Props, ContainerState> {
               values={this.state.values}
             />
             <div style={{ textAlign: "center" }}>
-              <Button color="primary" type="raised" onClick={this._onSubmit}>
-                Submit
-              </Button>
+              <NavLink to="/" style={{ textDecoration: 'none' }}>
+                <Button color="primary" type="raised">
+                  Cancel
+                </Button>
+              </NavLink>
+                <Button color="primary" type="raised" onClick={this._onSubmit}>
+                  Submit
+                </Button>
             </div>
           </div>
         </Section>

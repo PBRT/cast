@@ -1,5 +1,6 @@
 // @flow
 export type Story = {
+  +id: number,
   +username: string,
   +title: string,
   +description: string,
@@ -13,4 +14,11 @@ export type StoriesState = {
   +loading: boolean,
   +timestamp: number,
   +stories: Stories
+};
+
+export type StoryState = {
+  +error: ?string,
+  +loading: boolean,
+  +timestamp: number,
+  +story: Story
 };

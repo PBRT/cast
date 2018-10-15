@@ -30,7 +30,7 @@ app.get("/stories", (req, res) => {
   const dateOrder = req.query.dateOrder;
   const timestamp = req.query.timestamp;
   let SQLQuery;
-  if(req.query.timestamp) {
+  if(req.query.timestamp !== undefined) {
     SQLQuery = `SELECT * FROM stories WHERE timestamp='${timestamp}'`;
   } else {
     SQLQuery = "SELECT * FROM Stories ORDER BY timestamp " + dateOrder;
@@ -42,15 +42,12 @@ app.get("/stories", (req, res) => {
   });
 });
 
-
-// Retrieve only one story
-app.get("/stories/:id", (req, res) => {
-  const timestamp = req.query.timestamp;
-  const SQLQuery = `SELECT * FROM stories WHERE timestamp='${timestamp}'`;
-  // We do the query to the database
-  postgresDriver.query(SQLQuery).then(stories => {
-    // We send it back to the browser
-    res.send(stories);
+// Retrieve 1 story endpoint
+app.get("/stories/:story_id", (req, res) => {
+  const id = req.params.story_id;
+  SQLQuery = `SELECT * FROM stories WHERE id='${id}'`;
+  postgresDriver.query(SQLQuery).then(story => {
+    res.send(story);
   });
 });
 

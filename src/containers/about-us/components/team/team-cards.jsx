@@ -1,5 +1,5 @@
 /* @flow */
-import React, { Component } from "react";
+import React from "react";
 
 import Avatar from '@material-ui/core/Avatar';
 import Card from '@material-ui/core/Card';
@@ -29,7 +29,7 @@ const TeamCard = () => {
               <Typography className="title" color="textSecondary" gutterBottom>
                 {/* Word of the Day */}
               </Typography>
-              <Typography variant="h5" component="h2">
+              <Typography variant="display2" component="h2">
                 {bull}Migro{bull}
               </Typography>
               <Typography className="pos" color="textSecondary">
@@ -53,7 +53,7 @@ const TeamCard = () => {
               <Typography className="title" color="textSecondary" gutterBottom>
                 {/* Word of the Day */}
               </Typography>
-              <Typography variant="h5" component="h2">
+              <Typography variant="display2" component="h2">
                 {bull}Hans{bull}
               </Typography>
               <Typography className="pos" color="textSecondary">

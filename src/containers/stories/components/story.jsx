@@ -1,11 +1,10 @@
 /* @flow */
-// import type { Story as StoryType } from "../stories.type.js";
+import type { Story as StoryType } from "./../stories.type.js";
 
 import moment from "moment";
 import React from "react";
 import PropTypes from 'prop-types';
 import { NavLink } from "react-router-dom";
-import { withStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
@@ -15,6 +14,9 @@ import Typography from '@material-ui/core/Typography';
 
 import "./story.css"
 
+type Props = {
+  story: StoryType,
+};
 
 
 const Story = (props: Props) => {
@@ -36,7 +38,7 @@ const Story = (props: Props) => {
             {props.story.title}
           </Typography>
           <Typography type="caption" component="p">
-            {moment(parseInt(props.story.timestamp)).format("DD-MM-YYYY")}
+            {moment(parseInt(props.story.timestamp, 10)).format("DD-MM-YYYY")}
           </Typography>
           <Typography className="description hideOnMobile" type="subheading" component="p">
             {props.story.description}

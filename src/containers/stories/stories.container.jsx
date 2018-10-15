@@ -1,16 +1,15 @@
 /* @flow */
 import type { State } from "../../state/state.type.js";
 import type { Action } from "./stories.actions.js";
-import type { StoriesState, Story as StoryType } from "./stories.type";
+import type { StoriesState, Story as StoryType } from "./stories.type.js";
 
 import _ from "lodash";
-import PropTypes from 'prop-types';
 import { connect } from "react-redux";
 import React, { Component } from "react";
 import { requestStories } from "./stories.actions.js";
 import Section from "../../components/section/section";
 import Story from "./components/story";
-import SearchField from "./components/search-field"
+import SearchField from "./components/searchField.js"
 
 
 import Button from "@material-ui/core/Button";
@@ -85,10 +84,10 @@ class StoriesContainer extends Component<Props> {
               </Button>
             </div>
           </div>
-          {this.state.currentDisplay && this.state.searchTerm != "" ?
+          {this.state.currentDisplay && this.state.searchTerm !== "" ?
           <Section>
             <div className="cards-container">
-              {this.state.currentDisplay.length == 0 ?
+              {this.state.currentDisplay.length === 0 ?
                <div>No results</div> :
                 this.state.currentDisplay.map((story: StoryType, idx: number ) => (
               <Story key={idx} story={story} />

@@ -1,9 +1,9 @@
 /* @flow */
 import type { State } from "../../state/state.type.js";
-import type { Action } from "./stories.actions.js";
-import type { StoriesState, Story as StoryType } from "./stories.type";
+import type { Action } from "./../stories/actions/stories.actions.js";
+import type { StoriesState, Story as StoryType } from "./../stories/stories.type.js";
 
-import { requestStories } from "./../stories/stories.actions";
+import { requestStories } from "../stories/stories.actions";
 import Section from "../../components/section/section";
 import Story from "./../stories/components/story";
 import HomeButton from "./components/home-button";

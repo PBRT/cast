@@ -10,13 +10,6 @@ export type REQUEST_CREATE_STORY = "REQUEST_CREATE_STORY";
 export type RECEIVE_CREATE_STORY = "RECEIVE_CREATE_STORY";
 export type FAIL_CREATE_STORY = "FAIL_CREATE_STORY";
 
-export type REQUEST_DELETE_STORY = "REQUEST_DELETE_STORY";
-export type RECEIVE_DELETE_STORY = "RECEIVE_DELETE_STORY";
-export type FAIL_DELETE_STORY = "FAIL_DELETE_STORY";
-
-export type REQUEST_ONE_STORY = "REQUEST_ONE_STORY";
-export type RECEIVE_ONE_STORY = "RECEIVE_ONE_STORY";
-export type FAIL_STORY = "FAIL_STORY";
 
 export type Action = {
   type:
@@ -25,17 +18,12 @@ export type Action = {
     | FAIL_STORIES
     | REQUEST_CREATE_STORY
     | RECEIVE_CREATE_STORY
-    | FAIL_CREATE_STORY
-    | REQUEST_DELETE_STORY
-    | RECEIVE_DELETE_STORY
-    | FAIL_DELETE_STORY
-    | REQUEST_ONE_STORY
-    | RECEIVE_ONE_STORY
-    | FAIL_STORY,
+    | FAIL_CREATE_STORY,
   payload?: Stories,
   story?: Object,
   timestamp?: number,
   title?: string,
+  id?: number,
 };
 
 type RequestStories = () => Action;
@@ -44,19 +32,10 @@ export const requestStories: RequestStories = (dateOrder: String) => ({
   dateOrder
 });
 
-export const requestOneStory: RequestStories = (timestamp: number) => ({
-  type: "REQUEST_ONE_STORY",
-  timestamp
-})
-
 type CreateStory = (story: Object) => Action;
 export const createStory: CreateStory = (story: Object) => ({
   type: "REQUEST_CREATE_STORY",
   story
 });
 
-type DeleteStory = (title: String) => Action;
-export const deleteStory: DeleteStory = (title: String) => ({
-  type: "REQUEST_DELETE_STORY",
-  title
-});
+

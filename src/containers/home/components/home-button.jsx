@@ -1,8 +1,8 @@
 /* @flow */
-import type { Story as StoryType } from "../stories.type.js";
+import type { Stories as StoriesType } from "../stories.type.js";
 
 
-import React, { Component } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
 
 import PropTypes from 'prop-types';
@@ -105,6 +105,10 @@ const styles = theme => ({
       path: "/about-us",
     },
   ];
+
+  type Props = {
+    stories: StoriesType,
+  };
 
 
 const HomeButton = (props: Props) => {
