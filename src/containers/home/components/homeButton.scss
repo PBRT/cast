@@ -6,20 +6,19 @@
     flex-wrap: wrap;
     min-width: 300px;
     width: 100%;
-    opacity: 1;
-    :hover {
-        opacity: 0.5;
-    }
+    
     .image {
         position: relative;
         height: 200px;
+        opacity: 1;
         @include bp-mobileOnly {
             width: 100% !important;
             height: 100px;
-        };
+        }
         :hover {
-            
-            opacity: 1.0;
+            .imageBackDrop {
+                opacity: 0.2;
+            }
             .imageMarked {
                 display: none;
             }

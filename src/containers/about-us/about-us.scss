@@ -25,21 +25,6 @@
                 width: 100%;
                 object-fit: cover;
             }
-            h1 {
-                font-size: 50px;
-                color: red;
-                @include bp-mobileOnly {
-                    font-size: 16px;
-                    color: blue;
-                }
-                @include bp-small {
-                    font-size: 16px;
-                    color: blue;
-                }
-                @include bp-medium {
-                    font-size: 1.5em;
-                }
-            }
         }
         .definition {
             text-align: right;
@@ -77,6 +62,7 @@
         width: 70%;
         margin: auto;
         p {
+            margin: 30px 0;
             display: none;
             @include bp-mobileOnly {
                 display: block!important;
@@ -126,7 +112,6 @@ div#slider {
     box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 
                 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 
                 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
-    margin: 35px 0;
     @include bp-mobileOnly {
         height: 12px;
     }

@@ -15,60 +15,53 @@ const TeamCard = () => {
 
   const bull = <span className="bullet">•</span>;
 
-
+  const teamInfos = [
+    {
+      name: "Migro",
+      nickname: "La limace",
+      blur: "Adore les insectes et les shooters",
+      img: "migro.jpg"
+    },
+    {
+      name: "Hans",
+      nickname: "Wildfire",
+      blur: "Adore le champagne",
+      img: "8.jpg"
+    }
+  ]
     return (
-      
-      <div className="member-container" >
-        <Card className="card">
-          <CardContent className="card-content">
+      <div>
 
-            <div className="card-img">
-              <Avatar alt="Mimi" src="migro.jpg" className="avatar bigAvatar" />
-            </div>
-            <div className="card-text">
-              <Typography className="title" color="textSecondary" gutterBottom>
-                {/* Word of the Day */}
-              </Typography>
-              <Typography variant="display2" component="h2">
-                {bull}Migro{bull}
-              </Typography>
-              <Typography className="pos" color="textSecondary">
-                "La limace"
-              </Typography>
-              <Typography component="p" className="hideOnMobile">
-                Adore les insectes et les shooters
-                <br />
-                {'"a benevolent smile"'}
-              </Typography>
-            </div>
-          </CardContent>
-        </Card>
-
-        <Card className="card">
-          <CardContent className="card-content">
-            <div className="card-img">
-              <Avatar alt="Mimi" src="8.jpg" className="avatar bigAvatar" />
-            </div>
-            <div className="card-text">
-              <Typography className="title" color="textSecondary" gutterBottom>
-                {/* Word of the Day */}
-              </Typography>
-              <Typography variant="display2" component="h2">
-                {bull}Hans{bull}
-              </Typography>
-              <Typography className="pos" color="textSecondary">
-                "Wildfire"
-              </Typography>
-              <Typography component="p" className="hideOnMobile">
-                Adore le champagne
-                <br />
-                {'"a benevolent smile"'}
-              </Typography>
-            </div>
-
-          </CardContent>
-        </Card>
+        {teamInfos.map((member, idx) => (
+        <div className="member-container" key={idx}>
+          <Card className="card">
+            <CardContent className="card-content">
+  
+              <div className="card-img">
+                <Avatar alt="Mimi" src={member.img} className="avatar bigAvatar" />
+              </div>
+              <div className="card-text">
+                <Typography className="title" color="textSecondary" gutterBottom>
+                  {/* Word of the Day */}
+                </Typography>
+                <Typography variant="display2" component="h2">
+                  {bull}{member.name}{bull}
+                </Typography>
+                <Typography className="pos hideOnMobile" color="textSecondary">
+                  {member.nickname}
+                </Typography>
+                <Typography component="p" className="hideOnMobile">
+                  {member.blur}
+                  <br />
+                  {'"a benevolent smile"'}
+                </Typography>
+              </div>
+            </CardContent>
+          </Card>
+          </div>
+          ))}
       </div>
+
     );
   };
   

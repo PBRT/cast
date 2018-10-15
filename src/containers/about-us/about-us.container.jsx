@@ -28,7 +28,6 @@ class AboutUsContainer extends Component<Props> {
         <div className="header">
           <div className="head-image-container">
             <img src="south-park.jpg" alt="wouf wouf"/>
-            <h1><b>We love pinard but we want more !</b></h1>
           </div>
 
           <div className="definition hideOnMobile">

@@ -5,6 +5,8 @@ import React from "react";
 import PropTypes from 'prop-types';
 import Typography from '@material-ui/core/Typography';
 
+import "./learnMore.css"
+
 type Props = {
   story: StoryType,
 };
@@ -15,14 +17,17 @@ const StoryPage = (props: Props) => {
   let newStory = story[0];
   console.log(newStory);
   return (
-    <div>
+    <div className="story-page-ctn">
+      <div className="story-page-title">
+        <div className="story-page-img"></div>
+        <Typography gutterBottom variant="headline" component="h1">
+          {props.story.title}
+        </Typography>
+      </div>
       <Typography gutterBottom variant="headline" component="h2">
-        {props.story.title}
+        By: {props.story.username}
       </Typography>
-      <Typography gutterBottom variant="headline" component="h2">
-        {props.story.username}
-      </Typography>
-      <Typography gutterBottom variant="headline" component="h2">
+      <Typography gutterBottom variant="headline" component="p">
         {props.story.description}
       </Typography>
     </div>

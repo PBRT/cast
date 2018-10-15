@@ -36,6 +36,5 @@ html {
     .card-container .card .description {
       margin-top: 8px;
       text-overflow: ellipsis;
-      width: 200px;
       white-space: nowrap;
       overflow: hidden; }

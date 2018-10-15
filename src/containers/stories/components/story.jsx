@@ -22,7 +22,6 @@ type Props = {
 const Story = (props: Props) => {
 
   const { story } = props;
-  console.log(props.params)
 
   return ( 
     <div className="card-container" >

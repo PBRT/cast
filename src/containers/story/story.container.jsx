@@ -37,7 +37,7 @@ class StoryContainer extends Component<Props> {
               <Button>Return to stories</Button>
           </NavLink>
           <Section title="Latest stories" info={{ error, timestamp }} style={{ width: "50%" }}>
-              <div className="cards-container" style={{ display: "flex", margin: "auto", flexWrap: "wrap", overflow: "auto" }}>
+              <div className="cards-container" style={{ margin: "auto" }}>
                 
                 {story.map((story: StoryType, idx: number ) => (
                     <StoryPage key={idx} story={story} />

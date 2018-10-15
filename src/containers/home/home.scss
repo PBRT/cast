@@ -48,10 +48,11 @@
   
 
 .slider-container {
-    width: 75%;
+    width: 95%;
+    
     display: flex;
     margin: auto;
-    overflow: auto;
+    overflow: overlay;
 
 }
 

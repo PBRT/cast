@@ -35,7 +35,7 @@ const images = [
 const HomeButton = () => {
 
   return (
-    <div className="container">
+    <div className="bigButtonsContainer">
     {images.map(image => (
       
       <ButtonBase

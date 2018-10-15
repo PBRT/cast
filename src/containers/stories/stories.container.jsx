@@ -58,7 +58,7 @@ class StoriesContainer extends Component<Props> {
   };
 
   render() {
-
+    
     const { stories: { stories, error, timestamp } } = this.props;
     if(stories.length === 0) {
       return (
@@ -83,8 +83,9 @@ class StoriesContainer extends Component<Props> {
                 Order by Asc
               </Button>
             </div>
+            <div>Stories found: {this.state.currentDisplay.length}</div>
           </div>
-          {this.state.currentDisplay && this.state.searchTerm !== "" ?
+          {this.state.currentDisplay && this.state.searchTerm !== "" && (
           <Section>
             <div className="cards-container">
               {this.state.currentDisplay.length === 0 ?
@@ -93,8 +94,8 @@ class StoriesContainer extends Component<Props> {
               <Story key={idx} story={story} />
               ))}
             </div>
-          </Section> : null
-          }
+          </Section>
+          )}
           <Section title="Latest stories" info={{ error, timestamp }}>
             <div className="cards-container">
               {stories.map((story: StoryType, idx: number ) => (

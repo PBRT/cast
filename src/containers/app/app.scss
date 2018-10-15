@@ -38,17 +38,18 @@
       }
     }
     button {
-      @include bp-medium {
-        font-size: 2em;
-      }
-      @include bp-medium {
-        font-size: 1.5em;
-      }
-      @include bp-small {
+      @include bp-large {
         font-size: 1.2em;
       }
+      @include bp-medium {
+        font-size: 1.2em;
+      }
+      @include bp-small {
+        font-size: 0.8em;
+        display: flex;
+        justify-content: space-evenly;
+      }
       @include bp-mobileOnly {
-        font-size: 1.5em;
         width: 25%;
         background: $primary;
         border-radius: 3px;

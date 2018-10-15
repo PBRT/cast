@@ -87,7 +87,7 @@ const App = (props: Props) => {
                 onMouseOut={() => { hideIcon("home-icon") }}
               >
                 <p className="hideOnMobile" >Home</p>
-                <FontAwesomeIcon className="hideOnMobile" id="home-icon" icon="heart" style={{ display: "none"}}/>
+                <FontAwesomeIcon className="hideOnMobile" id="home-icon" icon="home" style={{ display: "none"}}/>
                 <FontAwesomeIcon className="mobile-icon" icon="home" style={{ display: "none"}}/>
               </Button>
             </NavLink>
@@ -134,7 +134,7 @@ const App = (props: Props) => {
               >
                 <p className="hideOnMobile">About us</p>
                 <FontAwesomeIcon className="hideOnMobile" id="about-us-icon" icon="heart" style={{ display: "none"}}/>
-                <FontAwesomeIcon className="mobile-icon" icon="plus" style={{ display: "none"}}/>
+                <FontAwesomeIcon className="mobile-icon" icon="heart" style={{ display: "none"}}/>
               </Button>
             </NavLink>
           </div>

@@ -33,7 +33,6 @@
         margin: auto;
         .textField {
             width: 60%;
-            color: red;
             @include bp-medium {
                 width: 100%;
             }

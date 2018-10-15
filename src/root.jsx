@@ -21,31 +21,11 @@ const Root = (props: Props) => (
     <Router>
       <App>
         <Switch>
-          <Route 
-            exact path="/" 
-            render={(props) => (
-              <Home history={props.history} />
-            )} />
-          <Route 
-            exact path="/stories" 
-            render={(props) => (
-              <Stories history={props.history} />
-            )} />
-          <Route 
-            exact path="/create-story" 
-            render={(props) => (
-              <CreateStory history={props.history} />
-            )} /> />
-          <Route 
-            exact path="/about-us" 
-            render={(props) => (
-              <AboutUsContainer history={props.history} />
-            )} />
-          <Route 
-            exact path="/stories/:id" 
-            render={(props) => (
-              <StoryContainer history={props.history} />
-            )} />
+          <Route exact path="/" component={Home} />
+          <Route exact path="/stories" component={Stories} />
+          <Route exact path="/create-story" component={CreateStory} />
+          <Route exact path="/about-us" component={AboutUsContainer} />
+          <Route exact path="/stories/:id" component={StoryContainer} />
           <Route
             component={() => (
               <div style={{ textAlign: "center" }}>
