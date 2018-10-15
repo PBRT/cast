@@ -11,45 +11,32 @@ html {
 @mixin bp-mobileOnly {
   //ONLY for small screns
   //480px
-  @media only screen and (max-width: 30em) {
+  @media only screen and (max-width: 480px) {
     @content;
   }
 }
 
-@mixin bp-sm {
+@mixin bp-small {
   //480px
-  @media only screen and (min-width: 30em) {
+  @media only screen and (min-width: 481px) and (max-width: 767px) {
     @content;
   }
 }
 
-@mixin bp-md {
+@mixin bp-medium {
   //640px
-  @media only screen and (min-width: 40em) {
+  @media only screen and (min-width: 768px) and (max-width: 1024px) {
     @content;
   }
 }
 
-@mixin bp-lg {
+@mixin bp-large {
   //960px
-  @media only screen and (min-width: 60em) {
+  @media only screen and (min-width: 1025px) and (max-width: 1280px) {
     @content;
   }
 }
 
-@mixin bp-xl {
-  //1280px
-  @media only screen and (min-width: 80em) {
-    @content;
-  }
-}
-
-@mixin bp-xxl {
-  //1600px
-  @media only screen and (min-width: 100em) {
-    @content;
-  }
-}
 
 @mixin printQuery {
   @media print {

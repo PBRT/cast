@@ -1,0 +1,54 @@
+/*Utils*/
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+/*Media Queries*/
+/*Transitions*/
+.search-container {
+  width: 50%;
+  border-radius: 10;
+  border: 2px solid #fa983a;
+  margin: auto;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-around;
+  box-shadow: -1px 9px 16px -8px rgba(0, 0, 0, 0.75);
+  color: black; }
+  @media only screen and (max-width: 480px) {
+    .search-container {
+      width: 100%; } }
+  .search-container h3 {
+    margin: auto;
+    padding-left: 25px;
+    width: 40%; }
+    @media only screen and (min-width: 768px) and (max-width: 1024px) {
+      .search-container h3 {
+        display: none; } }
+    @media only screen and (min-width: 481px) and (max-width: 767px) {
+      .search-container h3 {
+        display: none; } }
+    @media only screen and (max-width: 480px) {
+      .search-container h3 {
+        display: none; } }
+  .search-container .textfield-container {
+    width: 60%;
+    margin: auto; }
+    .search-container .textfield-container .textField {
+      width: 60%;
+      color: red; }
+      @media only screen and (min-width: 768px) and (max-width: 1024px) {
+        .search-container .textfield-container .textField {
+          width: 100%; } }
+      @media only screen and (min-width: 481px) and (max-width: 767px) {
+        .search-container .textfield-container .textField {
+          width: 100%; } }
+      @media only screen and (max-width: 480px) {
+        .search-container .textfield-container .textField {
+          width: 100%; } }
+  .search-container .search-icon {
+    width: 100px;
+    margin: auto;
+    margin-right: 20px; }

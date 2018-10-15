@@ -1,3 +1,12 @@
+/*Utils*/
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+/*Media Queries*/
+/*Transitions*/
 @keyframes slidy {
   0% {
     left: 0%; }
@@ -18,61 +27,51 @@
   100% {
     left: -400%; } }
 
-.header .head-image-container {
+.container .header {
   text-align: center; }
-  .header .head-image-container img {
+  .container .header .head-image-container img {
     width: 100%; }
-  .header .head-image-container h1 {
+  .container .header .head-image-container h1 {
     font-size: 24px;
     color: red; }
+  .container .header .definition {
+    text-align: right;
+    margin: 75px 16px 0 0; }
+    .container .header .definition p {
+      font-size: 12px;
+      color: black; }
+      .container .header .definition p a {
+        color: orange;
+        text-decoration: none; }
 
-.header .definition {
-  text-align: right;
-  margin: 75px 16px 0 0; }
-  .header .definition p {
-    font-size: 12px;
-    color: black; }
-    .header .definition p a {
-      color: orange;
-      text-decoration: none; }
-
-.top-resume {
-  margin: auto;
-  align-items: center;
+.container .top-resume {
+  margin: 25;
   text-align: center; }
-  .top-resume .text-resume {
+  .container .top-resume .text-resume {
     width: 60%;
-    margin: auto;
     padding: 25px;
-    text-align: center;
-    margin: 50px 0;
-    border: 2px solid #fa983a;
-    justify-content: center; }
+    margin: auto;
+    border: 5px solid #e5760d;
+    border-radius: 20px;
+    font-size: 200%; }
+    @media only screen and (min-width: 481px) and (max-width: 767px) {
+      .container .top-resume .text-resume {
+        font-size: 1em; } }
+    @media only screen and (min-width: 768px) and (max-width: 1024px) {
+      .container .top-resume .text-resume {
+        font-size: 1.5em; } }
+    @media only screen and (max-width: 480px) {
+      .container .top-resume .text-resume .mobile-only {
+        display: block !important; } }
 
 .team-resume .member-container {
   text-align: center;
   display: flex;
-  margin-left: 150px; }
-  .team-resume .member-container .member-card {
-    text-align: "center";
-    display: flex;
-    margin: 100px 50px;
-    padding-left: 100px;
-    border: 1px solid black; }
-    .team-resume .member-container .member-card .member-img {
-      text-align: "center";
-      height: 200px;
-      width: 200px; }
-      .team-resume .member-container .member-card .member-img img {
-        height: 200px;
-        width: 200px;
-        overflow: hidden;
-        border-radius: 50%;
-        margin-bottom: 150px; }
-    .team-resume .member-container .member-card .member-description {
-      text-align: center;
-      height: 200px;
-      width: 200px; }
+  margin: auto;
+  max-width: 80%;
+  width: 75%;
+  justify-content: center;
+  flex-wrap: wrap; }
 
 div#slider {
   width: 100%;

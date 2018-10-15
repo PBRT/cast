@@ -1,3 +1,6 @@
+@import "../../style/variables.scss";
+@import "../../style/mixins.scss";
+
 @keyframes slidy {
     0% { left: 0%; }
     20% { left: 0%; }
@@ -12,81 +15,65 @@
 
 
 
-
-
-
-.header {
-    .head-image-container {
+.container {
+    .header {
         text-align: center;
-        img {
-            width: 100%;
+        .head-image-container {
+            img {
+                width: 100%;
+            }
+            h1 {
+                font-size: 24px;
+                color: red;
+            }
         }
-        h1 {
-            font-size: 24px;
-            color: red;
+        .definition {
+            text-align: right;
+            margin: 75px 16px 0 0;
+            p {
+                font-size: 12px;
+                color: black;
+                a {
+                    color: orange;
+                    text-decoration: none;
+                }
+            }
         }
     }
-    .definition {
-        text-align: right;
-        margin: 75px 16px 0 0;
-        p {
-            font-size: 12px;
-            color: black;
-            a {
-                color: orange;
-                text-decoration: none;
+    .top-resume {
+        margin: 25;
+        text-align: center;
+        .text-resume {
+            width: 60%;
+            padding: 25px;
+            margin: auto;
+            border: 5px solid $primaryDark;
+            border-radius: 20px;
+            font-size: 200%;
+            @include bp-small {
+                font-size: 1em;
+            }
+            @include bp-medium {
+                font-size: 1.5em;
+            }
+            .mobile-only {
+                @include bp-mobileOnly {
+                    display: block !important;
+                }
             }
         }
     }
 }
-
-
-.top-resume {
-    margin: auto;
-    align-items: center;
-    text-align: center;
-    .text-resume {
-        width: 60%;
-        margin: auto;
-        padding: 25px;
-        text-align: center;
-        margin: 50px 0;
-        border: 2px solid #fa983a;
-        justify-content: center;
-    }
-}
-
 
 .team-resume {
     .member-container {
         text-align: center;
         display: flex;
-        margin-left: 150px;
-    
-        .member-card  {
-            text-align: "center";
-            display: flex;
-            margin: 100px 50px;
-            padding-left: 100px;
-            border: 1px solid black;
-            .member-img {
-                text-align: "center";
-                height: 200px;
-                width: 200px;
-                img {
-                    height: 200px;
-                    width: 200px;
-                    overflow: hidden;
-                    border-radius: 50%;
-                    margin-bottom: 150px;
-                }
-            }
-            .member-description {
-                text-align: center;
-                height: 200px;
-                width: 200px;
-            }
-        }
+        margin: auto;
+        max-width: 80%;
+        width: 75%;
+        justify-content: center;
+        flex-wrap: wrap;
     }
 }
 

@@ -1,5 +1,14 @@
 
 @import "../../style/variables.scss";
+@import "../../style/mixins.scss";
+
+
+
+.App {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
 
 .nav-link {
   text-decoration: none;
@@ -7,16 +16,41 @@
 }
 
 .navbar-color {
-  background-color: $primary !important;
+  background-color: $primaryDark !important;
 }
 
 .navbar-container {
+  width: 100%;
   display: flex;
-  padding: 0 12px;
+  padding: 10;
+  @include bp-small {
+    justify-content: space-evenly;
+  }
+  @include bp-mobileOnly {
+    justify-content: space-evenly;
+    }
+  
   .btn-container {
-    justify-content: space-between;
-    .story {
-      color: red !important;
+    @include bp-mobileOnly {
+      width: 25%;
+      .mobile-icon{
+        display: block !important;
+      }
+    }
+    button {
+      @include bp-medium {
+        font-size: 2em;
+      }
+      @include bp-medium {
+        font-size: 1.5em;
+      }
+      @include bp-small {
+        font-size: 1.2em;
+      }
+      @include bp-mobileOnly {
+        font-size: 1.5em;
+        width: 25%;
+      }
     }
   }
 }

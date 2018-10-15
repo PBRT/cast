@@ -1,24 +1,31 @@
 /* @flow */
 
 import React from "react";
+
+import { NavLink } from "react-router-dom";
 import PropTypes from 'prop-types';
+
 
 import { withStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import AppBar from "@material-ui/core/AppBar";
-import { NavLink } from "react-router-dom";
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
 import { faSwatchbook } from '@fortawesome/free-solid-svg-icons'
 import { faPlusCircle } from '@fortawesome/free-solid-svg-icons'
-
+import { faHome } from '@fortawesome/free-solid-svg-icons'
+import { faBible } from '@fortawesome/free-solid-svg-icons'
+import { faPlus } from '@fortawesome/free-solid-svg-icons'
 import "./app.css";
 
 library.add(faHeart);
 library.add(faSwatchbook);
 library.add(faPlusCircle);
+library.add(faHome);
+library.add(faBible);
+library.add(faPlus);
 
 const styles = {
   root: {
@@ -53,15 +60,15 @@ const App = (props: Props) => {
   };
 
   const hideIcon = (icon) => {
-    document.getElementById(icon).style.display="none"
+    document.getElementById(icon).style.display="none";
   };
 
   return (
     <div className="App">
       <AppBar
         position="static"
-        color="primary"
-        style={{ marginBottom: 16, padding: 8 }}
+
+        
         classes={{
           colorPrimary: "navbar-color"
         }}
@@ -70,7 +77,7 @@ const App = (props: Props) => {
           <div className="btn-container">
             <NavLink className="nav-link" to="/">
               <Button 
-                className={classes.button}  
+                className="" 
                 type="subheading" 
                 color="inherit" 
                 classes={{
@@ -79,9 +86,10 @@ const App = (props: Props) => {
                 }} 
                 onMouseOver={() => { showIcon("home-icon") }}
                 onMouseOut={() => { hideIcon("home-icon") }}
-                 >
-                Home
-                <FontAwesomeIcon id="home-icon" icon="heart" style={{ display: "none"}}/> 
+              >
+                <p className="hideOnMobile" >Home</p>
+                <FontAwesomeIcon className="hideOnMobile" id="home-icon" icon="heart" style={{ display: "none"}}/>
+                <FontAwesomeIcon className="mobile-icon" icon="home" style={{ display: "none"}}/>
               </Button>
             </NavLink>
           </div>
@@ -99,8 +107,9 @@ const App = (props: Props) => {
                 onMouseOver={() => { showIcon("story-icon") }}
                 onMouseOut={() => { hideIcon("story-icon") }}
               >
-                Stories
-                <FontAwesomeIcon id="story-icon" icon="swatchbook" style={{ display: "none"}}/>
+                <p className="hideOnMobile" >Stories</p>
+                <FontAwesomeIcon className="hideOnMobile" id="story-icon" icon="swatchbook" style={{ display: "none"}}/>
+                <FontAwesomeIcon className="mobile-icon" icon="bible" style={{ display: "none"}}/>
               </Button>
             </NavLink>
           </div>
@@ -117,8 +126,9 @@ const App = (props: Props) => {
                 onMouseOver={() => { showIcon("create-story-icon") }}
                 onMouseOut={() => { hideIcon("create-story-icon") }}
               >
-                Create story
-                <FontAwesomeIcon id="create-story-icon" icon="plus-circle" style={{ display: "none"}}/>
+                <p className="hideOnMobile">Create story</p>
+                <FontAwesomeIcon className="hideOnMobile" id="create-story-icon" icon="plus-circle" style={{ display: "none"}}/>
+                <FontAwesomeIcon className="mobile-icon" icon="plus" style={{ display: "none"}}/>
               </Button>
             </NavLink>
           </div>
@@ -135,12 +145,13 @@ const App = (props: Props) => {
                 onMouseOver={() => { showIcon("about-us-icon") }}
                 onMouseOut={() => { hideIcon("about-us-icon") }}
               >
-                About us
-                <FontAwesomeIcon id="about-us-icon" icon="heart" style={{ display: "none"}}/>
+                <p className="hideOnMobile">About us</p>
+                <FontAwesomeIcon className="hideOnMobile" id="about-us-icon" icon="heart" style={{ display: "none"}}/>
+                <FontAwesomeIcon className="mobile-icon" icon="plus" style={{ display: "none"}}/>
               </Button>
             </NavLink>
           </div>
-
+          
         </div>
       </AppBar>
       {props.children}

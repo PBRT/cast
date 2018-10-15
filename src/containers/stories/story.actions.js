@@ -11,12 +11,12 @@ export type FAIL_DELETE_STORY = "FAIL_DELETE_STORY";
 
 export type Action = {
     type:
-      | REQUEST_DELETE_STORY
-      | RECEIVE_DELETE_STORY
-      | FAIL_DELETE_STORY
       | REQUEST_ONE_STORY
       | RECEIVE_ONE_STORY
-      | FAIL_STORY,
+      | FAIL_STORY
+      | REQUEST_DELETE_STORY
+      | RECEIVE_DELETE_STORY
+      | FAIL_DELETE_STORY,
     payload?: Story,
     story?: Object,
     timestamp?: number,

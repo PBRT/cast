@@ -69,7 +69,6 @@ export const stories: StoriesReducer = (
         error: "FAIL",
         loading: false
       };
-    
 
     default:
       return state;
