@@ -19,6 +19,9 @@
     .header {
         text-align: center;
         width: 100%;
+        @include bp-mobileOnly {
+            width: 100%;
+        }
         .head-image-container {
             
             img {
@@ -45,7 +48,7 @@
         .text-resume {
             width: 60%;
             padding: 25px;
-            margin: auto;
+            margin: 50px auto;
             border: 5px solid $primaryDark;
             border-radius: 20px;
             font-size: 200%;
@@ -72,15 +75,8 @@
 }
 
 .team-resume {
-    .member-container {
-        text-align: center;
-        display: flex;
-        margin: auto;
-        max-width: 80%;
-        width: 75%;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
+    display: flex;
+    justify-content: center
 }
 
 

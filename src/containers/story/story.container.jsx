@@ -31,19 +31,17 @@ class StoryContainer extends Component<Props> {
       )
     } else {
       return (
-        <div>
+        <div className="story-page-ctn">
           <NavLink to="/stories">
-
               <Button>Return to stories</Button>
           </NavLink>
-          <Section title="Latest stories" info={{ error, timestamp }} style={{ width: "50%" }}>
-              <div className="cards-container" style={{ display: "flex", margin: "auto", flexWrap: "wrap", overflow: "auto" }}>
-                
-                {story.map((story: StoryType, idx: number ) => (
-                    <StoryPage key={idx} story={story} />
-                ))}
-              </div>
-            </Section>
+          <Section title="Latest stories" info={{ error, timestamp }}>
+            <div >              
+              {story.map((story: StoryType, idx: number ) => (
+                  <StoryPage key={idx} story={story} />
+              ))}
+            </div>
+          </Section>
         </div>
       );
     }

@@ -30,21 +30,22 @@ const TeamCard = () => {
     }
   ]
     return (
-      <div>
+      <div className="team-ctn">
 
         {teamInfos.map((member, idx) => (
         <div className="member-container" key={idx}>
           <Card className="card">
             <CardContent className="card-content">
   
-              <div className="card-img">
+              <div className="card-img" >
                 <Avatar alt="Mimi" src={member.img} className="avatar bigAvatar" />
+
               </div>
               <div className="card-text">
                 <Typography className="title" color="textSecondary" gutterBottom>
                   {/* Word of the Day */}
                 </Typography>
-                <Typography variant="display2" component="h2">
+                <Typography variant="display2" component="h2" className="hideOnMobile">
                   {bull}{member.name}{bull}
                 </Typography>
                 <Typography className="pos hideOnMobile" color="textSecondary">

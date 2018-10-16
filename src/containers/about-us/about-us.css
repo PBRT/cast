@@ -30,6 +30,9 @@ html {
 .container .header {
   text-align: center;
   width: 100%; }
+  @media only screen and (max-width: 480px) {
+    .container .header {
+      width: 100%; } }
   .container .header .head-image-container img {
     width: 100%;
     object-fit: cover; }
@@ -49,7 +52,7 @@ html {
   .container .top-resume .text-resume {
     width: 60%;
     padding: 25px;
-    margin: auto;
+    margin: 50px auto;
     border: 5px solid #e5760d;
     border-radius: 20px;
     font-size: 200%; }
@@ -70,14 +73,9 @@ html {
       .container .mobile-only p {
         display: block !important; } }
 
-.team-resume .member-container {
-  text-align: center;
+.team-resume {
   display: flex;
-  margin: auto;
-  max-width: 80%;
-  width: 75%;
-  justify-content: center;
-  flex-wrap: wrap; }
+  justify-content: center; }
 
 div#slider {
   width: 100%;

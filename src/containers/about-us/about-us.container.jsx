@@ -21,6 +21,8 @@ class AboutUsContainer extends Component<Props> {
     window.scrollTo(0, 0);
   };
 
+
+
   render() {
     return (
       <div className="container">
@@ -48,11 +50,11 @@ class AboutUsContainer extends Component<Props> {
         <div className="mobile-only">
           <p style={{ display: "none" }}>Proin vel eros a dolor aliquam placerat id at turpis.</p>
         </div>
+          <div className="separation-bar"></div>
         <div className="team-resume">          
-          <div className="separation-bar"></div>
             <TeamCard/>
-          <div className="separation-bar"></div>
         </div>
+          <div className="separation-bar"></div>
 
       </div>
     )

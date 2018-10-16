@@ -3,57 +3,69 @@
 
 
 
-
-.member-container {
-    .card {
-        min-width: 275px;
+.team-ctn {
+    display: flex;
+    @include bp-mobileOnly {
+        display: block;
+    }
+    .member-container {
         text-align: center;
-        margin: 15px;
-        background-color: $primaryLight;
-        @include bp-mobileOnly {
-            height: 100px;
-        }
-        .card-content {
-            padding-top: 7.5px!important;
+        display: flex;
+        margin: auto;
+        max-width: 100%;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        .card {
+            min-width: 275px;
+            text-align: center;
+            margin: 15px;
+            background-color: $primaryLight;
             @include bp-mobileOnly {
-                display: flex;
+                height: 100px;
             }
-            .card-text {
-                width: 100%;
-                p {
-                    @include bp-mobileOnly {
-                        font-size: 24px;
+            .card-content {
+                padding-top: 7.5px!important;
+                @include bp-mobileOnly {
+                    display: flex;
+                }
+                .card-text {
+                    width: 100%;
+                    p {
+                        @include bp-mobileOnly {
+                            font-size: 24px;
+                        }
+                    }
+                    .title {
+                        font-size: 14px;
+                        @include bp-mobileOnly {
+                            font-size: 36px;
+                        }
+                    }
+                    .pos {
+                        margin-bottom: 12px;
+                        @include bp-mobileOnly {
+                            margin-bottom: 0;
+                        }
+                    }
+                    .bullet {
+                        display: inline-block;
+                        margin: 0px 2px;
+                        transform: scale(0.8);
                     }
                 }
-                .title {
-                    font-size: 14px;
-                    @include bp-mobileOnly {
-                        font-size: 36px;
+                .card-img {
+                    .avatar {
+                        margin-bottom: 15px;
                     }
-                }
-                .pos {
-                    margin-bottom: 12px;
-                    @include bp-mobileOnly {
-                        margin-bottom: 0;
-                    }
-                }
-                .bullet {
-                    display: inline-block;
-                    margin: 0px 2px;
-                    transform: scale(0.8);
-                }
-            }
-            .card-img {
-                .avatar {
-                    margin-bottom: 15px;
-                }
-                .bigAvatar {
-                    width: 200px;
-                    height: 200px;
-                    margin: auto;
-                    @include bp-mobileOnly {
-                        width: 85px;
-                        height: 85px;
+                    .bigAvatar {
+                        width: 200px;
+                        height: 200px;
+                        margin: auto;
+                        @include bp-mobileOnly {
+                            width: 85px;
+                            height: 85px;
+                        }
                     }
                 }
             }
