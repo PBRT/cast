@@ -18,12 +18,12 @@
             background-color: $white;
             box-shadow: none;
             @include bp-mobileOnly {
-                height: 100px;
-                width: 115px;
+                height: 100%;
+                width: 100%;
                 min-width: 95px;
             }
             .card-content {
-                padding-top: 7.5px!important;
+                margin: auto;
                 border: none!important;
                 @include bp-mobileOnly {
                     display: flex;
@@ -63,8 +63,8 @@
                         height: 200px;
                         margin: auto;
                         @include bp-mobileOnly {
-                            width: 85px;
-                            height: 85px;
+                            width: 100px;
+                            height: 100px;
                         }
                     }
                     .onMobile {

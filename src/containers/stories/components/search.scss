@@ -11,12 +11,16 @@
     justify-content: space-around;
     box-shadow: -1px 9px 16px -8px rgba(0,0,0,0.75);
     color: black;
+    @include bp-small {
+        width: 100%;
+        position: sticky;
+    }
     @include bp-mobileOnly {
         width: 100%;
+        position: sticky;
     }
     h3 {
         margin: auto;
-        padding-left: 25px;
         width: 40%;
         @include bp-medium {
             display: none;
@@ -30,9 +34,20 @@
     }
     .textfield-container {
         width: 60%;
-        margin: auto;
+        margin: 25px;
+        @include bp-medium {
+            margin: 15px;
+        }
+        @include bp-small {
+            margin: 5px;
+        }
+        @include bp-mobileOnly {
+            margin: 5px;
+        }
         .textField {
-            width: 60%;
+            width: 100%;
+            margin: auto;
+
             @include bp-medium {
                 width: 100%;
             }

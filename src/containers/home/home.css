@@ -22,7 +22,7 @@ html {
   box-shadow: -1px 9px 16px -8px rgba(0, 0, 0, 0.75); }
   @media only screen and (max-width: 480px) {
     .home-header {
-      height: 150px; } }
+      height: 200px; } }
   .home-header h1 {
     padding-top: 75px; }
     @media only screen and (min-width: 768px) and (max-width: 1024px) {
@@ -34,7 +34,7 @@ html {
     @media only screen and (max-width: 480px) {
       .home-header h1 {
         font-size: 1.2em;
-        padding-top: 30px; } }
+        padding-top: 100px; } }
   .home-header h2 {
     padding-top: 75px; }
     @media only screen and (min-width: 768px) and (max-width: 1024px) {
@@ -51,7 +51,7 @@ html {
 .slider-container {
   width: 70%;
   display: flex;
-  margin: auto;
+  margin: 50px auto;
   overflow: overlay; }
   @media only screen and (max-width: 480px) {
     .slider-container {

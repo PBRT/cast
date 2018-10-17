@@ -11,16 +11,24 @@ html {
   width: 400px;
   min-width: 250px;
   height: 100%;
-  margin: auto;
+  margin: 50px auto;
   padding: 0px 10px; }
   @media only screen and (max-width: 480px) {
     .card-container {
       width: 100%;
       min-width: 150px;
       height: 100%;
-      padding-bottom: 10px; } }
+      padding-bottom: 10px;
+      margin: 10px auto; } }
   .card-container .card {
     width: 100%; }
+    .card-container .card:hover {
+      -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+      -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+      -webkit-transform: scale(1.1);
+      -moz-transform: scale(1.1);
+      transform: scale(1.1); }
     .card-container .card h2 {
       text-overflow: ellipsis;
       white-space: nowrap;

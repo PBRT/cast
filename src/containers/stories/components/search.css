@@ -17,12 +17,16 @@ html {
   justify-content: space-around;
   box-shadow: -1px 9px 16px -8px rgba(0, 0, 0, 0.75);
   color: black; }
+  @media only screen and (min-width: 481px) and (max-width: 767px) {
+    .search-container {
+      width: 100%;
+      position: sticky; } }
   @media only screen and (max-width: 480px) {
     .search-container {
-      width: 100%; } }
+      width: 100%;
+      position: sticky; } }
   .search-container h3 {
     margin: auto;
-    padding-left: 25px;
     width: 40%; }
     @media only screen and (min-width: 768px) and (max-width: 1024px) {
       .search-container h3 {
@@ -35,9 +39,19 @@ html {
         display: none; } }
   .search-container .textfield-container {
     width: 60%;
-    margin: auto; }
+    margin: 25px; }
+    @media only screen and (min-width: 768px) and (max-width: 1024px) {
+      .search-container .textfield-container {
+        margin: 15px; } }
+    @media only screen and (min-width: 481px) and (max-width: 767px) {
+      .search-container .textfield-container {
+        margin: 5px; } }
+    @media only screen and (max-width: 480px) {
+      .search-container .textfield-container {
+        margin: 5px; } }
     .search-container .textfield-container .textField {
-      width: 60%; }
+      width: 100%;
+      margin: auto; }
       @media only screen and (min-width: 768px) and (max-width: 1024px) {
         .search-container .textfield-container .textField {
           width: 100%; } }

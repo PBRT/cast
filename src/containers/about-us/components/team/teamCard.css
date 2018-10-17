@@ -25,11 +25,11 @@ html {
       box-shadow: none; }
       @media only screen and (max-width: 480px) {
         .team-ctn .member-container .card {
-          height: 100px;
-          width: 115px;
+          height: 100%;
+          width: 100%;
           min-width: 95px; } }
       .team-ctn .member-container .card .card-content {
-        padding-top: 7.5px !important;
+        margin: auto;
         border: none !important; }
         @media only screen and (max-width: 480px) {
           .team-ctn .member-container .card .card-content {
@@ -61,8 +61,8 @@ html {
           margin: auto; }
           @media only screen and (max-width: 480px) {
             .team-ctn .member-container .card .card-content .card-img .bigAvatar {
-              width: 85px;
-              height: 85px; } }
+              width: 100px;
+              height: 100px; } }
         .team-ctn .member-container .card .card-content .card-img .onMobile {
           display: none; }
           @media only screen and (max-width: 480px) {

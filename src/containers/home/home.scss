@@ -16,7 +16,7 @@
     -moz-box-shadow: -1px 9px 16px -8px rgba(0,0,0,0.75);
     box-shadow: -1px 9px 16px -8px rgba(0,0,0,0.75);
     @include bp-mobileOnly {
-        height: 150px;
+        height: 200px;
     }
     h1 {
         padding-top: 75px;
@@ -28,7 +28,7 @@
           }
         @include bp-mobileOnly {
             font-size: 1.2em;
-            padding-top: 30px;
+            padding-top: 100px;
         }
     }
     h2 {
@@ -50,7 +50,7 @@
 .slider-container {
     width: 70%;
     display: flex;
-    margin: auto;
+    margin: 50px auto;
     overflow: overlay;
     @include bp-mobileOnly {
         width: 95%;

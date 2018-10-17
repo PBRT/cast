@@ -11,7 +11,7 @@
     -moz-box-shadow: -1px 9px 16px -8px rgba(0,0,0,0.75);
     box-shadow: -1px 9px 16px -8px rgba(0,0,0,0.75);
     @include bp-mobileOnly {
-        height: 150px;
+        height: 200px;
     }
     h1 {
         padding-top: 100px;
@@ -26,11 +26,12 @@
           }
         @include bp-mobileOnly {
             font-size: 2em;
-            padding-top: 60px;
+            padding-top: 100px;
             margin-bottom: 45px;
         }
     }
 }
+
 
 .btn-filter {
     padding-top: 100px;
