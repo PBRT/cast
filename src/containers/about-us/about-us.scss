@@ -70,13 +70,17 @@
             @include bp-mobileOnly {
                 display: block!important;
             }
+            @include bp-small {
+                display: block!important;
+            }
         }
     }
 }
 
 .team-resume {
     display: flex;
-    justify-content: center
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 

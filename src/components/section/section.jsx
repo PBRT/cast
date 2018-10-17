@@ -18,8 +18,8 @@ type Props = {
 const Section = (props: Props) => {
   const { title, info, children } = props;
   return (
-    <div style={{ margin: "20px 0px" }}>
-      <div style={{ padding: "20px 20px 30px" }}>
+    <div className="section-ctn">
+      <div className="section-header">
         <div style={{ marginBottom: 20 }}>
           <Typography type="title" color="inherit" align="center">
             {title}

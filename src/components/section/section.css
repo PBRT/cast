@@ -1,3 +1,20 @@
-.color-secondary {
-  color: green !important;
-}
+/*Utils*/
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+/*Media Queries*/
+/*Transitions*/
+.section-ctn {
+  width: 70%;
+  margin: auto; }
+  @media only screen and (min-width: 481px) and (max-width: 767px) {
+    .section-ctn {
+      width: 90%; } }
+  @media only screen and (max-width: 480px) {
+    .section-ctn {
+      width: 95%; } }
+  .section-ctn .section-header {
+    padding: 20px 20px 30px; }

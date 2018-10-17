@@ -1,0 +1,16 @@
+@import "../../style/variables.scss";
+@import "../../style/mixins.scss";
+
+.section-ctn {
+    width: 70%;
+    margin: auto;
+    @include bp-small {
+        width: 90%;
+    }
+    @include bp-mobileOnly {
+        width: 95%;
+    }
+    .section-header {
+        padding: 20px 20px 30px;
+    }
+}

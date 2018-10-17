@@ -5,6 +5,7 @@ import moment from "moment";
 import React from "react";
 import PropTypes from 'prop-types';
 import { NavLink } from "react-router-dom";
+
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
@@ -25,7 +26,6 @@ const Story = (props: Props) => {
 
   return ( 
     <div className="card-container" >
-    <div className="storyPageOnly">
       <Card className="card" >
         <NavLink to={`stories/${story.id}`} >
           <CardMedia
@@ -62,7 +62,6 @@ const Story = (props: Props) => {
 
         </CardActions>
       </Card>
-      </div>
     </div>
   );
 }

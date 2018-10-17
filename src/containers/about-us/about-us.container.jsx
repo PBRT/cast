@@ -42,13 +42,13 @@ class AboutUsContainer extends Component<Props> {
         
         <div className="top-resume hideOnMobile">
           <div className="text-resume ">
-            <p>Proin vel eros a dolor aliquam placerat id at turpis. Sed facilisis et neque quis varius. Aliquam convallis nulla et pharetra cursus. Cras elementum nec quam quis pellentesque. Nunc molestie arcu dui, vel pellentesque nisi hendrerit ac. In a commodo est. Quisque ac ante arcu. Morbi maximus magna non purus condimentum iaculis. Nulla ultricies nec erat in pretium. Phasellus pharetra libero a libero ultricies, id faucibus mauris maximus. Donec consequat feugiat dolor. Morbi pretium gravida lacus sit amet tempor. Donec vel semper felis.</p>
+            <p>Ta ‘sta én bouno santat, hè coumo ét médéci, bébé bi !</p>
           </div>
           
           {/* <ImageSlider/>  */}
         </div>
         <div className="mobile-only">
-          <p style={{ display: "none" }}>Proin vel eros a dolor aliquam placerat id at turpis.</p>
+          <p style={{ display: "none" }}>Baù més ana croumpa bi qu’ ana t’at apouticayre !</p>
         </div>
           <div className="separation-bar"></div>
         <div className="team-resume">          

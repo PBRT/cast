@@ -1,13 +1,8 @@
 @import "../../../../style/variables.scss";
 @import "../../../../style/mixins.scss";
 
-
-
 .team-ctn {
     display: flex;
-    @include bp-mobileOnly {
-        display: block;
-    }
     .member-container {
         text-align: center;
         display: flex;
@@ -20,14 +15,19 @@
             min-width: 275px;
             text-align: center;
             margin: 15px;
-            background-color: $primaryLight;
+            background-color: $white;
+            box-shadow: none;
             @include bp-mobileOnly {
                 height: 100px;
+                width: 115px;
+                min-width: 95px;
             }
             .card-content {
                 padding-top: 7.5px!important;
+                border: none!important;
                 @include bp-mobileOnly {
                     display: flex;
+                    
                 }
                 .card-text {
                     width: 100%;
@@ -65,6 +65,27 @@
                         @include bp-mobileOnly {
                             width: 85px;
                             height: 85px;
+                        }
+                    }
+                    .onMobile {
+                        display: none;
+                        @include bp-mobileOnly {
+                            display: block;
+                        }
+                        .popup-content {
+                            text-align: center;
+                            margin: auto;
+                            color: $primaryDarker;
+                            .popup-name {
+                                font-size: 2em;
+                                margin: auto;
+                                padding: 10px;
+                            }
+                            .popup-nickname {
+                                font-size: 1.5em;
+                                margin: auto;
+                                padding: 10px;
+                            }
                         }
                     }
                 }

@@ -9,9 +9,6 @@ html {
 /*Transitions*/
 .team-ctn {
   display: flex; }
-  @media only screen and (max-width: 480px) {
-    .team-ctn {
-      display: block; } }
   .team-ctn .member-container {
     text-align: center;
     display: flex;
@@ -24,12 +21,16 @@ html {
       min-width: 275px;
       text-align: center;
       margin: 15px;
-      background-color: #ffad5f; }
+      background-color: #ffffff;
+      box-shadow: none; }
       @media only screen and (max-width: 480px) {
         .team-ctn .member-container .card {
-          height: 100px; } }
+          height: 100px;
+          width: 115px;
+          min-width: 95px; } }
       .team-ctn .member-container .card .card-content {
-        padding-top: 7.5px !important; }
+        padding-top: 7.5px !important;
+        border: none !important; }
         @media only screen and (max-width: 480px) {
           .team-ctn .member-container .card .card-content {
             display: flex; } }
@@ -62,3 +63,20 @@ html {
             .team-ctn .member-container .card .card-content .card-img .bigAvatar {
               width: 85px;
               height: 85px; } }
+        .team-ctn .member-container .card .card-content .card-img .onMobile {
+          display: none; }
+          @media only screen and (max-width: 480px) {
+            .team-ctn .member-container .card .card-content .card-img .onMobile {
+              display: block; } }
+          .team-ctn .member-container .card .card-content .card-img .onMobile .popup-content {
+            text-align: center;
+            margin: auto;
+            color: #b15804; }
+            .team-ctn .member-container .card .card-content .card-img .onMobile .popup-content .popup-name {
+              font-size: 2em;
+              margin: auto;
+              padding: 10px; }
+            .team-ctn .member-container .card .card-content .card-img .onMobile .popup-content .popup-nickname {
+              font-size: 1.5em;
+              margin: auto;
+              padding: 10px; }

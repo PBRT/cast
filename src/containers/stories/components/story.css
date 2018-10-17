@@ -8,26 +8,35 @@ html {
 /*Media Queries*/
 /*Transitions*/
 .card-container {
-  width: 250px;
+  width: 400px;
   min-width: 250px;
   height: 100%;
   margin: auto;
-  padding: 0px 15px 25px 15px; }
+  padding: 0px 10px; }
   @media only screen and (max-width: 480px) {
     .card-container {
       width: 100%;
       min-width: 150px;
-      max-width: 250px;
       height: 100%;
       padding-bottom: 10px; } }
   .card-container .card {
     width: 100%; }
-    @media only screen and (max-width: 480px) {
-      .card-container .card h2 {
-        font-size: 16px; } }
+    .card-container .card h2 {
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden; }
+      @media only screen and (max-width: 480px) {
+        .card-container .card h2 {
+          font-size: 16px;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden; } }
     @media only screen and (max-width: 480px) {
       .card-container .card p {
-        font-size: 12px; } }
+        font-size: 12px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden; } }
     .card-container .card .media {
       object-fit: cover; }
       @media only screen and (max-width: 480px) {

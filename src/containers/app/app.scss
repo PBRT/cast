@@ -38,6 +38,7 @@
       }
     }
     button {
+      text-transform: none!important;
       @include bp-large {
         font-size: 1.2em;
       }
@@ -51,15 +52,15 @@
       }
       @include bp-mobileOnly {
         width: 25%;
-        background: $primary;
         border-radius: 3px;
         border: 0px;
         color: $white;
         font-size: 24px;
-        height: 4px;
+        height: 60px;
         width: 100%;
         display: flex;
         justify-content: space-evenly;
+        
       }
       p {
         padding-right: 15px;
