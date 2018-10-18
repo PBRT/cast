@@ -1,10 +1,10 @@
 @import "../../../style/variables.scss";
 @import "../../../style/mixins.scss";
 
-.story-page-ctn {
+.learnmore-page-ctn {
     width: 100%;
     border: 2px solid black;
-    .story-page-title {
+    .learnmore-page-title {
         display: flex;
         @include bp-mobileOnly {
             display: unset;
@@ -12,7 +12,7 @@
         @include bp-small {
             display: unset;
         }
-        .story-page-img {
+        .learnmore-page-img {
             width: 50%;
             height: 400px;
             background-color: aqua;

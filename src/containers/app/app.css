@@ -11,51 +11,53 @@ html {
   width: 100%;
   margin: 0;
   padding: 0; }
-
-.nav-link {
-  text-decoration: none;
-  color: #ffffff; }
-
-.navbar-color {
-  background-color: #e5760d !important; }
-
-.navbar-container {
-  width: 100%;
-  display: flex;
-  padding: 10; }
-  @media only screen and (min-width: 481px) and (max-width: 767px) {
-    .navbar-container {
-      justify-content: center; } }
-  @media only screen and (max-width: 480px) {
-    .navbar-container {
-      justify-content: center; } }
-  @media only screen and (max-width: 480px) {
-    .navbar-container .btn-container {
-      width: 25%; }
-      .navbar-container .btn-container .mobile-icon {
-        display: block !important; } }
-  @media only screen and (min-width: 1025px) {
-    .navbar-container .btn-container button {
-      font-size: 1.2em; } }
-  @media only screen and (min-width: 768px) and (max-width: 1024px) {
-    .navbar-container .btn-container button {
-      font-size: 1.2em; } }
-  @media only screen and (min-width: 481px) and (max-width: 767px) {
-    .navbar-container .btn-container button {
-      font-size: 0.8em;
-      display: flex;
-      justify-content: space-evenly; } }
-  @media only screen and (max-width: 480px) {
-    .navbar-container .btn-container button {
-      width: 25%;
-      background: #fa983a;
-      border-radius: 3px;
-      border: 0px;
-      color: #ffffff;
-      font-size: 24px;
-      height: 4px;
+  .App .app-bar {
+    background-color: #e5760d !important; }
+    @media only screen and (max-width: 480px) {
+      .App .app-bar {
+        position: fixed; } }
+    .App .app-bar .navbar-container {
       width: 100%;
       display: flex;
-      justify-content: space-evenly; } }
-  .navbar-container .btn-container button p {
-    padding-right: 15px; }
+      padding: 10; }
+      @media only screen and (min-width: 481px) and (max-width: 767px) {
+        .App .app-bar .navbar-container {
+          justify-content: center; } }
+      @media only screen and (max-width: 480px) {
+        .App .app-bar .navbar-container {
+          justify-content: right;
+          width: 100%; } }
+      @media only screen and (max-width: 480px) {
+        .App .app-bar .navbar-container .btn-container {
+          width: 15%; }
+          .App .app-bar .navbar-container .btn-container .mobile-icon {
+            display: block !important; } }
+      .App .app-bar .navbar-container .btn-container .nav-link {
+        text-decoration: none;
+        color: #ffffff; }
+      .App .app-bar .navbar-container .btn-container button {
+        text-transform: none !important; }
+        @media only screen and (min-width: 1025px) {
+          .App .app-bar .navbar-container .btn-container button {
+            font-size: 1.2em; } }
+        @media only screen and (min-width: 768px) and (max-width: 1024px) {
+          .App .app-bar .navbar-container .btn-container button {
+            font-size: 1.2em; } }
+        @media only screen and (min-width: 481px) and (max-width: 767px) {
+          .App .app-bar .navbar-container .btn-container button {
+            font-size: 0.8em;
+            display: flex;
+            justify-content: space-evenly; } }
+        @media only screen and (max-width: 480px) {
+          .App .app-bar .navbar-container .btn-container button {
+            width: 25%;
+            border-radius: 3px;
+            border: 0px;
+            color: #ffffff;
+            font-size: 24px;
+            height: 60px;
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly; } }
+        .App .app-bar .navbar-container .btn-container button p {
+          padding-right: 15px; }

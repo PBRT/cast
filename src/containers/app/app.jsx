@@ -66,19 +66,11 @@ const App = (props: Props) => {
         position="static"
 
         
-        classes={{
-          colorPrimary: "navbar-color"
-        }}
+        className="app-bar"
       >
         <div className="navbar-container">
           <div className="btn-container">
-            <NavLink 
-              className="nav-link" 
-              to="/" 
-              activeStyle={{
-                fontWeight: "bold",
-                color: "red!important"
-              }}>
+            <NavLink className="nav-link" to="/" >
               <Button 
                 className="" 
                 type="subheading" 

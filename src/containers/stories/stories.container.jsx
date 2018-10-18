@@ -67,7 +67,7 @@ class StoriesContainer extends Component<Props> {
     } else {
       return (
         <div>
-          <div className="story-header">
+          <div className="story-header" onScroll={this.hideItem}>
             <h1 >Search a story</h1>
             <SearchField 
               handlechange={this.onInputChange}

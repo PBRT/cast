@@ -8,61 +8,63 @@
   width: 100%;
   margin: 0;
   padding: 0;
-}
-
-.nav-link {
-  text-decoration: none;
-  color: $white;
-}
-
-.navbar-color {
-  background-color: $primaryDark !important;
-}
-
-.navbar-container {
-  width: 100%;
-  display: flex;
-  padding: 10;
-  @include bp-small {
-    justify-content: center;
-  }
-  @include bp-mobileOnly {
-    justify-content: center;
-    }
-  
-  .btn-container {
+  .app-bar {
+    background-color: $primaryDark !important;
     @include bp-mobileOnly {
-      width: 25%;
-      .mobile-icon{
-        display: block !important;
-      }
+      position: fixed;
     }
-    button {
-      @include bp-large {
-        font-size: 1.2em;
-      }
-      @include bp-medium {
-        font-size: 1.2em;
-      }
+    .navbar-container {
+      width: 100%;
+      display: flex;
+      padding: 10;
       @include bp-small {
-        font-size: 0.8em;
-        display: flex;
-        justify-content: space-evenly;
+        justify-content: center;
       }
       @include bp-mobileOnly {
-        width: 25%;
-        background: $primary;
-        border-radius: 3px;
-        border: 0px;
-        color: $white;
-        font-size: 24px;
-        height: 4px;
+        justify-content: right;
         width: 100%;
-        display: flex;
-        justify-content: space-evenly;
-      }
-      p {
-        padding-right: 15px;
+        }
+      
+      .btn-container {
+        @include bp-mobileOnly {
+          width: 15%;
+          .mobile-icon{
+            display: block !important;
+          }
+        }
+        .nav-link {
+          text-decoration: none;
+          color: $white;
+        }
+        button {
+          text-transform: none!important;
+          @include bp-large {
+            font-size: 1.2em;
+          }
+          @include bp-medium {
+            font-size: 1.2em;
+          }
+          @include bp-small {
+            font-size: 0.8em;
+            display: flex;
+            justify-content: space-evenly;
+          }
+          @include bp-mobileOnly {
+            width: 25%;
+            border-radius: 3px;
+            border: 0px;
+            color: $white;
+            font-size: 24px;
+            height: 60px;
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            
+          }
+          p {
+            padding-right: 15px;
+          }
+        }
       }
     }
   }

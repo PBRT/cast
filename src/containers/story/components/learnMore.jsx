@@ -17,9 +17,9 @@ const StoryPage = (props: Props) => {
   let newStory = story[0];
   console.log(newStory);
   return (
-    <div className="story-page-ctn">
-      <div className="story-page-title">
-        <div className="story-page-img"></div>
+    <div className="learnmore-page-ctn">
+      <div className="learnmore-page-title">
+        <div className="learnmore-page-img"></div>
         <Typography gutterBottom variant="headline" component="h1">
           {props.story.title}
         </Typography>

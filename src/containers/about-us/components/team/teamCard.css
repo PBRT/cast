@@ -7,45 +7,76 @@ html {
 
 /*Media Queries*/
 /*Transitions*/
-.member-container .card {
-  min-width: 275px;
-  text-align: center;
-  margin: 15px;
-  background-color: #ffad5f; }
-  @media only screen and (max-width: 480px) {
-    .member-container .card {
-      height: 100px; } }
-  .member-container .card .card-content {
-    padding-top: 7.5px !important; }
-    @media only screen and (max-width: 480px) {
-      .member-container .card .card-content {
-        display: flex; } }
-    .member-container .card .card-content .card-text {
-      width: 100%; }
+.team-ctn {
+  display: flex; }
+  .team-ctn .member-container {
+    text-align: center;
+    display: flex;
+    margin: auto;
+    max-width: 100%;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap; }
+    .team-ctn .member-container .card {
+      min-width: 275px;
+      text-align: center;
+      margin: 15px;
+      background-color: #ffffff;
+      box-shadow: none; }
       @media only screen and (max-width: 480px) {
-        .member-container .card .card-content .card-text p {
-          font-size: 24px; } }
-      .member-container .card .card-content .card-text .title {
-        font-size: 14px; }
+        .team-ctn .member-container .card {
+          height: 100%;
+          width: 100%;
+          min-width: 95px; } }
+      .team-ctn .member-container .card .card-content {
+        margin: auto;
+        border: none !important; }
         @media only screen and (max-width: 480px) {
-          .member-container .card .card-content .card-text .title {
-            font-size: 36px; } }
-      .member-container .card .card-content .card-text .pos {
-        margin-bottom: 12px; }
-        @media only screen and (max-width: 480px) {
-          .member-container .card .card-content .card-text .pos {
-            margin-bottom: 0; } }
-      .member-container .card .card-content .card-text .bullet {
-        display: inline-block;
-        margin: 0px 2px;
-        transform: scale(0.8); }
-    .member-container .card .card-content .card-img .avatar {
-      margin-bottom: 15px; }
-    .member-container .card .card-content .card-img .bigAvatar {
-      width: 200px;
-      height: 200px;
-      margin: auto; }
-      @media only screen and (max-width: 480px) {
-        .member-container .card .card-content .card-img .bigAvatar {
-          width: 85px;
-          height: 85px; } }
+          .team-ctn .member-container .card .card-content {
+            display: flex; } }
+        .team-ctn .member-container .card .card-content .card-text {
+          width: 100%; }
+          @media only screen and (max-width: 480px) {
+            .team-ctn .member-container .card .card-content .card-text p {
+              font-size: 24px; } }
+          .team-ctn .member-container .card .card-content .card-text .title {
+            font-size: 14px; }
+            @media only screen and (max-width: 480px) {
+              .team-ctn .member-container .card .card-content .card-text .title {
+                font-size: 36px; } }
+          .team-ctn .member-container .card .card-content .card-text .pos {
+            margin-bottom: 12px; }
+            @media only screen and (max-width: 480px) {
+              .team-ctn .member-container .card .card-content .card-text .pos {
+                margin-bottom: 0; } }
+          .team-ctn .member-container .card .card-content .card-text .bullet {
+            display: inline-block;
+            margin: 0px 2px;
+            transform: scale(0.8); }
+        .team-ctn .member-container .card .card-content .card-img .avatar {
+          margin-bottom: 15px; }
+        .team-ctn .member-container .card .card-content .card-img .bigAvatar {
+          width: 200px;
+          height: 200px;
+          margin: auto; }
+          @media only screen and (max-width: 480px) {
+            .team-ctn .member-container .card .card-content .card-img .bigAvatar {
+              width: 100px;
+              height: 100px; } }
+        .team-ctn .member-container .card .card-content .card-img .onMobile {
+          display: none; }
+          @media only screen and (max-width: 480px) {
+            .team-ctn .member-container .card .card-content .card-img .onMobile {
+              display: block; } }
+          .team-ctn .member-container .card .card-content .card-img .onMobile .popup-content {
+            text-align: center;
+            margin: auto;
+            color: #b15804; }
+            .team-ctn .member-container .card .card-content .card-img .onMobile .popup-content .popup-name {
+              font-size: 2em;
+              margin: auto;
+              padding: 10px; }
+            .team-ctn .member-container .card .card-content .card-img .onMobile .popup-content .popup-nickname {
+              font-size: 1.5em;
+              margin: auto;
+              padding: 10px; }

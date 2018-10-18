@@ -1,0 +1,15 @@
+.slider {
+  width: 100%;
+  top: calc(50% - 97.25px);
+  overflow: hidden; }
+  .slider .slider-row {
+    width: 2956px;
+    height: 194.5px;
+    background-size: 2956px 194.5px;
+    animation: slide 50s linear infinite; }
+
+@keyframes slide {
+  from {
+    background-position-x: 0; }
+  to {
+    background-position-x: -2956px; } }
