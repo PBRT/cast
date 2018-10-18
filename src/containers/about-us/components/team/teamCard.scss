@@ -70,7 +70,7 @@
                     .onMobile {
                         display: none;
                         @include bp-mobileOnly {
-                            display: block;
+                            display: block!important;
                         }
                         .popup-content {
                             text-align: center;

@@ -106,23 +106,6 @@ html {
   justify-content: center;
   flex-wrap: wrap; }
 
-div#slider {
-  width: 100%;
-  overflow: hidden; }
-  div#slider figure {
-    position: relative;
-    width: 200%;
-    margin: 0;
-    padding: 0;
-    font-size: 0;
-    animation: 25s slidy infinite 0s;
-    animation-delay: 0s; }
-    div#slider figure img {
-      width: 95%;
-      max-height: 250px;
-      height: auto;
-      margin-bottom: 100px; }
-
 .separation-bar {
   height: 25px;
   background-color: #fa983a;

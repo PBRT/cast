@@ -67,7 +67,7 @@ html {
           display: none; }
           @media only screen and (max-width: 480px) {
             .team-ctn .member-container .card .card-content .card-img .onMobile {
-              display: block; } }
+              display: block !important; } }
           .team-ctn .member-container .card .card-content .card-img .onMobile .popup-content {
             text-align: center;
             margin: auto;

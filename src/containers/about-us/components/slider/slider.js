@@ -23,7 +23,7 @@ class ImageSlider extends Component<{}> {
         <div>
           <div id="slider" className="slider">
             <figure>
-              <div className="slider-row" style={{ textAlign: "center", display: "flex" }}>
+              <div className="slider-row">
                 {images.map(imageUrl => (
                   <div> 
                     <img src={imageUrl} alt=""/>

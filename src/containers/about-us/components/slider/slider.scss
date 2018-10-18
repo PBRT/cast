@@ -12,7 +12,15 @@ $speed: 50s;
     width: $img-w * $ratio;
     height: $img-h * $ratio;
     background-size: $img-w * $ratio $img-h * $ratio;
-    animation: slide $speed linear infinite;    
+    animation: slide $speed linear infinite; 
+    text-align: center;
+    display: flex;   
+    img {
+      width: 95%;
+      max-height: 250px;
+      height: auto;
+      margin-bottom: 100px;
+    }
   }
 }
 
@@ -20,3 +28,17 @@ $speed: 50s;
   from { background-position-x: 0; }
   to   { background-position-x: -$img-w * $ratio; }
 }
+
+
+
+//   figure {
+//       position: relative;
+//       width: 200%;
+//       margin: 0;
+//       padding: 0;
+//       font-size: 0;
+//       animation: 25s slidy infinite 0s;
+//       animation-delay: 0s;
+      
+//   }
+// }
