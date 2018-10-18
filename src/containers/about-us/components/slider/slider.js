@@ -1,7 +1,7 @@
 /* @flow */
 import React, { Component } from "react";
 
-import "./../about-us.css";
+import "./slider.css";
 
 var images = [
   "1.jpg",
@@ -16,22 +16,19 @@ var images = [
 
 class ImageSlider extends Component<{}> {
   
-  renderImage = (imageUrl) => {
-    return (
-      <div> 
-          <img src={imageUrl} alt=""/>
-      </div>
-    );
-  }
 
   
   render() {
     return (
         <div>
-          <div id="slider" className="">
+          <div id="slider" className="slider">
             <figure>
-              <div className="" style={{ textAlign: "center", display: "flex" }}>
-                {images.map(imageUrl => this.renderImage(imageUrl))}
+              <div className="slider-row" style={{ textAlign: "center", display: "flex" }}>
+                {images.map(imageUrl => (
+                  <div> 
+                    <img src={imageUrl} alt=""/>
+                  </div>
+                ))}
               </div>
             </figure>
           </div>

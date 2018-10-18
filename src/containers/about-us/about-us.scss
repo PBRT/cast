@@ -19,6 +19,7 @@
     .header {
         text-align: center;
         width: 100%;
+        position: relative;
         @include bp-mobileOnly {
             width: 100%;
         }
@@ -30,8 +31,18 @@
             }
         }
         .definition {
-            text-align: right;
-            margin: 75px 16px 0 0;
+            text-align: left;
+            position: absolute;
+            left:0;
+            bottom: 0;
+            width: 100%;
+            @include bp-small {
+                display: none;
+            }
+            @include bp-mobileOnly {
+                display: none;
+            }
+
             p {
                 font-size: 12px;
                 color: black;
@@ -52,25 +63,43 @@
             border: 5px solid $primaryDark;
             border-radius: 20px;
             font-size: 200%;
-            @include bp-small {
-                font-size: 1em;
-            }
             @include bp-medium {
                 font-size: 1.5em;
             }
+            @include bp-small {
+                font-size: 1em;
+            }
             
+        }
+        .image-slider-desktop {
+            @include bp-small {
+                display: none;
+            }
+            @include bp-mobileOnly {
+                display: none;
+            }
         }
     }
     .mobile-only {
         width: 70%;
         margin: auto;
+        display: none;
         p {
             margin: 30px 0;
             display: none;
+            @include bp-small {
+                display: block!important;
+            }
             @include bp-mobileOnly {
                 display: block!important;
             }
+        }
+        .image-slider-mobile {
+            display: none;
             @include bp-small {
+                display: block!important;
+            }
+            @include bp-mobileOnly {
                 display: block!important;
             }
         }
