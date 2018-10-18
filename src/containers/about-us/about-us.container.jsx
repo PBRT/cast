@@ -48,12 +48,12 @@ class AboutUsContainer extends Component<Props> {
           <div className="text-resume ">
             <p>Ta ‘sta én bouno santat, hè coumo ét médéci, bébé bi !</p>
           </div>
-          <ImageSlider/>
+          <ImageSlider className="image-slider-desktop"/>
            
         </div>
         <div className="mobile-only">
           <p>Baù més ana croumpa bi qu’ ana t’at apouticayre !</p>
-          <ImageSlider className="image-slider"/>
+          <ImageSlider className="image-slider-mobile"/>
         </div>
           <div className="separation-bar"></div>
         <div className="team-resume">          
