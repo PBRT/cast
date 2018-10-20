@@ -25,6 +25,7 @@ class StoryContainer extends Component<Props> {
 
   render() {
     const { story: { story, error, timestamp } } = this.props;
+    console.log(story)
     if(story.length === 0) {
       return (
         <LoadingAnimation/>
