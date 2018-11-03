@@ -15,7 +15,11 @@ html {
   .bigButtonsContainer .image {
     position: relative;
     height: 200px;
-    opacity: 1; }
+    opacity: 1;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s; }
     @media only screen and (max-width: 480px) {
       .bigButtonsContainer .image {
         width: 100% !important;
@@ -25,7 +29,11 @@ html {
     .bigButtonsContainer .image :hover .imageMarked {
       display: none; }
     .bigButtonsContainer .image :hover .imageTitle {
-      border: 4px solid white; }
+      border: 4px solid white;
+      -webkit-transform: scale(1.2);
+      -moz-transform: scale(1.2);
+      -o-transform: scale(1.2);
+      transform: scale(1.2); }
     .bigButtonsContainer .image .imageButton {
       font-size: 24px;
       position: absolute;
@@ -38,6 +46,9 @@ html {
       color: white; }
       .bigButtonsContainer .image .imageButton .imageTitle {
         margin: auto; }
+        @media only screen and (max-width: 480px) {
+          .bigButtonsContainer .image .imageButton .imageTitle {
+            font-size: 1em; } }
         .bigButtonsContainer .image .imageButton .imageTitle .imageMarked {
           height: 3px;
           width: 18px;
