@@ -23,7 +23,7 @@ type Props = {
 class Home extends Component<Props> {
   componentDidMount() {
     window.scrollTo(0, 0)
-    this.props.dispatch(requestStories("ASC"));
+    this.props.dispatch(requestStories("DESC"));
     }
   render() {
     const { stories: { stories, error, timestamp } } = this.props;
