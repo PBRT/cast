@@ -87,7 +87,7 @@ class StoriesContainer extends Component<Props> {
           </div>
           {this.state.currentDisplay && this.state.searchTerm !== "" && (
           <Section>
-            <div className="cards-container">
+            <div className="cards-container animated fadeIn">
               {this.state.currentDisplay.length === 0 ?
                <div>No results</div> :
                 this.state.currentDisplay.map((story: StoryType, idx: number ) => (
@@ -97,7 +97,7 @@ class StoriesContainer extends Component<Props> {
           </Section>
           )}
           <Section title="Latest stories" info={{ error, timestamp }}>
-            <div className="cards-container">
+            <div className="cards-container animated fadeIn">
               {stories.map((story: StoryType, idx: number ) => (
               <Story key={idx} story={story} />
               ))}

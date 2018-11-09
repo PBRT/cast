@@ -33,10 +33,30 @@ html {
   position: relative; }
   @media only screen and (max-width: 480px) {
     .container .header {
-      width: 100%; } }
+      width: 100%;
+      padding-top: 50px; } }
   .container .header .head-image-container img {
     width: 100%;
     object-fit: cover; }
+  .container .header .head-image-container .about-us-main-title {
+    z-index: 5;
+    width: 80%;
+    color: #fa983a;
+    margin: auto;
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    font-size: 3em;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); }
+    @media only screen and (min-width: 481px) and (max-width: 767px) {
+      .container .header .head-image-container .about-us-main-title {
+        font-size: 2em; } }
+    @media only screen and (max-width: 480px) {
+      .container .header .head-image-container .about-us-main-title {
+        font-size: 1em;
+        top: 40%; } }
   .container .header .definition {
     text-align: left;
     position: absolute;
@@ -79,26 +99,26 @@ html {
     .container .top-resume .image-slider-desktop {
       display: none; } }
 
-.container .mobile-only {
+.container .mobileOnly {
   width: 70%;
   margin: auto;
   display: none; }
-  .container .mobile-only p {
+  .container .mobileOnly p {
     margin: 30px 0;
     display: none; }
     @media only screen and (min-width: 481px) and (max-width: 767px) {
-      .container .mobile-only p {
+      .container .mobileOnly p {
         display: block !important; } }
     @media only screen and (max-width: 480px) {
-      .container .mobile-only p {
+      .container .mobileOnly p {
         display: block !important; } }
-  .container .mobile-only .image-slider-mobile {
+  .container .mobileOnly .image-slider-mobile {
     display: none; }
     @media only screen and (min-width: 481px) and (max-width: 767px) {
-      .container .mobile-only .image-slider-mobile {
+      .container .mobileOnly .image-slider-mobile {
         display: block !important; } }
     @media only screen and (max-width: 480px) {
-      .container .mobile-only .image-slider-mobile {
+      .container .mobileOnly .image-slider-mobile {
         display: block !important; } }
 
 .team-resume {

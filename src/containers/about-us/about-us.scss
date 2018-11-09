@@ -22,12 +22,33 @@
         position: relative;
         @include bp-mobileOnly {
             width: 100%;
+            padding-top: 50px;
         }
         .head-image-container {
             
             img {
                 width: 100%;
                 object-fit: cover;
+            }
+            .about-us-main-title {
+                z-index: 5;
+                width: 80%;
+                color: $primary;
+                margin: auto;
+                position: absolute;
+                top: 20%;
+                left: 10%;
+                font-size: 3em;
+                -webkit-transform: translate(-50%, -50%);
+                -ms-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+                @include bp-small {
+                    font-size: 2em;
+                }
+                @include bp-mobileOnly {
+                    font-size: 1em;
+                    top: 40%;
+                }
             }
         }
         .definition {
@@ -80,7 +101,7 @@
             }
         }
     }
-    .mobile-only {
+    .mobileOnly {
         width: 70%;
         margin: auto;
         display: none;

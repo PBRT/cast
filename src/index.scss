@@ -49,6 +49,12 @@ body {
   }
 }
 
+.mobileOnly {
+  @include bp-mobileOnly {
+    display: block !important;
+  }
+}
+
 .material-icons {
   font-family: 'Material Icons';
   font-weight: normal;

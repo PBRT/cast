@@ -31,27 +31,30 @@ class AboutUsContainer extends Component<Props> {
         <div className="header">
           <div className="head-image-container">
             <img src="south-park.jpg" alt="wouf wouf"/>
-            <div className="definition hideOnMobile">
+            <div className="about-us-main-title animated fadeInDown">
+              <h1>Meet the team</h1>
+            </div>
+            {/* <div className="definition hideOnMobile">
               <p>
               <a href="https://dictionary.cambridge.org/dictionary/english/animal">Cambridge dictionary</a>
               : animal noun (BAD PERSON)
               </p>
               <p>Informal - an unpleasant, cruel person or someone who behaves badly: He's a real animal when he's had too much to drink.</p>
-            </div>
+            </div> */}
           </div>
 
         </div>
 
         <div className="separation-bar"></div>
         
-        <div className="top-resume hideOnMobile">
+        <div className="top-resume">
           <div className="text-resume ">
             <p>Ta ‘sta én bouno santat, hè coumo ét médéci, bébé bi !</p>
           </div>
           <ImageSlider className="image-slider-desktop"/>
            
         </div>
-        <div className="mobile-only">
+        <div className="mobileOnly">
           <p>Baù més ana croumpa bi qu’ ana t’at apouticayre !</p>
           <ImageSlider className="image-slider-mobile"/>
         </div>

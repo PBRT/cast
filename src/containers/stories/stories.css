@@ -49,4 +49,6 @@ html {
 .cards-container {
   display: flex;
   margin: auto;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  animation-delay: 0s;
+  animation-duration: 1.5s; }
