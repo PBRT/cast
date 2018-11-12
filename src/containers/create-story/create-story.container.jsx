@@ -7,6 +7,8 @@ import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
 import React, { Component } from "react";
+import cloudinary from "cloudinary-core";
+
 import { createStory } from "../stories/stories.actions.js";
 import Section from "../../components/section/section";
 import CreateStoryForm from "./components/form.jsx";
@@ -35,13 +37,14 @@ class StoriesContainer extends Component<Props, ContainerState> {
     }
   };
   render() {
-    
+    console.log(this.state.values)
     return (
-      <div>
+      <div style={{ paddingTop: "100px" }}>
         <Section title="Create story">
           <div>
             <CreateStoryForm
               handleChange={this._handleChange}
+              handleImageChange={this._handleImageChange}
               values={this.state.values}
             />
             <div style={{ textAlign: "center" }}>
@@ -71,6 +74,17 @@ class StoriesContainer extends Component<Props, ContainerState> {
     });
   };
 
+  _handleImageChange = (e) => {
+    this.setState({
+      values: {
+        ...this.state.values,
+        ...{
+          image: e.target.files[0]
+        }
+      }
+    })
+  }
+
   _onSubmit = () => {
     const { timestamp } = this.state.values;
     const date =
@@ -81,8 +95,10 @@ class StoriesContainer extends Component<Props, ContainerState> {
         ...{ timestamp: date }
       })
     );
+    
     this.props.history.push("/");
   };
+  
 }
 
 export default connect((state: State) => ({

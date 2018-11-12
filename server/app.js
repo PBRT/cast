@@ -2,6 +2,9 @@ const path = require("path");
 const express = require("express");
 const bodyParser = require("body-parser");
 const postgresDriver = require("./postgres-driver");
+const fileUpload = require('express-fileupload');
+var multer  = require('multer');
+var upload = multer({ dest: 'uploads/' });
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -14,6 +17,7 @@ postgresDriver.connect();
 
 app.use(bodyParser.json());
 app.use(express.static(root));
+app.use(fileUpload());
 
 // Basic shit to allow requests from the browser
 app.use(function(req, res, next) {
@@ -56,7 +60,9 @@ app.get("/stories/:story_id", (req, res) => {
 });
 
 // Create a story
-app.post("/stories", (req, res) => {
+app.post("/stories", upload.single("uploadImg"), (req, res) => {
+  const uploadImg = req.files
+  console.log(uploadImg)
   const { username, title, description, timestamp } = req.body;
   // we make sure there is everything needed
   if (username != null && title != null && description != null && timestamp != null) {
