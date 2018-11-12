@@ -30,7 +30,7 @@ psql casto
 3- Create a table (data model)
 
 ```
-create table stories (title varchar(50) NOT NULL, description varchar(500) NOT NULL, timestamp bigint NOT NULL);
+create table stories (id serial PRIMARY, username varchar(50) NOT NULL, title varchar(50) NOT NULL, description varchar(1000) NOT NULL, timestamp bigint NOT NULL);
 ```
 
 4- Check if it's fine by running this:

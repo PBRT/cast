@@ -1,6 +1,6 @@
 /* @flow */
 import React from "react";
-import Popup from "reactjs-popup";
+// import Popup from "reactjs-popup";
 
 import Avatar from '@material-ui/core/Avatar';
 import Card from '@material-ui/core/Card';
@@ -41,7 +41,7 @@ const TeamCard = () => {
   
               <div className="card-img" >
                 <div className="onMobile">
-                  <Popup 
+                  {/* <Popup 
                     className=""
                     trigger={<Avatar alt="member-avatar" src={member.img} className="avatar bigAvatar" />} 
                     position="top center"
@@ -53,7 +53,7 @@ const TeamCard = () => {
                       <div className="popup-nickname">{member.nickname}</div>
                       <div className="popup-blur">{member.blur}</div>
                     </div>
-                  </Popup>
+                  </Popup> */}
                   </div>
                   <div className="hideOnMobile">
                     <Avatar alt="member-avatar" src={member.img} className="avatar bigAvatar" />

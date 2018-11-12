@@ -63,7 +63,7 @@ const HomeButton = () => {
               className="imageTitle"
             >
               {image.title}
-              <span className="imageMarked" />
+              <span className="imageMarked hideOnMobile" />
             </Typography>
           </span>
         </NavLink>

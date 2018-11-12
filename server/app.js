@@ -28,12 +28,12 @@ app.use(function(req, res, next) {
 // Retrieve stories endpoint
 app.get("/stories", (req, res) => {
   const dateOrder = req.query.dateOrder;
-  const timestamp = req.query.timestamp;
+  const id = req.query.id;
   let SQLQuery;
-  if(req.query.timestamp !== undefined) {
-    SQLQuery = `SELECT * FROM stories WHERE timestamp='${timestamp}'`;
+  if(id !== undefined) {
+    SQLQuery = `SELECT * FROM stories WHERE id='${id}'`;
   } else {
-    SQLQuery = "SELECT * FROM Stories ORDER BY timestamp " + dateOrder;
+    SQLQuery = "SELECT * FROM Stories ORDER BY timestamp " + dateOrder + " LIMIT 20";
   }
   // We do the query to the database
   postgresDriver.query(SQLQuery).then(stories => {
