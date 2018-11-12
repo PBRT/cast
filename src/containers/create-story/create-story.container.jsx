@@ -37,7 +37,7 @@ class StoriesContainer extends Component<Props, ContainerState> {
   render() {
     
     return (
-      <div>
+      <div style={{ paddingTop: "100px" }}>
         <Section title="Create story">
           <div>
             <CreateStoryForm

@@ -47,7 +47,7 @@ class AboutUsContainer extends Component<Props> {
 
         <div className="separation-bar"></div>
         
-        <div className="top-resume">
+        <div className="top-resume hideOnMobile">
           <div className="text-resume ">
             <p>Ta ‘sta én bouno santat, hè coumo ét médéci, bébé bi !</p>
           </div>
@@ -56,7 +56,7 @@ class AboutUsContainer extends Component<Props> {
         </div>
         <div className="mobileOnly">
           <p>Baù més ana croumpa bi qu’ ana t’at apouticayre !</p>
-          <ImageSlider className="image-slider-mobile"/>
+          {/* <ImageSlider className="image-slider-mobile"/> */}
         </div>
           <div className="separation-bar"></div>
         <div className="team-resume">          

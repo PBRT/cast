@@ -44,9 +44,10 @@ html {
         font-size: 1.5em; } }
     @media only screen and (max-width: 480px) {
       .home-header .main-title {
-        font-size: 1.2em;
+        font-size: 1.5em;
+        width: 70%;
         top: 50%;
-        left: 25%; } }
+        left: 15%; } }
   .home-header .main-subtitle {
     position: absolute;
     top: 60%;
@@ -64,8 +65,9 @@ html {
     @media only screen and (max-width: 480px) {
       .home-header .main-subtitle {
         font-size: 1em;
+        width: 50%;
         top: 75%;
-        left: 20%; } }
+        left: 25%; } }
 
 .slider-container {
   width: 80%;
