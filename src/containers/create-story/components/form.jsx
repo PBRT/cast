@@ -60,9 +60,11 @@ class StoryTextInput extends Component<StoryTextInputProps> {
 }
 
 const CreateStoryForm = (props: Props) => {
+
+
   return (
     <div className="form-container">
-      <form noValidate autoComplete="off">
+      <form action="/stories" noValidate autoComplete="off">
         <StoryTextInput
           label="Username"
           inputKey="username"
@@ -93,6 +95,10 @@ const CreateStoryForm = (props: Props) => {
           value={props.values.description}
           handleChange={props.handleChange}
         />
+        <input 
+          name="uploadImg"
+          type="file"
+          onChange={props.handleImageChange} />
         
       </form>
     </div>
