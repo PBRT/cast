@@ -5,7 +5,7 @@ import type { StoryState, Story as StoryType } from "../stories/stories.type.js"
 import { connect } from "react-redux";
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
-import { requestStory } from "./story.actions.js";
+import { requestStory, deleteStory } from "./story.actions.js";
 import Section from "../../components/section/section";
 
 import Button from "@material-ui/core/Button";
@@ -22,6 +22,19 @@ class StoryContainer extends Component<Props> {
   componentDidMount = () => {
     this.props.dispatch(requestStory(this.props.match.params.id))
   };
+
+  alertUserBeforeDelete = () => {
+    
+      let answer = window.confirm("Do you really want to delete this story?");
+      if(answer) {
+        this.props.dispatch(deleteStory(this.props.match.params.id))
+        this.props.history.push("/stories")
+      } else {
+        console.log("cancelled")
+      }
+      
+    
+  }
 
   render() {
     const { story: { story, error, timestamp } } = this.props;
@@ -43,6 +56,9 @@ class StoryContainer extends Component<Props> {
               ))}
             </div>
           </Section>
+          <Button onClick={this.alertUserBeforeDelete}>
+            Delete this story
+          </Button>
         </div>
       );
     }

@@ -25,14 +25,14 @@ export type Action = {
   };
 
 
-  type RequestStory = (id: number) => Action;
-  export const requestStory: RequestStory = (id: number) => ({
+  type RequestStory = (id: Number) => Action;
+  export const requestStory: RequestStory = (id: Number) => ({
     type: "REQUEST_ONE_STORY",
     id
   });
 
-type DeleteStory = (title: String) => Action;
-export const deleteStory: DeleteStory = (title: String) => ({
+type DeleteStory = (id: Number) => Action;
+export const deleteStory: DeleteStory = (id: Number) => ({
   type: "REQUEST_DELETE_STORY",
-  title
+  id
 });

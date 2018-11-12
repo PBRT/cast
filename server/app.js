@@ -20,8 +20,12 @@ app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header(
     "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
+    "Origin, X-Requested-With, Content-Type, Accept",
   );
+  res.header(
+    "Access-Control-Allow-Methods",
+    "GET, HEAD, POST, PUT, DELETE, PATCH, OPTIONS",
+  )
   next();
 });
 
@@ -71,12 +75,14 @@ app.post("/stories", (req, res) => {
   }
 });
 
-app.delete("/stories", (req, res) => {
-  const title = req.query.title;
-  if (title != null) {
+//Delete a story
+app.delete("/stories/:story_id", (req, res) => {
+  const id = req.params.story_id;
+  console.log(id)
+  if (id !== null) {
     postgresDriver
       .query(
-        `DELETE FROM stories WHERE title='${title}'`
+        `DELETE FROM stories WHERE id='${id}'`
       )
     .then(() => {
       res.send({ status: 200 });

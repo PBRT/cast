@@ -19,31 +19,57 @@ export const initialStoryState: StoryState = {
     switch (action.type) {
 
       case "REQUEST_ONE_STORY":
-      return fx({ ...state, loading: true }, [
-        {
-          effect: "fetch",
-          url: "stories/" + action.id,
-          method: "GET",
-          onSuccess: "RECEIVE_ONE_STORY",
-          onError: "FAIL_STORY"
-        }
-      ]);
-    case "RECEIVE_ONE_STORY":
-      return {
-        story: action.payload,
-        loading: false,
-        error: null,
-        timestamp: action.timestamp,
-      };
+        return fx({ ...state, loading: true }, [
+          {
+            effect: "fetch",
+            url: "stories/" + action.id,
+            method: "GET",
+            onSuccess: "RECEIVE_ONE_STORY",
+            onError: "FAIL_STORY"
+          }
+        ]);
+      case "RECEIVE_ONE_STORY":
+        return {
+          story: action.payload,
+          loading: false,
+          error: null,
+          timestamp: action.timestamp,
+        };
 
-    case "FAIL_STORY":
-      return {
-        ...state,
-        error: "FAIL",
-        loading: false
-      };
+      case "FAIL_STORY":
+        return {
+          ...state,
+          error: "FAIL",
+          loading: false
+        };
 
-    default:
-      return state;
+        case "REQUEST_DELETE_STORY":
+          return fx({ ...state, loading: true }, [
+            {
+              effect: "fetch",
+              url: "stories/" + action.id,
+              method: "DELETE",
+              onSuccess: "RECEIVE_DELETE_STORY",
+              onError: "FAIL_DELETE_STORY"
+            }
+          ]);
+        case "RECEIVE_DELETE_STORY":
+          return {
+            story: action.payload,
+            loading: false,
+            error: null,
+            timestamp: action.timestamp,
+          };
+
+        case "FAIL_DELETE_STORY":
+          return {
+            ...state,
+            error: "FAIL",
+            loading: false
+          };
+      
+
+      default:
+        return state;
   }
 };
