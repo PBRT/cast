@@ -2,10 +2,10 @@
 import React from "react";
 import Popup from "reactjs-popup";
 
-import Avatar from '@material-ui/core/Avatar';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import Typography from '@material-ui/core/Typography';
+import Avatar from "@material-ui/core/Avatar";
+import Card from "@material-ui/core/Card";
+import CardContent from "@material-ui/core/CardContent";
+import Typography from "@material-ui/core/Typography";
  
 import "./teamCard.css";
 
@@ -34,7 +34,7 @@ const TeamCard = () => {
 
     return (
       <div className="team-ctn animated rubberBand">
-        {teamInfos.map((member, idx) => (
+        {teamInfos.map((member: object, idx: number) => (
         <div className="member-container" key={idx}>
           <Card className="card">
             <CardContent className="card-content">
@@ -42,7 +42,7 @@ const TeamCard = () => {
               <div className="card-img" >
                 <div className="onMobile">
                   <Popup 
-                    className=""
+                    className="popup-mobile"
                     trigger={<Avatar alt="member-avatar" src={member.img} className="avatar bigAvatar" />} 
                     position="top center"
                     closeOnDocumentClick

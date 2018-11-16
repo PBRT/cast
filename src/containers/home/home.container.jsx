@@ -3,11 +3,12 @@ import type { State } from "../../state/state.type.js";
 import type { Action } from "./../stories/actions/stories.actions.js";
 import type { StoriesState, Story as StoryType } from "./../stories/stories.type.js";
 
-import Particles from 'react-particles-js';
-import HomeButton from "./components/homeButton";
+import Particles from "react-particles-js";
 import { connect } from "react-redux";
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 
+import HomeButton from "./components/homeButton";
 import { requestStories } from "../stories/stories.actions";
 import Section from "../../components/section/section";
 import Story from "./../stories/components/story";
@@ -62,6 +63,10 @@ class Home extends Component<Props> {
     );
   }
 }
+
+Home.propTypes = {
+  stories: PropTypes.object.isRequired,
+};
 
 export default connect((state: State) => ({
     stories: state.stories

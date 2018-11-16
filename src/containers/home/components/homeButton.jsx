@@ -1,11 +1,10 @@
 /* @flow */
-import type { Stories as StoriesType } from "../stories.type.js";
 
 
 import React from "react";
 import { NavLink } from "react-router-dom";
-import ButtonBase from '@material-ui/core/ButtonBase';
-import Typography from '@material-ui/core/Typography';
+import ButtonBase from "@material-ui/core/ButtonBase";
+import Typography from "@material-ui/core/Typography";
 
 import "./homeButton.css"
 
@@ -13,20 +12,20 @@ import "./homeButton.css"
 const images = [
   {
     url: "dikkenek.jpg",
-    title: 'Show all stories',
-    width: '30%',
+    title: "Show all stories",
+    width: "30%",
     path: "/stories",
   },
   {
-    url: 'oss.jpg',
-    title: 'Create your own',
-    width: '40%',
+    url: "oss.jpg",
+    title: "Create your own",
+    width: "40%",
     path: "/create-story",
   },
   {
-    url: 'workaholic.jpg',
-    title: 'Meet the team',
-    width: '30%',
+    url: "workaholic.jpg",
+    title: "Meet the team",
+    width: "30%",
     path: "/about-us",
   },
 ];
@@ -36,7 +35,7 @@ const HomeButton = () => {
 
   return (
     <div className="bigButtonsContainer">
-    {images.map(image => (
+    {images.map((image: object) => (
       
       <ButtonBase
         focusRipple

@@ -3,15 +3,15 @@ import type { Story as StoryType } from "./../stories.type.js";
 
 import moment from "moment";
 import React from "react";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 import { NavLink } from "react-router-dom";
 
-import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
+import Card from "@material-ui/core/Card";
+import CardActions from "@material-ui/core/CardActions";
+import CardContent from "@material-ui/core/CardContent";
+import CardMedia from "@material-ui/core/CardMedia";
+import Button from "@material-ui/core/Button";
+import Typography from "@material-ui/core/Typography";
 
 import "./story.css"
 

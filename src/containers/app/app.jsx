@@ -1,23 +1,20 @@
 /* @flow */
 
 import React from "react";
-
 import { NavLink } from "react-router-dom";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
-
-import { withStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import AppBar from "@material-ui/core/AppBar";
+import { library } from "@fortawesome/fontawesome-svg-core"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faHeart } from "@fortawesome/free-solid-svg-icons"
+import { faSwatchbook } from "@fortawesome/free-solid-svg-icons"
+import { faPlusCircle } from "@fortawesome/free-solid-svg-icons"
+import { faHome } from "@fortawesome/free-solid-svg-icons"
+import { faBible } from "@fortawesome/free-solid-svg-icons"
+import { faPlus } from "@fortawesome/free-solid-svg-icons"
 
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHeart } from '@fortawesome/free-solid-svg-icons'
-import { faSwatchbook } from '@fortawesome/free-solid-svg-icons'
-import { faPlusCircle } from '@fortawesome/free-solid-svg-icons'
-import { faHome } from '@fortawesome/free-solid-svg-icons'
-import { faBible } from '@fortawesome/free-solid-svg-icons'
-import { faPlus } from '@fortawesome/free-solid-svg-icons'
 import "./app.css";
 
 library.add(faHeart);
@@ -27,22 +24,6 @@ library.add(faHome);
 library.add(faBible);
 library.add(faPlus);
 
-const styles = {
-  root: {
-    background: "$primary",
-    borderRadius: 3,
-    border: 0,
-    color: "white",
-    fontSize: 24,
-    height: 48,
-    padding: "0 30px",
-    width: "100%",
-    margin: 10,
-    display: "flex",
-    justifyContent: "space-between",
-  },
-};
-
 type Props = {
   children: Array<Object> | Object
 };
@@ -50,7 +31,6 @@ type Props = {
 
 const App = (props: Props) => {
 
-  const { classes } = props;
 
   const showIcon = (icon) => {
     document.getElementById(icon).style.display="block"
@@ -88,7 +68,7 @@ const App = (props: Props) => {
           <div className="btn-container">
             <NavLink className="nav-link" to="/stories">
               <Button 
-                className={classes.button} 
+                className="" 
                 type="subheading" 
                 color="inherit" 
                 onMouseOver={() => { showIcon("story-icon") }}
@@ -104,7 +84,7 @@ const App = (props: Props) => {
           <div className="btn-container">
             <NavLink className="nav-link" to="/create-story">
               <Button 
-                className={classes.button} 
+                className="" 
                 type="subheading" color="inherit" 
                 onMouseOver={() => { showIcon("create-story-icon") }}
                 onMouseOut={() => { hideIcon("create-story-icon") }}
@@ -119,7 +99,7 @@ const App = (props: Props) => {
           <div className="btn-container">
             <NavLink className="nav-link" to="/about-us">
               <Button 
-                className={classes.button} 
+                className="" 
                 type="subheading" color="inherit" 
                 onMouseOver={() => { showIcon("about-us-icon") }}
                 onMouseOut={() => { hideIcon("about-us-icon") }}
@@ -142,7 +122,7 @@ const App = (props: Props) => {
 };
 
 App.propTypes = {
-  classes: PropTypes.object.isRequired,
+  children: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(App);
+export default App;

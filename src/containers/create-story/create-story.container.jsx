@@ -7,12 +7,12 @@ import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
 import React, { Component } from "react";
-import cloudinary from "cloudinary-core";
+import PropTypes from "prop-types";
+import Button from "@material-ui/core/Button";
 
 import { createStory } from "../stories/stories.actions.js";
 import Section from "../../components/section/section";
 import CreateStoryForm from "./components/form.jsx";
-import Button from "@material-ui/core/Button";
 
 export type SupportedInputs = ?string | ?number;
 type Props = {
@@ -37,7 +37,6 @@ class StoriesContainer extends Component<Props, ContainerState> {
     }
   };
   render() {
-    console.log(this.state.values)
     return (
       <div style={{ paddingTop: "100px" }}>
         <Section title="Create story">
@@ -74,7 +73,8 @@ class StoriesContainer extends Component<Props, ContainerState> {
     });
   };
 
-  _handleImageChange = (e) => {
+  _handleImageChange = (e: Event) => {
+    e.preventDefault();
     this.setState({
       values: {
         ...this.state.values,
@@ -99,7 +99,15 @@ class StoriesContainer extends Component<Props, ContainerState> {
     this.props.history.push("/");
   };
   
-}
+};
+
+
+StoriesContainer.propTypes = {
+  stories: PropTypes.object.isRequired,
+  dispatch: PropTypes.func.isRequired,
+  history: PropTypes.object.isRequired
+};
+
 
 export default connect((state: State) => ({
   stories: state.stories

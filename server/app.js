@@ -62,7 +62,6 @@ app.get("/stories/:story_id", (req, res) => {
 // Create a story
 app.post("/stories", upload.single("uploadImg"), (req, res) => {
   const uploadImg = req.files
-  console.log(uploadImg)
   const { username, title, description, timestamp } = req.body;
   // we make sure there is everything needed
   if (username != null && title != null && description != null && timestamp != null) {
@@ -84,7 +83,6 @@ app.post("/stories", upload.single("uploadImg"), (req, res) => {
 //Delete a story
 app.delete("/stories/:story_id", (req, res) => {
   const id = req.params.story_id;
-  console.log(id)
   if (id !== null) {
     postgresDriver
       .query(

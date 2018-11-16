@@ -1,7 +1,9 @@
 /* @flow */
 import type { SupportedInputs } from "../create-story.container.jsx";
+
 import TextField from "@material-ui/core/TextField";
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 
 import "./form.css";
 
@@ -64,7 +66,7 @@ const CreateStoryForm = (props: Props) => {
 
   return (
     <div className="form-container">
-      <form action="/stories" noValidate autoComplete="off">
+      <form action="/stories" noValidate autoComplete="off" encType="multipart/form-data">
         <StoryTextInput
           label="Username"
           inputKey="username"
@@ -103,6 +105,11 @@ const CreateStoryForm = (props: Props) => {
       </form>
     </div>
   );
+};
+
+CreateStoryForm.propTypes = {
+  handleChange: PropTypes.func.isRequired,
+  values: PropTypes.object.isRequired
 };
 
 export default CreateStoryForm;

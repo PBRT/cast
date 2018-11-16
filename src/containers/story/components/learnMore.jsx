@@ -2,8 +2,8 @@
 import type { Story as StoryType } from "../stories.type.js";
 
 import React from "react";
-import PropTypes from 'prop-types';
-import Typography from '@material-ui/core/Typography';
+import PropTypes from "prop-types";
+import Typography from "@material-ui/core/Typography";
 
 import "./learnMore.css"
 
@@ -13,9 +13,6 @@ type Props = {
 
 const StoryPage = (props: Props) => {
 
-  const { story } = props;
-  let newStory = story[0];
-  console.log(newStory);
   return (
     <div className="learnmore-page-ctn">
       <div className="learnmore-page-title">

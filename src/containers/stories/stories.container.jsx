@@ -6,14 +6,13 @@ import type { StoriesState, Story as StoryType } from "./stories.type.js";
 import _ from "lodash";
 import { connect } from "react-redux";
 import React, { Component } from "react";
+import PropTypes from 'prop-types';
+import Button from "@material-ui/core/Button";
+
 import { requestStories } from "./stories.actions.js";
 import Section from "../../components/section/section";
 import Story from "./components/story";
-import SearchField from "./components/searchField.js"
-
-
-import Button from "@material-ui/core/Button";
-
+import SearchField from "./components/searchField.js";
 import LoadingAnimation from "./../../../src/components/loading-animation";
 
 import "./stories.css";
@@ -22,8 +21,6 @@ type Props = {
   stories: StoriesState,
   dispatch: Action => void
 };
-
-
 
 class StoriesContainer extends Component<Props> {
   constructor(props) {
@@ -39,10 +36,10 @@ class StoriesContainer extends Component<Props> {
     return this.props.dispatch(requestStories("DESC"));
   };
 
-  onInputChange = (event) => {
+  onInputChange = (event: Event) => {
 
     let newlyDisplayed = _.filter(this.props.stories.stories, story => 
-      story.title.includes(event.target.value.toLowerCase()))
+      story.title.toLowerCase().includes(event.target.value.toLowerCase()))
     return this.setState({
       searchTerm: event.target.value,
       currentDisplay: newlyDisplayed
@@ -90,8 +87,8 @@ class StoriesContainer extends Component<Props> {
             <div className="cards-container animated fadeIn">
               {this.state.currentDisplay.length === 0 ?
                <div>No results</div> :
-                this.state.currentDisplay.map((story: StoryType, idx: number ) => (
-              <Story key={idx} story={story} />
+                this.state.currentDisplay.map((story: StoryType ) => (
+              <Story key={story.id} story={story} />
               ))}
             </div>
           </Section>
@@ -106,7 +103,11 @@ class StoriesContainer extends Component<Props> {
         </div>
       );
     }
-  }
+  };
+};
+
+StoriesContainer.propTypes = {
+  stories: PropTypes.object.isRequired,
 };
 
 export default connect((state: State) => ({

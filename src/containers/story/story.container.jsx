@@ -5,13 +5,14 @@ import type { StoryState, Story as StoryType } from "../stories/stories.type.js"
 import { connect } from "react-redux";
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
+import PropTypes from 'prop-types';
+import Button from "@material-ui/core/Button";
+
 import { requestStory, deleteStory } from "./story.actions.js";
 import Section from "../../components/section/section";
-
-import Button from "@material-ui/core/Button";
 import LoadingAnimation from "../../components/loading-animation";
-
 import StoryPage from "./components/learnMore";
+
 
 type Props = {
   story: StoryState,
@@ -19,26 +20,23 @@ type Props = {
 };
 
 class StoryContainer extends Component<Props> {
+
   componentDidMount = () => {
     this.props.dispatch(requestStory(this.props.match.params.id))
   };
 
   alertUserBeforeDelete = () => {
-    
-      let answer = window.confirm("Do you really want to delete this story?");
-      if(answer) {
-        this.props.dispatch(deleteStory(this.props.match.params.id))
-        this.props.history.push("/stories")
-      } else {
-        console.log("cancelled")
-      }
-      
-    
+    let answer = window.confirm("Do you really want to delete this story?");
+    if(answer) {
+      this.props.dispatch(deleteStory(this.props.match.params.id))
+      this.props.history.push("/stories")
+    } else {
+      console.log("cancelled")
+    }
   }
 
   render() {
     const { story: { story, error, timestamp } } = this.props;
-    console.log(story)
     if(story.length === 0) {
       return (
         <LoadingAnimation/>
@@ -51,8 +49,8 @@ class StoryContainer extends Component<Props> {
           </NavLink>
           <Section title="Latest stories" info={{ error, timestamp }}>
             <div >              
-              {story.map((story: StoryType, idx: number ) => (
-                  <StoryPage key={idx} story={story} />
+              {story.map((story: StoryType) => (
+                  <StoryPage key={story.id} story={story} />
               ))}
             </div>
           </Section>
@@ -63,6 +61,10 @@ class StoryContainer extends Component<Props> {
       );
     }
   };
+};
+
+StoryContainer.propTypes = {
+  story: PropTypes.object.isRequired,
 };
 
 export default connect((state: State) => ({
