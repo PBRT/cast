@@ -7,10 +7,12 @@ import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
 import React, { Component } from "react";
+import PropTypes from "prop-types";
+import Button from "@material-ui/core/Button";
+
 import { createStory } from "../stories/stories.actions.js";
 import Section from "../../components/section/section";
 import CreateStoryForm from "./components/form.jsx";
-import Button from "@material-ui/core/Button";
 
 export type SupportedInputs = ?string | ?number;
 type Props = {
@@ -35,13 +37,13 @@ class StoriesContainer extends Component<Props, ContainerState> {
     }
   };
   render() {
-    
     return (
-      <div>
+      <div style={{ paddingTop: "100px" }}>
         <Section title="Create story">
           <div>
             <CreateStoryForm
               handleChange={this._handleChange}
+              handleImageChange={this._handleImageChange}
               values={this.state.values}
             />
             <div style={{ textAlign: "center" }}>
@@ -71,6 +73,18 @@ class StoriesContainer extends Component<Props, ContainerState> {
     });
   };
 
+  _handleImageChange = (e: Event) => {
+    e.preventDefault();
+    this.setState({
+      values: {
+        ...this.state.values,
+        ...{
+          image: e.target.files[0]
+        }
+      }
+    })
+  }
+
   _onSubmit = () => {
     const { timestamp } = this.state.values;
     const date =
@@ -81,9 +95,19 @@ class StoriesContainer extends Component<Props, ContainerState> {
         ...{ timestamp: date }
       })
     );
+    
     this.props.history.push("/");
   };
-}
+  
+};
+
+
+StoriesContainer.propTypes = {
+  stories: PropTypes.object.isRequired,
+  dispatch: PropTypes.func.isRequired,
+  history: PropTypes.object.isRequired
+};
+
 
 export default connect((state: State) => ({
   stories: state.stories

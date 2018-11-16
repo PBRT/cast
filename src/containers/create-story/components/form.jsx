@@ -1,7 +1,9 @@
 /* @flow */
 import type { SupportedInputs } from "../create-story.container.jsx";
+
 import TextField from "@material-ui/core/TextField";
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 
 import "./form.css";
 
@@ -60,9 +62,11 @@ class StoryTextInput extends Component<StoryTextInputProps> {
 }
 
 const CreateStoryForm = (props: Props) => {
+
+
   return (
     <div className="form-container">
-      <form noValidate autoComplete="off">
+      <form action="/stories" noValidate autoComplete="off" encType="multipart/form-data">
         <StoryTextInput
           label="Username"
           inputKey="username"
@@ -93,10 +97,19 @@ const CreateStoryForm = (props: Props) => {
           value={props.values.description}
           handleChange={props.handleChange}
         />
+        <input 
+          name="uploadImg"
+          type="file"
+          onChange={props.handleImageChange} />
         
       </form>
     </div>
   );
+};
+
+CreateStoryForm.propTypes = {
+  handleChange: PropTypes.func.isRequired,
+  values: PropTypes.object.isRequired
 };
 
 export default CreateStoryForm;

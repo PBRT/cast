@@ -1,11 +1,14 @@
+/* @flow */
 import React from "react";
-
+import PropTypes from "prop-types";
 import TextField from "@material-ui/core/TextField";
-
 
 import "./search.css"
 
-
+type Props = {
+  value: string,
+  handlechange: void
+};
 
 const SearchField = (props: Props) => {
 
@@ -29,7 +32,10 @@ const SearchField = (props: Props) => {
     )
 }
 
-
+SearchField.propTypes = {
+  value: PropTypes.string.isRequired,
+  handlechange: PropTypes.func.isRequired
+};
   
   export default SearchField;
 

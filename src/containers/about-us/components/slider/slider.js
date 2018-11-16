@@ -24,9 +24,9 @@ class ImageSlider extends Component<{}> {
           <div id="slider" className="slider">
             <figure>
               <div className="slider-row">
-                {images.map(imageUrl => (
-                  <div> 
-                    <img src={imageUrl} alt=""/>
+                {images.map((imageUrl: string, index: number) => (
+                  <div key={index}> 
+                    <img src={imageUrl} alt="" />
                   </div>
                 ))}
               </div>

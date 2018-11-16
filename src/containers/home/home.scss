@@ -39,9 +39,10 @@
             font-size: 1.5em;
           }
         @include bp-mobileOnly {
-            font-size: 1.2em;
+            font-size: 1.5em;
+            width: 70%;
             top: 50%;
-            left: 25%;
+            left: 15%;
         }
     }
     .main-subtitle {
@@ -61,8 +62,9 @@
           }
         @include bp-mobileOnly {
             font-size: 1em;
+            width: 50%;
             top: 75%;
-            left: 20%;
+            left: 25%;
         }
     }
 }

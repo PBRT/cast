@@ -4,6 +4,7 @@ import type { Action } from "./../stories/actions/stories.actions.js";
 import type { StoriesState } from "./../stories/stories.type.js";
 
 import React, { Component } from "react";
+import { Image } from "cloudinary-react";
 
 import ImageSlider from "./components/slider/slider";
 import { connect } from "react-redux";
@@ -34,20 +35,20 @@ class AboutUsContainer extends Component<Props> {
             <div className="about-us-main-title animated fadeInDown">
               <h1>Meet the team</h1>
             </div>
-            {/* <div className="definition hideOnMobile">
+            <div className="definition hideOnMobile">
               <p>
               <a href="https://dictionary.cambridge.org/dictionary/english/animal">Cambridge dictionary</a>
               : animal noun (BAD PERSON)
               </p>
-              <p>Informal - an unpleasant, cruel person or someone who behaves badly: He's a real animal when he's had too much to drink.</p>
-            </div> */}
+              <p>Informal - an unpleasant, cruel person or someone who behaves badly: He"s a real animal when he"s had too much to drink.</p>
+            </div>
           </div>
 
         </div>
 
         <div className="separation-bar"></div>
         
-        <div className="top-resume">
+        <div className="top-resume hideOnMobile">
           <div className="text-resume ">
             <p>Ta ‘sta én bouno santat, hè coumo ét médéci, bébé bi !</p>
           </div>
@@ -56,13 +57,14 @@ class AboutUsContainer extends Component<Props> {
         </div>
         <div className="mobileOnly">
           <p>Baù més ana croumpa bi qu’ ana t’at apouticayre !</p>
-          <ImageSlider className="image-slider-mobile"/>
+          {/* <ImageSlider className="image-slider-mobile"/> */}
         </div>
           <div className="separation-bar"></div>
         <div className="team-resume">          
             <TeamCard/>
         </div>
           <div className="separation-bar"></div>
+          <Image cloudName="casthp" publicId="sample" width="300" crop="scale" />
 
       </div>
     )
