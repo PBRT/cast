@@ -13,9 +13,7 @@ type Props = {
 
 const StoryPage = (props: Props) => {
 
-  const { story } = props;
-  let newStory = story[0];
-  console.log(newStory);
+
   return (
     <div className="learnmore-page-ctn">
       <div className="learnmore-page-title">

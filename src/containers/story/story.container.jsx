@@ -19,6 +19,13 @@ type Props = {
 };
 
 class StoryContainer extends Component<Props> {
+
+  constructor() {
+    super();
+    this.state
+  }
+
+
   componentDidMount = () => {
     this.props.dispatch(requestStory(this.props.match.params.id))
   };
