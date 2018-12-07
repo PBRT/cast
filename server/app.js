@@ -2,7 +2,9 @@ const path = require("path");
 const express = require("express");
 const bodyParser = require("body-parser");
 const postgresDriver = require("./postgres-driver");
-
+const session = require('express-session');
+const loginFunctions = require("./loginFunctions");
+const cors = require('cors');
 const app = express();
 const port = process.env.PORT || 5000;
 
@@ -12,6 +14,7 @@ const root = path.join(__dirname, "..", "build/");
 // Create and run the database
 postgresDriver.connect();
 
+app.use(cors());
 app.use(bodyParser.json());
 app.use(express.static(root));
 
@@ -27,6 +30,48 @@ app.use(function(req, res, next) {
     "GET, HEAD, POST, PUT, DELETE, PATCH, OPTIONS",
   )
   next();
+});
+
+// Session
+
+app.use(session({
+  genid: function(req) {
+    return Math.floor(Math.random * 10000000) // use UUIDs for session IDs
+  },
+  secret: 'pierrosucebien',
+  cookie: {
+      maxAge: 3600000 // 1 hour
+  }
+}))
+
+app.get('/check', (req, res) => {
+  if (req.session.uid) {
+      res.send(JSON.stringify(req.session.uid));
+  }
+  else {
+      res.send(JSON.stringify("no cookies"));
+  }
+});
+
+// Login
+
+app.post('/signUp', (req, res) => {
+  let username = req.body.username;
+  let password = req.body.password;
+  res.send(JSON.stringify(loginFunctions.signUp(username, password)));
+  req.session.uid = loginFunctions.login(username, password);
+})
+
+app.post('/login', (req, res) => {
+  let username = req.body.username;
+  let password = req.body.password;
+  console.log("user: " + username + ", pwd: " + password)
+  req.session.uid = loginFunctions.login(username, password);
+  res.send(JSON.stringify(loginFunctions.login(username, password)));
+})
+
+app.post('/logout', (req, res) => {
+  req.session.destroy();
 });
 
 // Retrieve stories endpoint
