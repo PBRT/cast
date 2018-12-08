@@ -1,10 +1,10 @@
-const fs = require('fs');
-
+const fs = require("fs");
+const sha1 = require("sha1");
 
 let loginInfos = {};
 
 
-let loginData = fs.readFileSync('login-infos.txt').toString();
+let loginData = fs.readFileSync("login-infos.txt").toString();
 loginInfos = JSON.parse(loginData);
 
 function signUp(username, password) {
@@ -14,30 +14,29 @@ function signUp(username, password) {
       return "Username not available";
     } else {
       loginInfos[username] = {};
-      loginInfos[username].password = password;
+      loginInfos[username].password = sha1(password);
       loginInfos[username].userID = uID;
-      fs.writeFileSync('login-infos.txt', JSON.stringify(loginInfos));
+      fs.writeFileSync("login-infos.txt", JSON.stringify(loginInfos));
       return "success";
-    }
+    };
   }
   catch(err) {
-    return "Signup Failed"
-  }
-}
+    return "Signup Failed";
+  };
+};
 
 function login(username, password) {
   try {
     if (loginInfos[username].password === password) {
       return loginInfos[username].userID;
-    }
-    else {
+    } else {
       return "fail";
-    }
+    };
   }
   catch(err) {
     return "Login Failed"
-  }
-}
+  };
+};
 
 module.exports = {
   signUp,

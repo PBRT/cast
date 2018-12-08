@@ -36,11 +36,14 @@ app.use(function(req, res, next) {
 
 app.use(session({
   genid: function(req) {
-    return Math.floor(Math.random * 10000000) // use UUIDs for session IDs
+    return Math.floor(Math.random * 10000000)
   },
   secret: 'pierrosucebien',
+  resave: false,
+  saveUninitialized: true,
   cookie: {
-      maxAge: 3600000 // 1 hour
+      maxAge: 3600000, // 1 hour,
+      secure: true
   }
 }))
 

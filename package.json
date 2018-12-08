@@ -40,6 +40,7 @@
     "redux-logger": "^3.0.6",
     "redux-promise": "^0.5.3",
     "redux-thunk": "^2.2.0",
+    "sha1": "^1.1.1",
     "typeface-roboto": "^0.0.50",
     "victory": "^0.24.5",
     "whatwg-fetch": "^2.0.3"
